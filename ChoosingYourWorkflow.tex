@@ -1,5 +1,8 @@
 %% December 2007 
-\documentclass[11pt,article]{memoir}
+\documentclass[11pt,article]{memoir}     
+% Script-based version control (vc package)
+\input{vc}
+
 \usepackage{graphicx}
 \usepackage{memoir-article-styles}
 \usepackage{mysects}
@@ -56,6 +59,8 @@
 %\cfoot{}
 
 %\mainmatter
+% Include version information in footer. 
+\thispagestyle{kjhgit}
  
 \begin{abstract}
 	As a beginning graduate student in the social sciences, what sort of software should you use to do your work? More importantly, what principles should guide your choice of software? This article offers some answers. The short version is: write using a good text editor (there are several to choose from); analyze data with R or Stata; and minimize errors by keeping your stuff in a simple format (plain text is best), documenting it properly (maybe in a version control system), and back it up sensibly. Don't get bogged down by the gadgets, utilities or other accoutrements: they are there to help you get your work done, but often  waste your time by being beguilingly fun to tweak, update and generally futz with.  
