@@ -213,11 +213,11 @@ This concludes the exploratory analysis.
 \label{fig:codechunk}
 \end{figure}
 
-When you're ready, you ``weave'' the file: you feed it to R, which processes the code chunks, and spits out a finished version where the code chunks have been replaced by their output. This is now a well-formed LaTeX file that you can then turn into a PDF document in the normal way. It's pretty straightforward in practice. I've included an example at the end of this document that shows how it works.
+When you're ready, you ``weave'' the file: you feed it to R, which processes the code chunks, and spits out a finished version where the code chunks have been replaced by their output. This is now a well-formed LaTeX file that you can then turn into a PDF document in the normal way. It's pretty straightforward in practice. I've included an example at the end of this document that shows how it works. Sweave comes built-in to R. Sweave files can be edited in Emacs, as ESS understands them.                                
 
 The strength of this approach is that is makes it much easier to document your work properly (and elegantly) and it makes reproducing a data analysis much easier as well. If you need to do multiple but identical (or very similar) analyses of different bits of data, Sweave can make generating consistent and reliable reports much easier.
 
-A weakness of the Sweave model is that when you make changes, you have to reprocess the all of the code to reproduce the final LaTeX file. If your analysis is computationally intensive this can take up time. There are \emph{ad hoc} ways around this, such as designing one's projects so that they are relatively modular, or selectively processing code chunks. The latter may eventually appear as a  feature in a future version of Sweave. Sweave comes built-in to R. Sweave files can be edited in Emacs, as ESS understands them.
+A weakness of the Sweave model is that when you make changes, you have to reprocess the all of the code to reproduce the final LaTeX file. If your analysis is computationally intensive this can take up time. There are some ways around this: designing one's projects so that they are relatively modular is good practice anyway. Two add-on packages for R (\texttt{cacheSweave} and \texttt{weaver}, both available from the R website) are designed to alleviate this problem. 
 
 \smallskip
 
