@@ -73,7 +73,11 @@ Although I shall describe some specific applications in what follows, in the end
 
 \section{Make Sure You Know What you Did} % (fold)
 \label{sec:make_it_so_that_you_know_what_you_did}
-For any kind of formal data analysis that leads to a scholarly paper, however you do it, there are basic principles that you will want to adhere to. Perhaps the most important one is to do your work in a way that leaves a coherent record of your actions. Instead of doing a bit of data analysis and then just keeping the resulting table of results or graphic that you produced, for instance, write down what you did as a piece of code or an explicit procedure. That way you leave the beginnings of an audit trail. Why should you bother to do this? Because when you inevitably return to this table or figure six months down the line, your future self will have been saved hours spent wondering what it was you thought you were doing and how the hell did you manage to produce those great-looking results anyway. A second principle is that a file or folder should always be able to tell you what it is --- i.e., beyond making your work reproducible, you will also need some method for organizing and documenting your draft papers, code, field notes, datasets, output files or whatever it is you're working with. A third principle is that repetitive and error-prone processes should be automated as much as possible. This makes it easier to check for and correct mistakes. Rather than copying and pasting code over and over to do basically the same thing to different parts of your data, write a general function that can be called whenever it's needed. Instead of tediously retyping and reformatting the bibliography for each of your papers as you send it out to a journal, get hold of some software that can manage this for you automatically.
+For any kind of formal data analysis that leads to a scholarly paper, however you do it, there are basic principles that you will want to adhere to. Perhaps the most important one is to do your work in a way that leaves a coherent record of your actions. Instead of doing a bit of data analysis and then just keeping the resulting table of results or graphic that you produced, for instance, write down what you did as a piece of code or an explicit procedure. That way you leave the beginnings of an audit trail. Why should you bother to do this? Because when you inevitably return to this table or figure six months down the line, your future self will have been saved hours spent wondering what it was you thought you were doing and how the hell did you manage to produce those great-looking results anyway. 
+
+A second principle is that a file or folder should always be able to tell you what it is --- i.e., beyond making your work reproducible, you will also need some method for organizing and documenting your draft papers, code, field notes, datasets, output files or whatever it is you're working with. 
+
+A third principle is that repetitive and error-prone processes should be automated as much as possible. This makes it easier to check for and correct mistakes. Rather than copying and pasting code over and over to do basically the same thing to different parts of your data, write a general function that can be called whenever it's needed. Instead of tediously retyping and reformatting the bibliography for each of your papers as you send it out to a journal, get hold of some software that can manage this for you automatically.
 
 There are many ways of implementing these principles. You could use Microsoft Word, Endnote and SPSS. Or Textpad and Stata. Or a pile of legal pads, a calculator, a pair of scissors and a box of file folders. It's the principles that matter, not the software. Still, software applications are not all created equal, and some make it easier than others to do the Right Thing. For instance, it is \emph{possible} to produce well-structured, easily-maintainable documents using Microsoft Word. But you have to use its styling and outlining features strictly and responsibly, and most people don't bother. You can maintain reproducible analyses in SPSS, but the application isn't set up to do this automatically or efficiently, nor does its design encourage good habits. So, it is probably a good idea to invest some time learning about the alternatives. Many of them are free to use or try out, and you are at a point in your career where you can afford to play with different setups without too much trouble.
 % section introduction (end)   
@@ -107,48 +111,9 @@ The dissertation, book, or articles you write will generally consist of the main
 \section{Edit Text}
 If you are going to be doing quantitative analysis of any kind then you should learn to use a good text editor. The same is true, I'd argue, for any highly structured document subject to a lot of revision, such as a scholarly paper. Text editors are different from word processors. Unlike applications such as Microsoft Word, text editors generally don't make a big effort to make what you write look like as though it is being written on a printed page.\footnote{For further argument about the advantages of text-editors over word processors see Allin Cottrell's polemic, ``\href{http://www.ecn.wfu.edu/~cottrell/wp.html}{Word Processors: Stupid and Inefficient}.''} Instead, they focus on manipulating text efficiently and assisting you with visualizing the logical structure of what you're writing. If you are writing code to run in a statistics program, for instance, then at a minimum a good editor will highlight keywords and operators in a way that makes the code more readable. Typically, it will also passively signal to you when you've done something wrong (such as forget a closing brace or semicolon or quotation mark), and    \href{http://en.wiktionary.org/wiki/automagical}{automagically} indent or tidy up your code in an intelligent way. If you are writing a scholarly paper or a dissertation, a good text editor can make it easier to maintain control over the structure of your document, and help ensure that cross-references and other paraphernalia are correct. Just as the actual numbers are crunched by your stats program --- not your text editor --- the typesetting of your paper is handled by a specialized application, too.
 
-\textbf{Emacs} is a text editor, in the same way the blue whale is a
-mammal. Emacs is very powerful, and can become almost a complete
-working environment in itself, should you so wish. (I don't really
-recommend it.) Combining Emacs with some other applications and
-add-ons (described below) allows you to manage writing and
-data-analysis effectively. The
-\href{http://www.gnu.org/software/emacs/}{Emacs Homepage} has links to
-Windows and Linux versions. The two most easily available versions on
-the Mac are
-\href{http://www.apple.com/downloads/macosx/unix_open_source/carbonemacspackage.html}{Carbon
-Emacs} and \href{http://aquamacs.org/}{Aquamacs}. The former is a
-``purer'' version of Emacs and does not implement many Mac
-conventions. The latter makes an effort to integrate Emacs with the
-Mac OS.\footnote{In the near future, a new major version of Emacs ---
-  version 23 --- will be officially
-  released and Carbon Emacs will be outmoded. If you are comfortable
-  compiling software you can download a development version that works
-very well.} For Windows users who would like to use Emacs, John Fox has a
-\href{http://socserv.mcmaster.ca/jfox/Books/Companion/ESS/}{very useful page}
-containing a customized XEmacs distribution and instructions for how to install and
-configure it for quantitative analysis with R (about which more below).
+\textbf{Emacs} is a text editor, in the same way the blue whale is a mammal. Emacs is very powerful, and can become almost a complete working environment in itself, should you so wish. (I don't really recommend it.) Combining Emacs with some other applications and add-ons (described below) allows you to manage writing and data-analysis effectively. The \href{http://www.gnu.org/software/emacs/}{Emacs Homepage} has links to Windows and Linux versions. The two most easily available versions on the Mac are \href{http://www.apple.com/downloads/macosx/unix_open_source/carbonemacspackage.html}{Carbon Emacs} and \href{http://aquamacs.org/}{Aquamacs}. The former is a ``purer'' version of Emacs and does not implement many Mac conventions. The latter makes an effort to integrate Emacs with the Mac OS.\footnote{A new major version of Emacs --- version 23 --- was recently officially released. If you are comfortable compiling software you can download the Emacs source code for this new version and use that instead of the versions listed above.} For Windows users who would like to use Emacs, John Fox has a \href{http://socserv.mcmaster.ca/jfox/Books/Companion/ESS/}{very useful page} containing a customized XEmacs distribution and instructions for how to install and configure it for quantitative analysis with R (about which more below).
 
-While very powerful and flexible, Emacs is not particularly easy to
-learn. Because it evolved in a much  earlier era of computing (before
-decent graphical displays, for instance), it doesn't share many of the
-conventions of modern applications. There are numerous good
-alternatives, and I discuss some of them in subsequent sections. I
-recommend it here because, despite its shortcomings, it is very, very
-good at managing the typesetting and statistics applications I'm about
-to discuss. Interestingly, though,
-Emacs has recently become quite popular amongst a set 
-of software developers (all of whom are much younger than Emacs
-itself) and as a result there are some good, new resources available
-for learning it and optimizing it easily. These include
-\href{http://peepcode.com/products/meet-emacs}{Meet Emacs}, a
-screencast from PeepCode that walks you through the basics of the
-application, and an associated
-\href{http://github.com/technomancy/emacs-starter-kit/tree/master}{Emacs
-Starter Kit} which gives you a number useful customizations that will
-make your life easier.\footnote{I've made some
-  \href{http://kjhealy.github.com/emacs-starter-kit/}{further changes}
-to this myself.}
+While very powerful and flexible, Emacs is not particularly easy to learn. Because it evolved in a much earlier era of computing (before decent graphical displays, for instance), it doesn't share many of the conventions of modern applications. There are numerous good alternatives, and I discuss some of them in subsequent sections. I recommend it here because, despite its shortcomings, it is very, very good at managing the typesetting and statistics applications I'm about to discuss. Interestingly, though, Emacs has recently become quite popular amongst a set of software developers (all of whom are much younger than Emacs itself) and as a result there are some good, new resources available for learning it and optimizing it easily. These include \href{http://peepcode.com/products/meet-emacs}{Meet Emacs}, a screencast from PeepCode that walks you through the basics of the application, and an associated \href{http://github.com/technomancy/emacs-starter-kit/tree/master}{Emacs Starter Kit} which gives you a number useful customizations that will make your life easier.\footnote{I've made some \href{http://kjhealy.github.com/emacs-starter-kit/}{further changes} to this myself.}
 
 If text editors like Emacs are not concerned with formatting your documents nicely, then what are you supposed to use? You need a way to take the text you write and turn it into a presentable printed (or PDF) page. This is what \textbf{LaTeX} is for. LaTeX is a freely-available, professional-quality typesetting system. It takes text marked up in a way that describes the structure and formatting  of the document (where the sections and subsections are, for example, or whether text should be \textbf{in bold face} or \emph{emphasized}) and typesets it properly. If you have ever edited the HTML of a web page, you'll know the general idea of a markup language. If you haven't, the easiest way to understand what I mean is to look at a segment of LaTeX markup. An example is shown in Figure \ref{fig:latex}. This document is written in LaTeX markup. You can get started with TeX and LaTeX for Mac OS X \href{http://tug.org/mactex/}{from this page}. On Windows, \href{http://www.miktex.org/}{MiKTeX} is a widely-used version of TeX. The \href{http://www.tug.org/pracjourn/}{PracTeX Journal} is an excellent source of information on how to do work using LaTeX. 
 
