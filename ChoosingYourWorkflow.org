@@ -35,22 +35,60 @@ There are many ways of implementing these principles. You could use Microsoft Wo
 
 ** What Sort of Computer Should You Use?
 
-The earliest choice you will face is buying your computer and deciding what operating system to run on it. The leading candidates are Microsoft Windows, Apple's Mac OS X, and some distribution of Linux. Each of these platforms has gone some of the way --- in some cases a long way --- toward remedying the main defects associated with it. I would characterize the present state of things this way: 
+The earliest choice you will face is buying your computer and deciding
+what operating system to run on it. The leading candidates are
+Microsoft Windows, Apple's Mac OS X, and some distribution of
+Linux. Each of these platforms has gone some of the way --- in some
+cases a long way --- toward remedying the main defects associated with
+it. I would characterize the present state of things this way: 
 
-\begin{itemize}
-	\item *Windows* dominates the market. Its most widely-available version, Windows 7, is stable and relatively secure. Because of its market dominance, far more viruses and malware target Windows than any other OS. Long-standing design and usability problems have been somewhat ameliorated. The previous major version, Windows Vista, was not very successful, though its main problems were not primarily related to security. Its successor, Windows 7, has generally been accepted as an improvement. 
+- *Windows* dominates the market. Its most widely-available version,
+  Windows 7, is stable and relatively secure. Because of its market
+  dominance, far more viruses and malware target Windows than any
+  other OS. Long-standing design and usability problems have been
+  somewhat ameliorated. The previous major version, Windows Vista, was
+  not very successful, though its main problems were not primarily
+  related to security. Its successor, Windows 7, has generally been
+  accepted as an improvement.
 
-	\item *Mac OS X* runs only on Apple hardware (``hackintosh'' efforts notwithstanding). Unlike in the past, Apple computers today have the same basic hardware (Intel chipsets) as computers that run Windows. This has two consequences for those considering a move to Mac OS X. First, one can now make direct price comparisons between Apple computers and PC alternatives (such as Dells, Lenovos, etc). In general, the more similarly kitted-out a PC is to an Apple machine, the more the price difference between the two goes away.\footnote{Comparisons should still take account of remaining differences in hardware design quality, and of course the OS itself.} However, Apple does not compete at all price-points in the market, so it will always be possible to configure a cheaper PC (with fewer features) than one Apple sells. For the same reason, it is also easier to find a PC configuration precisely tailored to some particular set of needs or  preferences (e.g., with a better display but without some other feature or other) than may be available from Apple. 
-	
-	Second, because Apple now runs Intel-based hardware, installing and running Windows is easy, and even catered to by Mac OS's Boot Camp utility. Beyond installing OS X and Windows side-by-side, third-party virtualization software is available (for about \$80 from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]]) that allows you to run Windows or Linux seamlessly within OS X. Thus, Apple hardware is the only setup where you can easily try out each of the main desktop operating systems.
-	 
-	\item *Linux* is stable, secure and free. User-oriented distributions such as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the past. The user environment is friendlier now. Installing, upgrading and updating software --- a key point of frustration and time-wasting in older Linux distributions --- is also much better than it used to be, as Linux's package-management systems have matured. It remains true that Linux users are much more likely to be forced at some point to learn more than they might want to about the guts of their operating system.
-	
-\end{itemize}
+- *Mac OS X* runs only on Apple hardware (``hackintosh'' efforts
+  notwithstanding). Unlike in the past, Apple computers today have the
+  same basic hardware (Intel chipsets) as computers that run
+  Windows. This has two consequences for those considering a move to
+  Mac OS X. First, one can now make direct price comparisons between
+  Apple computers and PC alternatives (such as Dells, Lenovos,
+  etc). In general, the more similarly kitted-out a PC is to an Apple
+  machine, the more the price difference between the two goes
+  away.\footnote{Comparisons should still take account of remaining
+  differences in hardware design quality, and of course the OS
+  itself.} However, Apple does not compete at all price-points in the
+  market, so it will always be possible to configure a cheaper PC
+  (with fewer features) than one Apple sells. For the same reason, it
+  is also easier to find a PC configuration precisely tailored to some
+  particular set of needs or preferences (e.g., with a better display
+  but without some other feature or other) than may be available from
+  Apple.
+
+  Second, because Apple now runs Intel-based hardware, installing and
+  running Windows is easy, and even catered to by Mac OS's Boot Camp
+  utility. Beyond installing OS X and Windows side-by-side,
+  third-party virtualization software is available (for about \$80
+  from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]]) that allows you to run Windows or Linux
+  seamlessly within OS X. Thus, Apple hardware is the only setup where
+  you can easily try out each of the main desktop operating systems.
+
+- *Linux* is stable, secure and free. User-oriented distributions such
+  as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the
+  past. The user environment is friendlier now. Installing, upgrading
+  and updating software --- a key point of frustration and
+  time-wasting in older Linux distributions --- is also much better
+  than it used to be, as Linux's package-management systems have
+  matured. It remains true that Linux users are much more likely to be
+  forced at some point to learn more than they might want to about the
+  guts of their operating system.
 
 These days, I use Mac OS X, and the discussion here reflects that choice to some extent. But the other two options are also perfectly viable alternatives. Rather than try to convince you to plump for one option or another, let's look at some applications that will run on all of these operating systems.
 
-% section  (end)                                         
 The dissertation, book, or articles you write will generally consist of the main text, the results of data analysis (perhaps presented in tables or figures) and the scholarly apparatus of notes and references. Thus, as you  put a paper or an entire dissertation together you will want to be able to easily *edit text*, *analyze data* and *minimize error*. In the next section I describe some applications and tools designed to let you do this easily. They fit together well (by design) and are all freely available for Windows, Linux and Mac OS X. They are not perfect, by any means --- in fact, some of them are kind of a pain in the ass to learn. (I'll discuss some nicer alternatives later.) But graduate-level research and writing is kind of a pain in the ass to learn, too. Specialized tasks need specialized tools and, unfortunately,   even if they are very good at what they do these tools aren't always intuitively accessible.                                                      
 
 ** Edit Text
