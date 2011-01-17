@@ -585,7 +585,14 @@ users. (Again, though, many people find Word's ``Track Changes''
 feature indispensable once they begin using it.) But version control
 systems can be used quite straightforwardly in a basic fashion, and
 they increasingly come with front ends that can be easily integrated
-with your text editor.[fn:magit]
+with your text editor.[fn:magit] Moreover, you can meet these systems
+half way. The excellent [[https://www.getdropbox.com/][DropBox]], for example, allows you to share
+files between different computers you own, or with collaborators or
+general public. But it also automatically version-controls the
+contents of these folders (using Subversion behind the scenes). DVCSs
+like Git and Mercurial combine the virtues of version control and
+backups because every repository is a complete, self-contained,
+cryptographically signed copy of the project.
 
 [fn:magit] Emacs comes with support for a variety of VCS systems built
 in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
@@ -595,28 +602,33 @@ Revision control has significant benefits. A good VCS puts you in the
 habit of recording (or ``committing'') changes to a file or project as
 you work on it, and (briefly) documenting those changes as you go. It
 allows you to easily test out alternative lines of development by
-branching a project. And perhaps most importantly, it lets you revisit
-any stage of a project's development at will and reconstruct what it
-was you were doing. This can be tremendously useful whether you are
-writing code for a quantitative analysis, managing field notes, or
-writing a paper.[fn:dvcs] While you will probably not need to control
-everything in this way (though some people do), I /strongly/ suggest
-you consider managing at least the core set of text files that make up
-your project (e.g., the code that does the analysis and generates your
-tables and figures; the dataset itself; your notes and working papers,
-the chapters of your dissertation, etc). As time goes by you will
-generate a complete, annotated record of your actions that is also a
-backup of your project at every stage of its development. Services
-such as [[http://www.github.com][GitHub]] allow you to store public or (for a fee) private
-project repositories and so can be a way to back up work offsite as
-well as a platform for collaboration and documentation of your work.
+branching a project. It allows collborators to work on the same
+project at the same time, and provides powerful tools that allow you
+to automatically merge or (when necessary) manually compare changes
+that people have made. And perhaps most importantly, it lets you
+revisit any stage of a project's development at will and reconstruct
+what it was you were doing. This can be tremendously useful whether
+you are writing code for a quantitative analysis, managing field
+notes, or writing a paper.[fn:dvcs] While you will probably not need
+to control everything in this way (though some people do), I
+/strongly/ suggest you consider managing at least the core set of text
+files that make up your project (e.g., the code that does the analysis
+and generates your tables and figures; the dataset itself; your notes
+and working papers, the chapters of your dissertation, etc). As time
+goes by you will generate a complete, annotated record of your actions
+that is also a backup of your project at every stage of its
+development. Services such as [[http://www.github.com][GitHub]] allow you to store public or (for
+a fee) private project repositories and so can be a way to back up
+work offsite as well as a platform for collaboration and documentation
+of your work.
 
 [fn:dvcs] Mercurial and Git are /distributed/ revision control systems
 (DVCSs) which can handle projects with many contributors and very
-complex, decentralized structures. Bryan O'Sullivan's /[[http://hgbook.red-bean.com/hgbook.pdf][Distributed
-Version Control with Mercurial]]/ is a free, comprehensive guide to one
-of the main DVCS tools, but also provides a clear account of how
-modern version-control systems have developed, together with the main
+complex, decentralized structures. Bryan O'Sullivan's
+/[[http://hgbook.red-bean.com/hgbook.pdf][Distributed Version Control
+with Mercurial]]/ is a free, comprehensive guide to one of the main
+DVCS tools, but also provides a clear account of how modern
+version-control systems have developed, together with the main
 concepts behind them. For Git, I recommend starting [[http://git-scm.com/][at this site]] and
 following the links to the documentation.
 
@@ -803,15 +815,7 @@ for various DVCSs. On the Mac, [[http://www.zennaware.com/cornerstone/][CornerSt
 full-featured applications designed to make it easy to use
 Subversion. Taking a longer view, version control is likely to become
 more widely available through intermediary services or even as part of
-the basic functionality of operating systems. The excellent [[https://www.getdropbox.com/][DropBox]],
-for example, allows you to share files between different computers you
-own, or with collaborators or general public. But it also
-automatically version-controls the contents of these folders (using
-Subversion behind the scenes). DVCSs like Git and Mercurial combine
-the virtues of version control and backups because every repository is
-a complete, self-contained, cryptographically signed copy of the
-project, which makes it easy to keep multiple copies of your work at
-different locations.
+the basic functionality of operating systems.
 
 
 ** A Broader Perspective 
