@@ -712,21 +712,22 @@ thing you /really/ need to start doing immediately is keeping good
 backups. There are a number of ways to try them out in whole or in
 part. You could try LaTeX first, using any editor. Or you could try
 Emacs and LaTeX together. You could begin using R and its GUI.[fn:try]
-Sweave can be left till last, though I've found it increasingly useful
-since I've started using it, and wish that all of my old data
-directories had some documentation in this format. Revision control is
-more beneficial when implemented at the beginning of projects, and
-best of all when committing changes to a project becomes a habit of
-work, but it can be added at any time.
+Sweave or Org-babel can be left till last, though I have found these
+increasingly useful since I've started using them, and wish that all
+of my old project directories had some documentation in one or other
+of these formats. Revision control is more beneficial when implemented
+at the beginning of projects, and best of all when committing changes
+to a project becomes a habit of work. But it can be added at any time.
 
 [fn:try] If you already know Emacs, you should certainly try R using
 ESS instead of the R GUI, though.
 
 You are not condemned to use these applications forever, either. LaTeX
-documents can be converted into other formats. Your text files are
-editable in any other text editor. Statistical code is by nature much
-less portable, but the openness of R means that it is not likely to
-become obsolete or inaccessible any time soon.
+and (especially) Org-mode documents can be converted into many other
+formats. Your text files are editable in any other text
+editor. Statistical code is by nature much less portable, but the
+openness of R means that it is not likely to become obsolete or
+inaccessible any time soon.
 
 A disadvantage of these particular applications is that I'm in a
 minority with respect to other people in my field. This is less and
@@ -744,22 +745,26 @@ other. Your mileage, as they say, may vary.
 
 [fn:lightweight] If you really want to maximize the portability of
 your papers or especially your reading notes or memos, consider
-writing them in a modern lightweight markup format such as [[http://en.wikipedia.org/wiki/Markdown][Markdown]] or
-its close relation, [[http://fletcherpenney.net/MultiMarkdown][MultiMarkdown]]. Documents written in this format
-are easy to read in their plain-text form but can be simply and
-directly converted into HTML, Rich Text, LaTeX, Word, or other
-formats. TextMate has good support for Markdown and MultiMarkdown,
-allowing you to do these conversions more or less automatically.  John
-MacFarlane's [[http://johnmacfarlane.net/pandoc/][Pandoc]] is a tool that can read markdown and (subsets of)
-reStructuredText, HTML, and LaTeX; and it can write to MarkDown,
-reStructuredText, HTML, LaTeX, ConTeXt, RTF, DocBook XML, groff man,
-and S5 HTML slide shows. Pandoc is a terrifically useful too and I
-recommend checking it out. Lightweight markup languages like Markdown
-and Textile have a harder time dealing with some of the requirements
-of scholarly writing, especially the machinery of bibliographies and
-citations. If they could handle this task elegantly they would be
-almost perfect, but in practice this would probably just turn them
-back into something much less lightweight.
+writing them in a modern lightweight markup format. Org-mode's native
+format is effectively one of these already, and it provides built-in
+support for export to many such formats. Other options include
+[[http://en.wikipedia.org/wiki/Markdown][Markdown]] or its close relation, [[http://fletcherpenney.net/MultiMarkdown][MultiMarkdown]]. Documents written in
+these formats are easy to read in their plain-text form but can be
+simply and directly converted into HTML, Rich Text, LaTeX, Word, or
+other formats. TextMate has good support for Markdown and
+MultiMarkdown, allowing you to do these conversions more or less
+automatically. John MacFarlane's [[http://johnmacfarlane.net/pandoc/][Pandoc]] is a powerful tool that can
+read markdown and (subsets of) reStructuredText, HTML, Org, and LaTeX;
+and it can write to MarkDown, reStructuredText, HTML, LaTeX, ConTeXt,
+RTF, DocBook XML, groff man, and S5 HTML slide shows. Pandoc is
+terrifically useful and I recommend checking it out. Lightweight
+markup languages like Markdown and Textile have a harder time dealing
+with some of the requirements of scholarly writing, especially the
+machinery of bibliographies and citations. If they could handle this
+task elegantly they would be almost perfect, but in practice this
+would probably just turn them back into something much less
+lightweight. Even here, though, good progress is being made as Pandoc
+will soon include support for citations.
 
 
 ** Some Alternative Applications
