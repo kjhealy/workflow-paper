@@ -61,23 +61,7 @@ Although in what follows I advocate you take a look at several
  utilities. The Zen of Organization is Not to be Found in Fancy
  Software. Nor shall the true path of Getting Things Done be revealed
  to you through the purchase of a nice [[http://www.moleskineus.com/][Moleskine Notebook]]. Instead, it
- lies within. Unfortunately. For instance, like me my wife is an
- academic --- a philosopher. Unlike me, she is very well-organized and
- highly productive. Her task-management system consists of a calendar
- and some bits of scrap paper with to-do lists scrawled on them. Her
- work environment is comprised of Microsoft Word, email and a secret
- drawer full of candy. No context-dependent Getting-Things-Done
- system, no bibliographic software, nothing.[fn:backup] Her hidden trick is that,
- when she has a project, she thinks about what needs to be done,
- writes down a list of tasks on a piece of paper, and --- this next
- bit is the tricky part --- /actually completes these tasks one by one
- in a systematic fashion, beginning right away/. I know, I didn't
- understand that last bit, either. Sad to say, only when you have
- grasped this point will you be able to snatch this list of stuff to
- do today from her hand, grasshopper.
-
-[fn:backup] Even she backs up her work religiously, though. More on
-that below.
+ lies within. Unfortunately.
 
 ** Just Make Sure You Know What You Did 
 
@@ -140,29 +124,30 @@ The earliest choice you will face is buying your computer and deciding
 what operating system to run on it. The leading candidates are
 Microsoft Windows, Apple's Mac OS X, and some distribution of
 Linux. Each of these platforms has gone some of the way --- in some
-cases a long way --- toward remedying the main defects associated with
-it. I would characterize the present state of things this way:
+cases a long way --- toward remedying the main defects stereotypically
+associated with it. I would characterize the present state of things
+this way:
 
-- Windows dominates the market. Because of its market dominance, far
-  more viruses and malware target Windows than any other
-  OS. Long-standing design and usability problems have been somewhat
-  ameliorated. The previous major version, Windows Vista, was not very
+- Windows dominates the market. Because of this, far more viruses and
+  malware target Windows than any other OS. Long-standing design and
+  usability problems have been somewhat ameliorated in recent
+  years. The previous major version, Windows Vista, was not very
   popular, though its main problems were not primarily related to
   security. Its successor, Windows 7, is generally accepted to be a
   solid improvement.
 
-- Mac OS X runs only on Apple hardware (``hackintosh'' efforts
-  notwithstanding). Unlike in the past, Apple computers today have the
-  same basic hardware (Intel chipsets) as computers that run
-  Windows. This has two consequences for those considering a move to
-  Mac OS X. First, one can now make direct price comparisons between
-  Apple computers and PC alternatives (such as Dells, Lenovos,
-  etc). In general, the more similarly kitted-out a PC is to an Apple
-  machine, the more the price difference between the two goes
-  away.[fn:compare] However, Apple does not compete at all price-points in the
-  market, so it will always be possible to configure a cheaper PC
-  (with fewer features) than one Apple sells. For the same reason, it
-  is also easier to find a PC configuration precisely tailored to some
+- Mac OS X runs only on computers made by Apple (the existence of
+  "hackintoshes" notwithstanding). Unlike in the past, Apple computers
+  today have the same basic hardware as computers that run
+  Windows. This has two consequences for those considering Mac OS
+  X. First, one can now make direct price comparisons between Apple
+  computers and PC alternatives (such as Dells, Lenovos, etc). In
+  general, the more similarly kitted-out a PC is to an Apple machine,
+  the more the price difference between the two goes away.[fn:compare]
+  However, Apple does not compete at all price-points in the market,
+  so it will always be possible to configure a cheaper PC (with fewer
+  features) than one Apple sells. For the same reason, it is also
+  easier to find a PC configuration precisely tailored to some
   particular set of needs or preferences (e.g., with a better display
   but without some other feature or other) than may be available from
   Apple.
@@ -175,7 +160,7 @@ it. I would characterize the present state of things this way:
   seamlessly within OS X. Thus, Apple hardware is the only setup where
   you can easily try out each of the main desktop operating systems.
 
-- Linux is stable, secure and free. User-oriented distributions such
+- Linux is stable, secure, and free. User-oriented distributions such
   as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the
   past. The user environment is friendlier now. Installing, upgrading
   and updating software --- a key point of frustration and
@@ -204,27 +189,27 @@ applications and tools designed to let you do this easily. They fit
 together well (by design) and are all freely available for Windows,
 Linux and Mac OS X. They are not perfect, by any means --- in fact,
 some of them are kind of a pain in the ass to learn. (I'll discuss
-some nicer alternatives later.) But graduate-level research and
-writing is kind of a pain in the ass to learn, too. Specialized tasks
-need specialized tools and, unfortunately, even if they are very good
-at what they do these tools aren't always intuitively accessible.
+some nicer alternatives, too.) But graduate-level research and writing
+is kind of a pain in the ass to learn, too. Specialized tasks need
+specialized tools and, unfortunately, even if they are very good at
+what they do these tools don't always go out of their way to be
+friendly.
 
 ** Edit Text
 If you are going to be doing quantitative analysis of any kind then
-you should learn to use a good text editor, of the sort that
-programmers use. The same can be said, I'd argue, for working with any
-highly structured document subject to a lot of revision, such as a
-scholarly paper. Text editors are different from word
-processors. Unlike applications such as Microsoft Word, text editors
-generally don't make a big effort to make what you write look like as
-though it is being written on a printed page.[fn:cottrell] Instead,
-they focus on manipulating text efficiently and assisting you with
-visualizing the logical structure of what you're writing. If you are
-writing code to do some statistical analysis, for instance, then at a
-minimum a good editor will highlight keywords and operators in a way
-that makes the code more readable. Typically, it will also passively
-signal to you when you've done something wrong syntactically (such as
-forget a closing brace or semicolon or quotation mark), and
+you should write using a good text editor. The same can be said, I'd
+argue, for working with any highly structured document subject to a
+lot of revision, such as a scholarly paper. Text editors are different
+from word processors. Unlike applications such as Microsoft Word, text
+editors generally don't make a big effort to make what you write look
+like as though it is being written on a printed page.[fn:cottrell]
+Instead, they focus on manipulating text efficiently and assisting you
+with visualizing the logical structure of what you're writing. If you
+are writing code to do some statistical analysis, for instance, then
+at a minimum a good editor will highlight keywords and operators in a
+way that makes the code more readable. Typically, it will also
+passively signal to you when you've done something wrong syntactically
+(such as forget a closing brace or semicolon or quotation mark), and
 [[http://en.wiktionary.org/wiki/automagical][automagically]] indent or tidy up your code as you write it. If you are
 writing a scholarly paper or a dissertation, a good text editor can
 make it easier to maintain control over the structure of your
@@ -251,23 +236,22 @@ Processors: Stupid and Inefficient]].''
  are [[http://emacsformacosx.com/][GNU Emacs]] itself and [[http://aquamacs.org/][Aquamacs]]. The former is the ``purest''
  version of Emacs and does not implement many Mac conventions out of
  the box. The latter makes an effort to integrate Emacs with the Mac
- OS. For Windows users who would like to use Emacs, John Fox has a
- [[http://socserv.mcmaster.ca/jfox/Books/Companion/ESS/][very useful page]] containing a customized XEmacs distribution and
- instructions for how to install and configure it for quantitative
- analysis with R (about which more below).
+ OS. For Windows users who would like to use Emacs, the developers
+ maintain an [[http://www.gnu.org/software/emacs/windows/faq.html][extensive FAQ]] including information on where to download
+ a copy and how to install it. 
 
 While very powerful and flexible, Emacs is not particularly easy to
 learn. Indeed, to many first-time users (especially those used to
 standard applications on Windows or Mac OS) its conventions seem
-bizarre any byzantine. As applications go, Emacs is very old: the
+bizarre any byzantine. As applications go, Emacs is quite ancient: the
 first version was written by Richard Stallman in the 1970s. Because it
 evolved in a much earlier era of computing (before decent graphical
-displays, for instance), it doesn't share many of the conventions of
-modern applications.[fn:emacs] Emacs offers many opportunities to
-waste your time learning its particular conventions, tweaking its
-settings, and generally customizing the bejaysus out of it. There are
-several good alternatives on each major platform, and I discuss some
-of them below.
+displays, for instance, and possibly also fire), it doesn't share many
+of the conventions of modern applications.[fn:emacs] Emacs offers many
+opportunities to waste your time learning its particular conventions,
+tweaking its settings, and generally customizing the bejaysus out of
+it. There are several good alternatives on each major platform, and I
+discuss some of them below.
 
 [fn:emacs] One of the reasons that Emacs' keyboard shortcuts are so
 strange is that they have their roots in a model of computer that laid
@@ -288,7 +272,7 @@ application.
 If text editors like Emacs are not concerned with formatting your
 documents nicely, then how do you produce properly typeset papers? You
 need a way to take the text you write and turn it into a presentable
-printed (or PDF) page. This is what \textbf{LaTeX} is for. LaTeX is a
+printed (or PDF) page. This is what *LaTeX* is for. LaTeX is a
 freely-available, professional-quality typesetting system. It takes
 text marked up in a way that describes the structure and formatting of
 the document (where the sections and subsections are, for example, or
@@ -297,12 +281,9 @@ properly. If you have ever edited the HTML of a web page, you'll know
 the general idea of a markup language. If you haven't, the easiest way
 to understand what I mean is to look at a segment of LaTeX markup. An
 example is shown in Figure \ref{fig:latex}. You can get started with
-TeX and LaTeX for Mac OS X by downloading
-[[http://tug.org/mactex/][the MacTeX distribution]]. On Windows,
-[[http://www.tug.org/protext/][ProTeXt]] and
-[[http://www.miktex.org/][MiKTeX]] are both widely-used. Linux vendors
-have their own distributions, or you can install
-[[http://www.tug.org/texlive][TeXLive]] yourself.[fn:distributions]
+LaTeX for Mac OS X by downloading [[http://tug.org/mactex/][the MacTeX distribution]]. On Windows,
+[[http://www.tug.org/protext/][ProTeXt]] and [[http://www.miktex.org/][MiKTeX]] are both widely-used. Linux vendors have their own
+distributions, or you can install [[http://www.tug.org/texlive][TeXLive]] yourself.[fn:distributions]
 
 [fn:distributions] For more about these distributions of TeX, see the
 [[http://www.latex-project.org/ftp.html][LaTeX project page]]. The proliferation of "-TeX" acronyms and names can
@@ -422,13 +403,14 @@ plenty of good advice available via Google, and you should pay
 attention to it.
                           
 ** Minimize Error  
-We have already seen some of the right set of tools can save you time
-by automatically highlighting the syntax of your code, ensuring
+We have already seen how the right set of tools can save you time by
+automatically highlighting the syntax of your code, ensuring
 everything you cite ends up in your bibliography, picking out mistakes
 in your markup, and providing templates for commonly-used methods or
-functions. Your time is saved because you make fewer errors. When it
-comes to managing ongoing projects, minimizing error means addressing
-two related problems. The first is to find ways to further reduce the
+functions. Your time is saved twice over: you don't repeat yourself,
+and you make fewer errors you'd otherwise have to fix. When it comes
+to managing ongoing projects, minimizing error means addressing two
+related problems. The first is to find ways to further reduce the
 opportunity for errors to creep in without you noticing. This is
 especially important when it comes to coding and analyzing data. The
 second is to find a way to figure out, retrospectively, what it was
@@ -453,11 +435,11 @@ who has written a quantitative paper has been confronted with the
 problem of reading an old draft containing results or figures that
 need to be revisited or reproduced (as a result of the peer-review
 process, say) but which lack any information about the circumstances
-of their initial creation. Academic papers take a long time to get
-through the cycle of writing, review, revision and publication, even
-when you're working hard the whole time. It is not uncommon to have to
-return to something you did two years previously in order to answer
-some question or other from a reviewer. You do not want to have to do
+of their creation. Academic papers take a long time to get through the
+cycle of writing, review, revision, and publication, even when you're
+working hard the whole time. It is not uncommon to have to return to
+something you did two years previously in order to answer some
+question or other from a reviewer. You do not want to have to do
 everything over from scratch in order to get the right answer. I am
 not exaggerating when I say that, whatever the challenges of
 replicating the results of someone else's quantitative analysis, after
@@ -518,12 +500,11 @@ practice. Sweave files can be edited in Emacs, as ESS understands
 them.
 
 The strength of this approach is that is makes it much easier to
-document your work properly (and elegantly). Work becomes much easier
-to reproduce because there is just one file for both the data analysis
-and the writeup: the output of the analysis is created on the fly, and
-the code to do it is embedded in the paper. If you need to do multiple
-but identical (or very similar) analyses of different bits of data,
-Sweave can make generating consistent and reliable reports much
+document your work properly. There is just one file for both the data
+analysis and the writeup. The output of the analysis is created on the
+fly, and the code to do it is embedded in the paper. If you need to do
+multiple but identical (or very similar) analyses of different bits of
+data, Sweave can make generating consistent and reliable reports much
 easier.
 
 A weakness of the Sweave model is that when you make changes, you have
@@ -539,18 +520,21 @@ website, does a good job alleviating the problem.
 *[[http://orgmode.org/][Org-mode]]* is an Emacs mode originally designed to make it easier to
  take notes, make outlines and manage to-do lists. Very much in the
  spirit of Emacs itself, its users have extended it so that it is
- capable of all kinds of other things, as well: calendar management,
- time-tracking, and so on. A recent and very powerful extension to
+ capable of all kinds of other things, too, such as calendar
+ management, time-tracking, and so on. One very powerful extension to
  org-mode is [[http://orgmode.org/worg/org-contrib/babel/][Org-Babel]], which is a generalized literate-programming
- framework for org-mode documents. In essence, it works like Sweave
- except that instead of writing your papers, reports, or documentation
- in LaTeX and your code in R, you write text in Org-mode's lightweight
- markup syntax and your code in any one of a large number of supported
+ framework for org-mode documents. It works like Sweave, except that
+ instead of writing your papers, reports, or documentation in LaTeX
+ and your code in R, you write text in Org-mode's lightweight markup
+ syntax and your code in any one of a large number of supported
  languages. Org-mode has very powerful export capabilities, so it can
  convert =.org= files to LaTeX, HTML, and many other formats quite
  easily. Examples of it in use can be seen at the [[http://orgmode.org/worg/org-contrib/babel/intro.html][Org-babel website]].
  This article was written as a plain-text =.org= file and the raw
- version is available for inspection [[https://github.com/kjhealy/workflow-paper][as a repository on GitHub]].
+ version is available for inspection [[https://github.com/kjhealy/workflow-paper][as a repository on GitHub]]. You
+ can treat Org-Babel just as you would Sweave, or you can take
+ advantage of the fact that it's fully part of org-mode and get all of
+ the latter's functionality for free.
 
 
 *** Use Revision Control
@@ -604,25 +588,26 @@ cryptographically signed copy of the project. It puts you in the habit
 of recording (or ``committing'') changes to a file or project as you
 work on it, and (briefly) documenting those changes as you go. It
 allows you to easily test out alternative lines of development by
-branching a project. It allows collborators to work on the same
-project at the same time, and provides powerful tools that allow you
-to automatically merge or (when necessary) manually compare changes
-that people have made. And perhaps most importantly, it lets you
-revisit any stage of a project's development at will and reconstruct
-what it was you were doing. This can be tremendously useful whether
-you are writing code for a quantitative analysis, managing field
-notes, or writing a paper.[fn:dvcs] While you will probably not need
-to control everything in this way (though some people do), I
-/strongly/ suggest you consider managing at least the core set of text
-files that make up your project (e.g., the code that does the analysis
-and generates your tables and figures; the dataset itself; your notes
-and working papers, the chapters of your dissertation, etc). As time
-goes by you will generate a complete, annotated record of your actions
-that is also a backup of your project at every stage of its
-development. Services such as [[http://www.github.com][GitHub]] allow you to store public or (for
-a fee) private project repositories and so can be a way to back up
-work offsite as well as a platform for collaboration and documentation
-of your work.
+branching a project. It allows collaborators to work on a project at
+the same time without sending endless versions of the "master" copy
+back and forth via email, and it provides powerful tools that allow
+you to automatically merge or (when necessary) manually compare
+changes that you or others have made. Perhaps most importantly, it
+lets you revisit any stage of a project's development at will and
+reconstruct what it was you were doing. This can be tremendously
+useful whether you are writing code for a quantitative analysis,
+managing field notes, or writing a paper.[fn:dvcs] While you will
+probably not need to control everything in this way (though some
+people do), I /strongly/ suggest you consider managing at least the
+core set of text files that make up your project (e.g., the code that
+does the analysis and generates your tables and figures; the dataset
+itself; your notes and working papers, the chapters of your
+dissertation, etc). As time goes by you will generate a complete,
+annotated record of your actions that is also a backup of your project
+at every stage of its development. Services such as [[http://www.github.com][GitHub]] allow you
+to store public or (for a fee) private project repositories and so can
+be a way to back up work offsite as well as a platform for
+collaboration and documentation of your work.
 
 [fn:dvcs] Mercurial and Git are /distributed/ revision control systems
 (DVCSs) which can handle projects with many contributors and very
