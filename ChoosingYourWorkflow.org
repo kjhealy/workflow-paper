@@ -624,14 +624,11 @@ Regardless of whether you choose to use a formal revision control
 system, you should nevertheless have /some/ kind of systematic method
 for keeping track of versions of your files. The task of backing up
 and synchronizing your files is related to the question of version
-control. I have a laptop and a desktop computer. I want to keep
-certain folders in both home directories synchronized. *Unison* is an
-efficient command-line synchronization tool that can work locally or
-use SSH for remote clients. It can also be used for backing up your
-data. There's a menu-driven, graphical version available as well. It's
-free. Learn more at [[http://www.cis.upenn.edu/~bcpierce/unison/][Unison's homepage]]. Other GUI-based file
-synchronization tools are available for Mac OS X and Windows, such as
-[[http://www.getdropbox.com][DropBox]] and [[http://www.sugarsync.com/][SugarSync]].
+control. Apple's Time Machine software, for example, backs up and
+versions your files, allowing you to step back to particular instances
+of the file you want. Other GUI-based file synchronization tools, such
+as [[http://www.getdropbox.com][DropBox]] and [[http://www.sugarsync.com/][SugarSync]], are available across various platforms.
+
 
 Even if you have no need for a synchronization application, you will
 need to back up your work regularly. Because you are lazy and prone to
@@ -651,7 +648,9 @@ your files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.ht
 to losing your data ``The universe tends toward maximum irony. Don't
 push it.''
 
-[fn:tornado] I know of someone whose office building was hit by a tornado. She returned to find her files and computer sitting in a foot of water. You never know.
+[fn:tornado] I know of someone whose office building was hit by a
+tornado. She returned to find her files and computer sitting in a foot
+of water. You never know.
 
 ** Pulling Everything Together: An Emacs Starter Kit for the Social Sciences 
 Detailed instructions for downloading and installing every piece of
@@ -753,22 +752,23 @@ back into something much less lightweight.
 
 
 ** Some Alternative Applications
-There are many other applications you might put at the center of your workflow, depending on one's needs, personal preferences, willingness to pay some money, or desire to work on a specific platform. For *text editing*, especially, there is a plethora of choices. On the Mac, quality editors  include
-[[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]]
-(beloved of many web developers),
-[[http://smultron.sourceforge.net/][Smultron]], and
-[[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). I
-strongly recommend taking a look at TextMate: it's the editor I use
-for most of my day-to-day work. It has strong support for LaTeX and
-good (meaning, ESS-like) support for R. Because it is a modern
-application written specifically for the Mac it can take advantage of
-features of OS X that Emacs cannot, and is much better integrated with
-the rest of your system. It has good support for many of the ancillary
-applications discussed above, such as version control systems.[fn:tm2]
-On Linux, an alternative to Emacs is [[http://www.eng.hawaii.edu/Tutor/vi.html][vi]] or [[http://www.vim.org/][Vim]], but there are many
-others. For Windows there is [[http://www.textpad.com/][Textpad]], [[http://www.winedt.com/][WinEdt]], [[http://www.ultraedit.com/][UltraEdit]], and [[http://notepad-plus.sourceforge.net/uk/site.htm][NotePad++]]
-amongst many others. Most of these applications have strong support
-for LaTeX and some also have good support for statistics programming.
+There are many other applications you might put at the center of your
+workflow, depending on one's needs, personal preferences, willingness
+to pay some money, or desire to work on a specific platform. For *text
+editing*, especially, there is a plethora of choices. On the Mac,
+quality editors include [[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers),
+[[http://smultron.sourceforge.net/][Smultron]], and [[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). I strongly
+recommend taking a look at TextMate: it's the editor I use for most of
+my day-to-day work. It has strong support for LaTeX and good (meaning,
+ESS-like) support for R. Because it is a modern application written
+specifically for the Mac it can take advantage of features of OS X
+that Emacs cannot, and is much better integrated with the rest of your
+system. It has good support for many of the ancillary applications
+discussed above, such as version control systems.[fn:tm2] On Linux, an
+alternative to Emacs is [[http://www.eng.hawaii.edu/Tutor/vi.html][vi]] or [[http://www.vim.org/][Vim]], but there are many others. For
+Windows there is [[http://www.textpad.com/][Textpad]], [[http://www.winedt.com/][WinEdt]], [[http://www.ultraedit.com/][UltraEdit]], and [[http://notepad-plus.sourceforge.net/uk/site.htm][NotePad++]] amongst
+many others. Most of these applications have strong support for LaTeX
+and some also have good support for statistics programming.
 
 #+CAPTION: An earlier version of this document being edited in TextMate.
 #+LABEL:   fig:tm
