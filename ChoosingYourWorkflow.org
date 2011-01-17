@@ -680,14 +680,13 @@ citations. If they could handle this task elegantly they would be
 almost perfect, but in practice this would probably just turn them
 back into something much less lightweight.
 
-#+CAPTION: Editing an earlier version of this document in TextMate (left) with the typeset output on the right. Note how section titles, citations and hyperlinks are represented in the editor and how they appear in the typeset document.  
-#+LABEL: fig:textmate
-#+ATTR_LaTeX: scale=0.2, placement=[h!]
-[[file:figures/TextMateLaTeX.png][/Users/kjhealy/Documents/projects/teaching/workflow/figures/TextMateLaTeX]]
 
 ** Some Alternative Applications
 There are many other applications you might put at the center of your workflow, depending on one's needs, personal preferences, willingness to pay some money, or desire to work on a specific platform. For *text editing*, especially, there is a plethora of choices. On the Mac, quality editors  include
-[[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers), [[http://smultron.sourceforge.net/][Smultron]] and [[http://macromates.com/][TextMate]]. I
+[[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]]
+(beloved of many web developers),
+[[http://smultron.sourceforge.net/][Smultron]], and
+[[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). I
 strongly recommend taking a look at TextMate: it's the editor I use
 for most of my day-to-day work. It has strong support for LaTeX and
 good (meaning, ESS-like) support for R. Because it is a modern
@@ -699,6 +698,12 @@ On Linux, an alternative to Emacs is [[http://www.eng.hawaii.edu/Tutor/vi.html][
 others. For Windows there is [[http://www.textpad.com/][Textpad]], [[http://www.winedt.com/][WinEdt]], [[http://www.ultraedit.com/][UltraEdit]], and [[http://notepad-plus.sourceforge.net/uk/site.htm][NotePad++]]
 amongst many others. Most of these applications have strong support
 for LaTeX and some also have good support for statistics programming.
+
+#+CAPTION: An earlier version of this document being edited in TextMate.
+#+LABEL:   fig:tm
+#+ATTR_LaTeX: width=5in
+[[file:figures/textmate.png]]
+
 
 [fn:tm2] Its next major version, TextMate 2, has been in development
 for a very long time and is awaited with a mixture of near-religious
