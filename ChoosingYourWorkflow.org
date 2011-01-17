@@ -5,7 +5,7 @@
 
 #+BEGIN_LaTeX
 \lstset{frame=single}
-\chapterstyle{article-5}
+\chapterstyle{article-4-sans}
 \setkeys{Gin}{width=1\textwidth} 
 \pagestyle{kjh}
 \thispagestyle{kjhgit}
@@ -140,16 +140,15 @@ Linux. Each of these platforms has gone some of the way --- in some
 cases a long way --- toward remedying the main defects associated with
 it. I would characterize the present state of things this way:
 
-- *Windows* dominates the market. Its most widely-available version,
-  Windows 7, is stable and relatively secure. Because of its market
-  dominance, far more viruses and malware target Windows than any
-  other OS. Long-standing design and usability problems have been
-  somewhat ameliorated. The previous major version, Windows Vista, was
-  not very successful, though its main problems were not primarily
-  related to security. Its successor, Windows 7, has generally been
-  accepted as an improvement.
+- Windows dominates the market. Because of its market dominance, far
+  more viruses and malware target Windows than any other
+  OS. Long-standing design and usability problems have been somewhat
+  ameliorated. The previous major version, Windows Vista, was not very
+  popular, though its main problems were not primarily related to
+  security. Its successor, Windows 7, is generally accepted to be a
+  solid improvement.
 
-- *Mac OS X* runs only on Apple hardware (``hackintosh'' efforts
+- Mac OS X runs only on Apple hardware (``hackintosh'' efforts
   notwithstanding). Unlike in the past, Apple computers today have the
   same basic hardware (Intel chipsets) as computers that run
   Windows. This has two consequences for those considering a move to
@@ -173,7 +172,7 @@ it. I would characterize the present state of things this way:
   seamlessly within OS X. Thus, Apple hardware is the only setup where
   you can easily try out each of the main desktop operating systems.
 
-- *Linux* is stable, secure and free. User-oriented distributions such
+- Linux is stable, secure and free. User-oriented distributions such
   as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the
   past. The user environment is friendlier now. Installing, upgrading
   and updating software --- a key point of frustration and
