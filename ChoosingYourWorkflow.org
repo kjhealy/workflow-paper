@@ -14,7 +14,6 @@
 \maketitle
 #+END_LaTeX
 
-
 #+begin_abstract 
 \noindent As a beginning graduate student in the social sciences, what
 sort of software should you use to do your work? More importantly,
@@ -366,14 +365,13 @@ add-on packages. R has the ability to produce sophisticated and
 high-quality statistical graphics. The documentation that comes with
 the software is complete, if somewhat terse, but there are a large
 number of excellent reference and teaching texts that illustrate its
-use. These include \textcite{dalgaard02:_introd_statis_r},
-\textcite{venables02:_moder_applied_statis_s_plus},
-\textcite{maindonald03:_data_analy_graph_using_r},
-\textcite{fox02:_r_s_plus_compan_applied_regres},
-\textcite{frank01:_regres_model_strat}, and
-\textcite{gelmanhill07:data_analysis}. Although it is a command-line
-tool at its core, it has a good graphical interface as well. You can
-download it from [[http://www.r-project.org/][The R Project Homepage]].
+use. These include \textcite{dalgaard02:_introd_statis_r,
+venables02:_moder_applied_statis_s_plus,
+maindonald03:_data_analy_graph_using_r,
+fox02:_r_s_plus_compan_applied_regres, frank01:_regres_model_strat},
+and \textcite{gelmanhill07:data_analysis}. Although it is a
+command-line tool at its core, it has a good graphical interface as
+well. You can download it from [[http://www.r-project.org/][The R Project Homepage]].
 
 R can be used directly within Emacs by way of a package called *ESS*
 (for ``Emacs Speaks Statistics''). As shown in Figure \ref{fig:ess},
