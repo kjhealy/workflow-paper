@@ -563,7 +563,12 @@ seem like overkill for individual users. (Again, though, many people
 find Word's ``Track Changes'' feature indispensable once they begin
 using it.) But version control systems can be used quite
 straightforwardly in a basic fashion, and they increasingly come with
-front ends that can be easily integrated with your text editor.
+front ends that can be easily integrated with your text
+editor.[fn:magit]
+
+[fn:magit] Emacs comes with support for a variety of VCS systems built
+in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
+specifically to Git. 
 
 Revision control has significant benefits. A good VCS puts you in the
 habit of recording (or ``committing'') changes to a file or project as
