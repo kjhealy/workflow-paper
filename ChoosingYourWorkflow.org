@@ -295,9 +295,15 @@ properly. If you have ever edited the HTML of a web page, you'll know
 the general idea of a markup language. If you haven't, the easiest way
 to understand what I mean is to look at a segment of LaTeX markup. An
 example is shown in Figure \ref{fig:latex}. You can get started with
-TeX and LaTeX for Mac OS X [[http://tug.org/mactex/][from this page]]. On Windows, [[http://www.miktex.org/][MiKTeX]] is a
-widely-used version of TeX. The [[http://www.tug.org/pracjourn/][PracTeX Journal]] is an excellent source
-of information on how to do work using LaTeX.
+TeX and LaTeX for Mac OS X by downloading
+[[http://tug.org/mactex/][the MacTeX distribution]]. On Windows,
+[[http://www.tug.org/protext/][ProTeXt]] and
+[[http://www.miktex.org/][MiKTeX]] are both widely-used. Linux vendors
+have their own distributions, or you can install
+[[http://www.tug.org/texlive][TeXLive]] yourself.[fn:distributions]
+
+[fn:distributions] For more about these distributions of TeX, see the [[http://www.latex-project.org/ftp.html][LaTeX project page]].
+
 
 #+LaTeX: \begin{figure} 
 #+begin_src [latex]tex :exports code
