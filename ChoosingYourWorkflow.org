@@ -302,8 +302,14 @@ TeX and LaTeX for Mac OS X by downloading
 have their own distributions, or you can install
 [[http://www.tug.org/texlive][TeXLive]] yourself.[fn:distributions]
 
-[fn:distributions] For more about these distributions of TeX, see the [[http://www.latex-project.org/ftp.html][LaTeX project page]].
-
+[fn:distributions] For more about these distributions of TeX, see the
+[[http://www.latex-project.org/ftp.html][LaTeX project page]]. The proliferation of "-TeX" acronyms and names can
+be confusing to newcomers, as they may refer to a distribution of an
+entire TeX/LaTeX platform (as with MikTeX or MacTeX), or to a
+particular program or utility that comes with these distributions
+(such as BibTeX, for dealing with bibliographies), or to some bit of
+software that allows something else to work with or talk to the TeX
+system.
 
 #+LaTeX: \begin{figure} 
 #+begin_src [latex]tex :exports code
