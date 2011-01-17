@@ -589,18 +589,18 @@ with your text editor.[fn:magit] Moreover, you can meet these systems
 half way. The excellent [[https://www.getdropbox.com/][DropBox]], for example, allows you to share
 files between different computers you own, or with collaborators or
 general public. But it also automatically version-controls the
-contents of these folders (using Subversion behind the scenes). DVCSs
-like Git and Mercurial combine the virtues of version control and
-backups because every repository is a complete, self-contained,
-cryptographically signed copy of the project.
+contents of these folders (using Subversion behind the scenes).
 
 [fn:magit] Emacs comes with support for a variety of VCS systems built
 in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
 specifically to Git. 
 
-Revision control has significant benefits. A good VCS puts you in the
-habit of recording (or ``committing'') changes to a file or project as
-you work on it, and (briefly) documenting those changes as you go. It
+Revision control has significant benefits. A tool like Git or
+Mercurial combines the virtues of version control with backups,
+because every repository is a complete, self-contained,
+cryptographically signed copy of the project. It puts you in the habit
+of recording (or ``committing'') changes to a file or project as you
+work on it, and (briefly) documenting those changes as you go. It
 allows you to easily test out alternative lines of development by
 branching a project. It allows collborators to work on the same
 project at the same time, and provides powerful tools that allow you
