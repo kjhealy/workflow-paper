@@ -682,7 +682,8 @@ bits and pieces mentioned here. As you can see if you follow the
 links, the kit is stored on GitHub and you are free to fork it and
 modify it to your own liking.
 
-** Pros and Cons  
+** Do I Have to Use this Stuff?
+*** Pros and Cons  
 Using Emacs, LaTeX and R together has four main advantages. First,
 these applications are all free. You can try them out without much in
 the way of monetary expense. (Your time may be a different matter, but
@@ -769,7 +770,7 @@ though, good progress is being made as Pandoc will soon include
 support for citations.
 
 
-** Some Alternative Applications
+*** Some Alternatives
 There are many other applications you might put at the center of your
 workflow, depending on one's needs, personal preferences, willingness
 to pay some money, or desire to work on a specific platform. For text
@@ -835,19 +836,29 @@ problems for you. Too much concern with the details of your setup can
 hinder your work. Indeed --- and I speak from experience here --- this
 concern is itself a kind self-imposed distraction that placates
 work-related anxiety in the short term while generating more of it
-later.[fn:merlin] The besetting vice of productivity-enhancing
-software is the tendency to waste a lot of your time installing,
-updating and generally obsessing about your productivity-enhancing
-software. This is why it helps to bear in mind that it's the
-principles of workflow management that are important, and the software
-is just a means to an end. Even more generally, efficient workflow
-habits are themselves just a means to the end of completing the
-projects you are really interested in, of making things you want to
-make, finding out the answers to the questions that brought you to
+later.[fn:merlin] On the hardware side, there's the absurd
+productivity counterpart to the hedonic treadmill, where for some
+reason it's hard to get through the to-do list even though the café
+you're at contains more computing power than was available to the
+Pentagon in 1965. On the software side, the besetting vice of
+productivity-enhancing software is the tendency to waste a lot of your
+time installing, updating and generally obsessing about your
+productivity-enhancing software. Even more generally, efficient
+workflow habits are themselves just a means to the end of completing
+the projects you are really interested in, of making things you want
+to make, finding out the answers to the questions that brought you to
 graduate school. The process of idea generation and project management
 can be run well, too, and perhaps even the business of choosing what
 the projects should be in the first place. But this is not the place
 --- and I am not the person --- to be giving advice about that.
+
+All of which is just to reiterate that it's the principles of workflow
+management that are important, and the software is just a means to an
+end. One of the [[http://en.wikipedia.org/wiki/David_Kellogg_Lewis][smartest, most productive people I've ever known]] spent
+half of his career writing on a typewriter and the other half on an
+[[http://www-03.ibm.com/ibm/history/exhibits/pc/pc_8.html][IBM Displaywriter]]. His backup solution for having hopelessly outdated
+hardware was to keep a spare Displaywriter in a nearby closet, in case
+the first one broke. It never did.
 
 [fn:merlin] See [[http://inboxzero.com/][Merlin Mann]], amongst others, for more on this point.
 
