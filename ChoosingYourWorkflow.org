@@ -676,11 +676,11 @@ default settings, as well as automatically installing some important
 add-on packages. It will, I hope, help you skirt the abyss of Setting
 Things Up Forever. The [[http://github.com/technomancy/emacs-starter-kit/tree/master][original version]] of the kit was written by Phil
 Hagelberg and was made to go with the "[[http://peepcode.com/products/meet-emacs][Meet Emacs]]" screencast
-mentioned above. It was [[https://github.com/eschulte/emacs-starter-kit][modified and further extended]] by Eric Schulte,
-the author of Org-babel.  which smooths out Emacs' default settings to
-make your life much easier. [[https://github.com/kjhealy/emacs-starter-kit][My version]] adds support for AucTeX, ESS,
-and other bits and pieces mentioned here. As you can see if you follow
-the links, the kit is stored on GitHub and you are free to fork it and
+mentioned above. It was aimed at software developers in general.  Eric
+Schulte, one of the authors of Org-babel, [[https://github.com/eschulte/emacs-starter-kit][modified and further
+extended]] the kit. [[https://github.com/kjhealy/emacs-starter-kit][My version]] adds support for AucTeX, ESS, and other
+bits and pieces mentioned here. As you can see if you follow the
+links, the kit is stored on GitHub and you are free to fork it and
 modify it to your own liking.
 
 ** Pros and Cons  
