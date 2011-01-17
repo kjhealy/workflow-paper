@@ -267,7 +267,10 @@ settings, and generally customizing the bejaysus out of it. There are
 several good alternatives on each major platform, and I discuss some
 of them below.
 
-[fn:emacs] One of the reasons that Emacs' keyboard shortcuts are so strange is that they have their roots in a model of computer that laid out its command and function keys differently from modern keyboards. It's that old.
+[fn:emacs] One of the reasons that Emacs' keyboard shortcuts are so
+strange is that they have their roots in a model of computer that laid
+out its command and function keys differently from modern
+keyboards. It's that old.
 
 At this point it's reasonable to ask why I am even mentioning it, let
 alone recommending you try it. The answer is that, despite its
@@ -363,7 +366,11 @@ it trivially easy to use any Postscript, TrueType or OpenType font
 installed on your system. XeTeX was originally developed for use on
 the Mac, but is available now for Linux and Windows as well.
 
-More information on Emacs and LaTeX is readily available via Google, and there are several excellent books available to help you get started. \textcite{kopka03:_guide_latex} and \textcite{mittlebach04:_latex_compan} are good resources for learning LaTeX. 
+More information on Emacs and LaTeX is readily available via Google,
+and there are several excellent books available to help you get
+started. \textcite{kopka03:_guide_latex} and
+\textcite{mittlebach04:_latex_compan} are good resources for learning
+LaTeX.
      
 ** Analyze Data and Present Results 
 You will probably be doing some --- perhaps a great deal --- of
@@ -613,7 +620,18 @@ concepts behind them. For Git, I recommend starting [[http://git-scm.com/][at th
 following the links to the documentation.
 
 *** You don't need backups until you really, really need them
-Regardless of whether you choose to use a formal revision control system, you should nevertheless have /some/ kind of systematic method for keeping track of versions of your files. The task of backing up and synchronizing your files is related to the question of version control. I have a laptop and a desktop computer. I want to keep certain folders in both home directories synchronized. *Unison* is an efficient command-line synchronization tool that can work locally or use SSH for remote clients. It can also be used for backing up your data. There's a menu-driven, graphical version available as well. It's free. Learn more at [[http://www.cis.upenn.edu/~bcpierce/unison/][Unison's homepage]]. Other GUI-based file synchronization tools are available for Mac OS X and Windows, such as [[http://www.getdropbox.com][DropBox]] and [[http://www.sugarsync.com/][SugarSync]].
+Regardless of whether you choose to use a formal revision control
+system, you should nevertheless have /some/ kind of systematic method
+for keeping track of versions of your files. The task of backing up
+and synchronizing your files is related to the question of version
+control. I have a laptop and a desktop computer. I want to keep
+certain folders in both home directories synchronized. *Unison* is an
+efficient command-line synchronization tool that can work locally or
+use SSH for remote clients. It can also be used for backing up your
+data. There's a menu-driven, graphical version available as well. It's
+free. Learn more at [[http://www.cis.upenn.edu/~bcpierce/unison/][Unison's homepage]]. Other GUI-based file
+synchronization tools are available for Mac OS X and Windows, such as
+[[http://www.getdropbox.com][DropBox]] and [[http://www.sugarsync.com/][SugarSync]].
 
 Even if you have no need for a synchronization application, you will
 need to back up your work regularly. Because you are lazy and prone to
@@ -786,13 +804,15 @@ for various DVCSs. On the Mac, [[http://www.zennaware.com/cornerstone/][CornerSt
 full-featured applications designed to make it easy to use
 Subversion. Taking a longer view, version control is likely to become
 more widely available through intermediary services or even as part of
-the basic functionality of operating systems. A file-sharing service
-such as [[https://www.getdropbox.com/][DropBox]] (available for Windows, Mac and Linux), for example,
-automatically version-controls the contents of shared folders. DVCSs
-like Git and Mercurial combine the virtues of version control and
-backups because every repository is a complete, self-contained,
-cryptographically signed copy of the project, which makes it easy to
-keep multiple copies of your work at different locations.
+the basic functionality of operating systems. The excellent [[https://www.getdropbox.com/][DropBox]],
+for example, allows you to share files between different computers you
+own, or with collaborators or general public. But it also
+automatically version-controls the contents of these folders (using
+Subversion behind the scenes). DVCSs like Git and Mercurial combine
+the virtues of version control and backups because every repository is
+a complete, self-contained, cryptographically signed copy of the
+project, which makes it easy to keep multiple copies of your work at
+different locations.
 
 
 ** A Broader Perspective 
