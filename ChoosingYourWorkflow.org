@@ -4,6 +4,7 @@
 #+OPTIONS: toc:nil :num nil
 
 #+BEGIN_LaTeX
+\lstset{frame=single}
 \chapterstyle{article-5}
 \setkeys{Gin}{width=1\textwidth} 
 \pagestyle{kjh}
