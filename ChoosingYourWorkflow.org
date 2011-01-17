@@ -130,7 +130,6 @@ does its design encourage good habits. So, it is probably a good idea
 to invest some time learning about the alternatives. Many of them are
 free to use or try out, and you are at a point in your career where
 you can afford to play with different setups without too much trouble.
-% section introduction (end)
 
 ** What Sort of Computer Should You Use?
 
