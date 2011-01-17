@@ -110,10 +110,11 @@ creating some elaborate classification scheme or catalog that becomes
 an end in itself to maintain.
 
 A third principle is that repetitive and error-prone processes should
-be automated if possible. This makes it easier to check for and
-correct mistakes. Rather than copying and pasting code over and over
-to do basically the same thing to different parts of your data, write
-a general function that can be called whenever it's needed. Instead of
+be automated if possible. (Software developers call this "DRY", or
+[[http://en.wikipedia.org/wiki/Don't_repeat_yourself][Don't Repeat Yourself.]]) This makes it easier to check for and correct
+mistakes. Rather than copying and pasting code over and over to do
+basically the same thing to different parts of your data, write a
+general function that can be called whenever it's needed. Instead of
 retyping and reformatting the bibliography for each of your papers as
 you send it out to a journal, use software that can manage this for
 you automatically.
