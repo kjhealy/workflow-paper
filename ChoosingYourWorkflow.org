@@ -568,23 +568,24 @@ directories full of files with confusingly similar names like
 =Paper-1.txt=, =Paper-2.txt=, =Paper-conferenceversion.txt=, and so
 on.
 
-In the social sciences and humanities, you are most likely to come
-across the idea of version control by way of the ``Track Changes''
-feature in Microsoft Word, which lets you see the edits you and your
-collaborators have made to a document. Think of true version control
-as a way to keep track of projects in a much better-organized,
-comprehensive, and transparent fashion. Modern version control systems
-such as [[http://subversion.tigris.org/][Subversion]], [[http://www.selenic.com/mercurial/][Mercurial]] and [[http://git.or.cz/][Git]] can, if needed, manage very
-large projects with many branches spread across multiple users. As
-such, they require a little time to get comfortable with, mostly
-because you have to get used to some new concepts related to tracking
-your files, and then learn how your version control system implements
-these concepts. Because of their power, these tools might seem like
-overkill for individual users. (Again, though, many people find Word's
-``Track Changes'' feature indispensable once they begin using it.) But
-version control systems can be used quite straightforwardly in a basic
-fashion, and they increasingly come with front ends that can be easily
-integrated with your text editor.[fn:magit]
+In the social sciences and humanities, you are most likely to have
+come across the idea of version control by way of the ``Track
+Changes'' feature in Microsoft Word, which lets you see the edits you
+and your collaborators have made to a document. Think of true version
+control as a way to keep track of whole projects (not just individual
+documents) in a much better-organized, comprehensive, and transparent
+fashion. Modern version control systems such as [[http://subversion.tigris.org/][Subversion]], [[http://www.selenic.com/mercurial/][Mercurial]]
+and [[http://git.or.cz/][Git]] can, if needed, manage very large projects with many branches
+spread across multiple users. As such, they require a little time to
+get comfortable with, mostly because you have to get used to some new
+concepts related to tracking your files, and then learn how your
+version control system implements these concepts. Because of their
+power, these tools might seem like overkill for individual
+users. (Again, though, many people find Word's ``Track Changes''
+feature indispensable once they begin using it.) But version control
+systems can be used quite straightforwardly in a basic fashion, and
+they increasingly come with front ends that can be easily integrated
+with your text editor.[fn:magit]
 
 [fn:magit] Emacs comes with support for a variety of VCS systems built
 in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
