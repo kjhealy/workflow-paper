@@ -826,24 +826,24 @@ the basic functionality of operating systems.
 
 
 ** A Broader Perspective 
-It would be nice if all you needed to do your work was a bunch of
-well-written and very useful applications. But of course it's a bit
-more complicated than that. In order to get to the point where you can
-write a paper, you need to be organized enough to have collected some
-data, read the right literature and, most importantly, asked an
-interesting question. No amount of software is going to solve those
-problems for you. Too much concern with the details of your setup can
-hinder your work. Indeed --- and I speak from experience here --- this
-concern is itself a kind self-imposed distraction that placates
-work-related anxiety in the short term while generating more of it
-later.[fn:merlin] On the hardware side, there's the absurd
-productivity counterpart to the hedonic treadmill, where for some
-reason it's hard to get through the to-do list even though the café
-you're at contains more computing power than was available to the
-Pentagon in 1965. On the software side, the besetting vice of
+It would be nice if all you needed to do your work was a box software
+of software tricks and shortcuts. But of course it's a bit more
+complicated than that. In order to get to the point where you can
+write a paper, you need to be organized enough to have read the right
+literature, maybe collected some data, and most importantly asked an
+interesting question in the first place. No amount of software is
+going to solve those problems for you. Too much concern with the
+details of your setup hinders your work. Indeed --- and I speak
+from experience here --- this concern is itself a kind self-imposed
+distraction that placates work-related anxiety in the short term while
+generating more of it later.[fn:merlin] On the hardware side, there's
+the absurd productivity counterpart to the hedonic treadmill, where
+for some reason it's hard to get through the to-do list even though
+the café you're at contains more computing power than was available to
+the Pentagon in 1965. On the software side, the besetting vice of
 productivity-enhancing software is the tendency to waste a lot of your
 time installing, updating and generally obsessing about your
-productivity-enhancing software. Even more generally, efficient
+productivity-enhancing software.[fn:devil] Even more generally, efficient
 workflow habits are themselves just a means to the end of completing
 the projects you are really interested in, of making things you want
 to make, finding out the answers to the questions that brought you to
@@ -861,6 +861,9 @@ hardware was to keep a spare Displaywriter in a nearby closet, in case
 the first one broke. It never did.
 
 [fn:merlin] See [[http://inboxzero.com/][Merlin Mann]], amongst others, for more on this point.
+
+[fn:devil] Mike Hall's brilliant "[[http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/][Org-Mode in your Pocket is a
+GNU-Shaped Devil]] makes this point very well.
 
 \printbibliography 
 
