@@ -48,34 +48,36 @@ will be later. Second, in the social sciences, text and data
 management skills are usually not taught to students explicitly. This
 means that you may end up adopting the practices of your advisor or
 mentor, continue to use what you are taught in your methods classes,
-or just copy whatever your peers are using. Following any one of these
-paths may by chance lead you to an arrangement that you will be happy
-with. But maybe not. It's worth looking at the options.
+or just copy whatever your peers are doing. Following these paths may
+lead you to an arrangement that you will be happy with. But maybe
+not. It's worth looking at the options.
 
 [fn:faculty] This may also be true if you are about to move from being
 a graduate student to starting as a faculty member, though perhaps the
 rationale is less compelling given the costs.
 
-Although I shall describe some specific applications in what follows,
-I want to emphasize again that it's not really about the gadgets or
-utilities. The Zen of Organization is Not to be Found in Fancy
-Software. Nor shall the true path of Getting Things Done be revealed
-to you through the purchase of a nice [[http://www.moleskineus.com/][Moleskine Notebook]]. Instead, it
-lies within. Unfortunately. For instance, like me my wife is an
-academic --- a philosopher. Unlike me, she is very well-organized and
-highly productive. Her task-management system consists of a calendar
-and some bits of scrap paper with to-do lists scrawled on them. Her
-work environment is comprised of Microsoft Word, email and a secret
-drawer full of candy. No context-dependent Getting-Things-Done system,
-no bibliographic software, no revision control, nothing. Her hidden
-trick is that, when she has a project, she thinks about what needs to
-be done, writes down a list of tasks on a piece of paper, and then ---
-this next bit is the tricky part, and you may find it hard to follow
---- /actually completes these tasks one by one in a systematic
-fashion, beginning right away/. I know, I didn't understand that last
-bit, either. Sad to say, only when you have grasped this point will
-you be able to snatch this list of stuff to do today from her hand,
-grasshopper.
+Although in what follows I advocate you take a look at several
+ applications in particular, it's not really about the gadgets or
+ utilities. The Zen of Organization is Not to be Found in Fancy
+ Software. Nor shall the true path of Getting Things Done be revealed
+ to you through the purchase of a nice [[http://www.moleskineus.com/][Moleskine Notebook]]. Instead, it
+ lies within. Unfortunately. For instance, like me my wife is an
+ academic --- a philosopher. Unlike me, she is very well-organized and
+ highly productive. Her task-management system consists of a calendar
+ and some bits of scrap paper with to-do lists scrawled on them. Her
+ work environment is comprised of Microsoft Word, email and a secret
+ drawer full of candy. No context-dependent Getting-Things-Done
+ system, no bibliographic software, nothing.[fn:backup] Her hidden trick is that,
+ when she has a project, she thinks about what needs to be done,
+ writes down a list of tasks on a piece of paper, and --- this next
+ bit is the tricky part --- /actually completes these tasks one by one
+ in a systematic fashion, beginning right away/. I know, I didn't
+ understand that last bit, either. Sad to say, only when you have
+ grasped this point will you be able to snatch this list of stuff to
+ do today from her hand, grasshopper.
+
+[fn:backup] Even she backs up her work religiously, though. More on
+that below.
 
 ** Just Make Sure You Know What You Did 
 
