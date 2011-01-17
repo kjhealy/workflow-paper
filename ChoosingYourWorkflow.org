@@ -629,24 +629,22 @@ versions your files, allowing you to step back to particular instances
 of the file you want. Other GUI-based file synchronization tools, such
 as [[http://www.getdropbox.com][DropBox]] and [[http://www.sugarsync.com/][SugarSync]], are available across various platforms.
 
-
 Even if you have no need for a synchronization application, you will
-need to back up your work regularly. Because you are lazy and prone to
-magical thinking, you will not do this responsibly by yourself. This
-is why the most useful backup systems are the ones that require a
-minimum amount of work to set up and, once organized, back up
-everything automatically to an external (or remote) hard disk without
-you having to remember to do anything. On newer Macs, Apple's *Time
+still need to back up your work regularly. Because you are lazy and
+prone to magical thinking, you will not do this responsibly by
+yourself. This is why the most useful backup systems are the ones that
+require a minimum amount of work to set up and, once organized, back
+up everything automatically to an external (or remote) hard disk
+without you having to remember to do anything. On Macs, Apple's *Time
 Machine* software is built in to the operating system and makes
 backups very easy. On Linux, you can use [[http://www.psychocats.net/ubuntu/backup][rsync]] for backups. It is also
 worth looking into a secure, peer-to-peer or offsite backup service
-like *[[http://www.crashplan.com/][Crashplan]]*. These services are relatively cheap, and allow you
-to automatically and securely back up your data. It also means that in
-the event (unlikely, but not unheard of) that your computer /and/ your
-local backups are stolen or destroyed, you will still have copies of
-your files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.html][has remarked]], when it comes
-to losing your data ``The universe tends toward maximum irony. Don't
-push it.''
+like *[[http://www.crashplan.com/][Crashplan]]* or [[https://spideroak.com/][Spider Oak]]. Offsite backup means that in the event
+(unlikely, but not unheard of) that your computer /and/ your local
+backups are stolen or destroyed, you will still have copies of your
+files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.html][has remarked]], when it comes to
+losing your data ``The universe tends toward maximum irony. Don't push
+it.''
 
 [fn:tornado] I know of someone whose office building was hit by a
 tornado. She returned to find her files and computer sitting in a foot
