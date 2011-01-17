@@ -286,30 +286,18 @@ application.
 If text editors like Emacs are not concerned with formatting your
 documents nicely, then how do you produce properly typeset papers? You
 need a way to take the text you write and turn it into a presentable
-printed (or PDF) page. This is what *LaTeX* is for. LaTeX is a
+printed (or PDF) page. This is what \textbf{LaTeX} is for. LaTeX is a
 freely-available, professional-quality typesetting system. It takes
 text marked up in a way that describes the structure and formatting of
 the document (where the sections and subsections are, for example, or
 whether text should be *in bold face* or /emphasized/) and typesets it
 properly. If you have ever edited the HTML of a web page, you'll know
 the general idea of a markup language. If you haven't, the easiest way
-to understand what I mean is to look at a segment of LaTeX
-markup. Here's an example: An example is shown in Figure
-\ref{fig:latex}. This document is written in LaTeX markup. You can get
-started with TeX and LaTeX for Mac OS X [[http://tug.org/mactex/][from this page]]. On Windows,
-[[http://www.miktex.org/][MiKTeX]] is a widely-used version of TeX. The [[http://www.tug.org/pracjourn/][PracTeX Journal]] is an
-excellent source of information on how to do work using LaTeX.
-
-
-This is what \textbf{LaTeX} is for. LaTeX is a freely-available,
-professional-quality typesetting system. It takes text marked up
-in a way that describes the structure and formatting  of the
-document (where the sections and subsections are, for example, or
-whether text should be \textbf{in bold face} or \emph{emphasized})
-and typesets it properly. If you have ever edited the HTML of a
-web page, you'll know the general idea of a markup language. If
-you haven't, the easiest way to understand what I mean is to look
-at a segment of LaTeX markup. An example is shown in Figure \ref{fig:latex}.
+to understand what I mean is to look at a segment of LaTeX markup. An
+example is shown in Figure \ref{fig:latex}. You can get started with
+TeX and LaTeX for Mac OS X [[http://tug.org/mactex/][from this page]]. On Windows, [[http://www.miktex.org/][MiKTeX]] is a
+widely-used version of TeX. The [[http://www.tug.org/pracjourn/][PracTeX Journal]] is an excellent source
+of information on how to do work using LaTeX.
 
 #+LaTeX: \begin{figure} 
 #+begin_src [latex]tex :exports code
@@ -773,8 +761,8 @@ support for citations.
 ** Some Alternative Applications
 There are many other applications you might put at the center of your
 workflow, depending on one's needs, personal preferences, willingness
-to pay some money, or desire to work on a specific platform. For *text
-editing*, especially, there is a plethora of choices. On the Mac,
+to pay some money, or desire to work on a specific platform. For text
+editing, especially, there is a plethora of choices. On the Mac,
 quality editors include [[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers),
 [[http://smultron.sourceforge.net/][Smultron]], and [[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). TextMate has
 strong support for LaTeX and good (meaning, ESS-like) support for
