@@ -33,14 +33,14 @@ with them.
 You can do productive, maintainable and reproducible work with all
 kinds of different software set-ups.\symbolfootnote[0]{I thank Jake
 Bowers for helpful comments.} This is the main reason I don't go
-around encouraging everyone to convert to the group of applications I
-myself use. (My rule is that I don't try to persuade anyone to switch
-if I can't commit to offering them technical support during and after
-their move.) So this discussion is not geared toward convincing you
-there is One True Way to organize things. I do think, however, that if
-you're in the early phase of your career as a graduate student in,
-say, Sociology, or Economics, or Political Science, you should give
-some thought to how you're going to organize and manage your
+around encouraging everyone to convert to the applications I use. (My
+rule is that I don't try to persuade anyone to switch if I can't
+commit to offering them technical support during and after their
+move.) So this discussion is not geared toward convincing you there is
+One True Way to organize things. I do think, however, that if you're
+in the early phase of your career as a graduate student in, say,
+Sociology, or Economics, or Political Science, you should give some
+thought to how you're going to organize and manage your
 work.[fn:faculty] This is so for two reasons. First, the transition to
 graduate school is a good time to make changes. Early on, there's less
 inertia and cost associated with switching things around than there
