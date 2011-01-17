@@ -321,7 +321,7 @@ excellent source of information on how to do work using LaTeX.
 
 LaTeX works best with some tools that help you take full advantage of
 it with a minimum of fuss. You can manage bibliographical references
-in LaTeX documents using *BibTeX*. It does the same job as [[http://www.endnote.com/][*Endnote]]*,
+in LaTeX documents using *BibTeX*. It does the same job as *[[http://www.endnote.com/][Endnote]]*,
 the commercial plug-in for managing references in Microsoft
 Word. BibTeX comes with any standard LaTeX installation. Whichever
 text editor or word processor you use, you should strongly consider
@@ -337,7 +337,8 @@ overcome some of BibTeX's limitations. BibLaTeX is not yet officially
 stable, but it is very well-documented, very usable, and has many nice
 features.
 
-*[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are bundled along with Emacs. These packages
+*[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are
+available for Emacs. These packages
 allow Emacs to understand the ins-and-outs of typesetting LaTeX
 documents, color-coding the marked-up text to make it easier to read,
 providing shortcuts to LaTeX's formatting commands, and helping you
@@ -571,7 +572,7 @@ well as a platform for collaboration and documentation of your work.
 
 [fn:dvcs] Mercurial and Git are /distributed/ revision control systems
 (DVCSs) which can handle projects with many contributors and very
-complex, decentralized structures. Bryan O'Sullivan's [[http://hgbook.red-bean.com/hgbook.pdf][/Distributed
+complex, decentralized structures. Bryan O'Sullivan's /[[http://hgbook.red-bean.com/hgbook.pdf][Distributed
 Version Control with Mercurial]]/ is a free, comprehensive guide to one
 of the main DVCS tools, but also provides a clear account of how
 modern version-control systems have developed, together with the main
@@ -591,7 +592,7 @@ you having to remember to do anything. On newer Macs, Apple's *Time
 Machine* software is built in to the operating system and makes
 backups very easy. On Linux, you can use [[http://www.psychocats.net/ubuntu/backup][rsync]] for backups. It is also
 worth looking into a secure, peer-to-peer or offsite backup service
-like [[http://www.crashplan.com/][*Crashplan]]*. These services are relatively cheap, and allow you
+like *[[http://www.crashplan.com/][Crashplan]]*. These services are relatively cheap, and allow you
 to automatically and securely back up your data. It also means that in
 the event (unlikely, but not unheard of) that your computer /and/ your
 local backups are stolen or destroyed, you will still have copies of
