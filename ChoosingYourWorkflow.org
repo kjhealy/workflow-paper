@@ -864,7 +864,7 @@ the first one broke. It never did.
 [fn:merlin] See [[http://inboxzero.com/][Merlin Mann]], amongst others, for more on this point.
 
 [fn:devil] Mike Hall's brilliant "[[http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/][Org-Mode in your Pocket is a
-GNU-Shaped Devil]] makes this point very well.
+GNU-Shaped Devil]]" makes this point very well.
 
 \printbibliography 
 
