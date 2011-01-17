@@ -664,7 +664,7 @@ tornado. She returned to find her files and computer sitting in a foot
 of water. You never know.
 
 ** Pulling Things Together: An Emacs Starter Kit for the Social Sciences 
-Detailed instructions for downloading and installing every piece of
+A step-by-step guide to downloading and installing every piece of
 software I've mentioned so far is beyond the scope of this
 discussion. But let's say you take the plunge and download Emacs, a
 TeX distribution, R, and maybe even Git. Now what? If you're going to
@@ -681,7 +681,7 @@ the author of Org-babel.  which smooths out Emacs' default settings to
 make your life much easier. [[https://github.com/kjhealy/emacs-starter-kit][My version]] adds support for AucTeX, ESS,
 and other bits and pieces mentioned here. As you can see if you follow
 the links, the kit is stored on GitHub and you are free to fork it and
-modify it to your own liking. 
+modify it to your own liking.
 
 ** Pros and Cons  
 Using Emacs, LaTeX and R together has four main advantages. First,
