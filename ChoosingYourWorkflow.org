@@ -3,14 +3,17 @@
 #+DATE:
 #+OPTIONS: toc:nil :num nil
 
-#+TEXT: \chapterstyle{article-5}
-#+LaTeX: \setkeys{Gin}{width=1\textwidth} 
-#+LaTeX: \pagestyle{kjh}
-#+LaTeX: \thispagestyle{kjhgit}
-#+TEXT: \title{\bigskip \bigskip Choosing Your Workflow Applications}
-#+TEXT: \author{\normalsize Kieran Healy {\par\vskip 0.15em} /Duke University/}
-#+TEXT: \published{{\scriptsize The most recent version of this document is at} {\scriptsize  \texttt{[[http://www.kieranhealy.org/files/misc/workflow-apps.pdf][http://www.kieranhealy.org/files/misc/workflow-apps.pdf]]}}}
-#+TEXT: \maketitle
+#+BEGIN_LaTeX
+\chapterstyle{article-5}
+\setkeys{Gin}{width=1\textwidth} 
+\pagestyle{kjh}
+\thispagestyle{kjhgit}
+\title{\bigskip \bigskip Choosing Your Workflow Applications}
+\author{\normalsize Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
+\published{The latest version of this document is at \href{http://kieranhealy.org/files/misc/workflow-apps.pdf}{\texttt{http://kieranhealy.org/files/misc/workflow-apps.pdf}}}
+\maketitle
+#+END_LaTeX
+
 
 #+begin_abstract 
 \noindent As a beginning graduate student in the social sciences, what
@@ -681,7 +684,7 @@ back into something much less lightweight.
 #+CAPTION: Editing an earlier version of this document in TextMate (left) with the typeset output on the right. Note how section titles, citations and hyperlinks are represented in the editor and how they appear in the typeset document.  
 #+LABEL: fig:textmate
 #+ATTR_LaTeX: scale=0.2, placement=[h!]
-[[/Users/kjhealy/Documents/projects/teaching/workflow/figures/TextMateLaTeX]]
+[[file:figures/TextMateLaTeX.png][/Users/kjhealy/Documents/projects/teaching/workflow/figures/TextMateLaTeX]]
 
 ** Some Alternative Applications
 There are many other applications you might put at the center of your workflow, depending on one's needs, personal preferences, willingness to pay some money, or desire to work on a specific platform. For *text editing*, especially, there is a plethora of choices. On the Mac, quality editors  include
