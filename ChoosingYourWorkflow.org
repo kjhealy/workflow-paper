@@ -833,8 +833,8 @@ write a paper, you need to be organized enough to have read the right
 literature, maybe collected some data, and most importantly asked an
 interesting question in the first place. No amount of software is
 going to solve those problems for you. Too much concern with the
-details of your setup hinders your work. Indeed --- and I speak
-from experience here --- this concern is itself a kind self-imposed
+details of your setup hinders your work. Indeed --- and I speak from
+experience here --- this concern is itself a kind self-imposed
 distraction that placates work-related anxiety in the short term while
 generating more of it later.[fn:merlin] On the hardware side, there's
 the absurd productivity counterpart to the hedonic treadmill, where
@@ -843,17 +843,18 @@ the café you're at contains more computing power than was available to
 the Pentagon in 1965. On the software side, the besetting vice of
 productivity-enhancing software is the tendency to waste a lot of your
 time installing, updating and generally obsessing about your
-productivity-enhancing software.[fn:devil] Even more generally, efficient
-workflow habits are themselves just a means to the end of completing
-the projects you are really interested in, of making things you want
-to make, finding out the answers to the questions that brought you to
-graduate school. The process of idea generation and project management
-can be run well, too, and perhaps even the business of choosing what
-the projects should be in the first place. But this is not the place
---- and I am not the person --- to be giving advice about that.
+productivity-enhancing software.[fn:devil] Even more generally,
+efficient workflow habits are themselves just a means to the end of
+completing the projects you are really interested in, of making the
+things you want to make, of finding the answers to the questions that
+brought you to graduate school. The process of idea generation and
+project management can be run well, too, and perhaps even the business
+of choosing what the projects should be in the first place. But this
+is not the place --- and I am not the person --- to be giving advice
+about that.
 
 All of which is just to reiterate that it's the principles of workflow
-management that are important, and the software is just a means to an
+management that are important. The software is just a means to an
 end. One of the [[http://en.wikipedia.org/wiki/David_Kellogg_Lewis][smartest, most productive people I've ever known]] spent
 half of his career writing on a typewriter and the other half on an
 [[http://www-03.ibm.com/ibm/history/exhibits/pc/pc_8.html][IBM Displaywriter]]. His backup solution for having hopelessly outdated
