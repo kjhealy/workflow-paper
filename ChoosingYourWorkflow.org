@@ -508,10 +508,8 @@ When you're ready, you "weave" the file: you feed it to R, which
 processes the code chunks, and spits out a finished version where the
 code chunks have been replaced by their output. This is now a
 well-formed LaTeX file that you can then turn into a PDF document in
-the normal way. It's pretty straightforward in practice. I've included
-an example at the end of this document that shows how it works. Sweave
-comes built-in to R. Sweave files can be edited in Emacs, as ESS
-understands them.
+the normal way. It's pretty straightforward in practice. Sweave files
+can be edited in Emacs, as ESS understands them.
 
 The strength of this approach is that is makes it much easier to
 document your work properly (and elegantly). Work becomes much easier
