@@ -301,11 +301,19 @@ started with TeX and LaTeX for Mac OS X [[http://tug.org/mactex/][from this page
 [[http://www.miktex.org/][MiKTeX]] is a widely-used version of TeX. The [[http://www.tug.org/pracjourn/][PracTeX Journal]] is an
 excellent source of information on how to do work using LaTeX.
 
-#+source: latex-example
-#+CAPTION: A fragment of an earlier version of this document, written in LaTeX markup.
-#+LABEL: fig:latex
-#+ATTR_LaTeX: width=5in, placement=[h!]
-#+begin_src latex :exports code
+
+This is what \textbf{LaTeX} is for. LaTeX is a freely-available,
+professional-quality typesetting system. It takes text marked up
+in a way that describes the structure and formatting  of the
+document (where the sections and subsections are, for example, or
+whether text should be \textbf{in bold face} or \emph{emphasized})
+and typesets it properly. If you have ever edited the HTML of a
+web page, you'll know the general idea of a markup language. If
+you haven't, the easiest way to understand what I mean is to look
+at a segment of LaTeX markup. An example is shown in Figure \ref{fig:latex}.
+
+#+LaTeX: \begin{figure} 
+#+begin_src [latex]tex :exports code
   \subsection{Edit Text}
   This is what \textbf{LaTeX} is for. LaTeX is a freely-available,
   professional-quality typesetting system. It takes text marked up in
@@ -318,6 +326,10 @@ excellent source of information on how to do work using LaTeX.
   segment of LaTeX markup. An example is shown in Figure
   \ref{fig:latex}.
 #+end_src
+#+LaTeX: \caption{Part of the \LaTeX\ source for an earlier version of this document.}
+#+LaTeX: \label{fig:latex}
+#+LaTeX: \end{figure}
+
 
 LaTeX works best with some tools that help you take full advantage of
 it with a minimum of fuss. You can manage bibliographical references
@@ -467,11 +479,8 @@ beginning of a chunk: =load-data= is just a label for the chunk and
 =echo=true= is an option. The end of each chunk is marked by the =@=
 symbol.
 
-#+source: rnw-example
-#+CAPTION: A chunk of R code in a LaTeX document
-#+LABEL: fig:codechunk
-#+ATTR_LaTeX: placement=[h!]
-#+begin_src latex :exports code
+#+LaTeX: \begin{figure}
+#+begin_src r :exports code
   \subsection{Some exploratory analysis}
   In this section we do some exploratory analysis of the data. We begin by
   reading in the data file:
@@ -489,6 +498,10 @@ symbol.
   % now we are back to normal latex 
   This concludes the exploratory analysis. 
 #+end_src
+#+LaTeX: \caption{\LaTeX\ and R code mixed together in an Sweave file.}
+#+LaTeX: \label{fig:codechunk}
+#+LaTeX: \end{figure}
+ 
 
 When you're ready, you "weave" the file: you feed it to R, which
 processes the code chunks, and spits out a finished version where the
