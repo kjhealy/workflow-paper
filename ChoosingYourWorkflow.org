@@ -546,8 +546,8 @@ website, does a good job alleviating the problem.
  languages. Org-mode has very powerful export capabilities, so it can
  convert =.org= files to LaTeX, HTML, and many other formats quite
  easily. Examples of it in use can be seen at the [[http://orgmode.org/worg/org-contrib/babel/intro.html][Org-babel website]].
- This document was written as a plain-text =.org= file and the raw
- version is available to look at. 
+ This article was written as a plain-text =.org= file and the raw
+ version is available for inspection [[https://github.com/kjhealy/workflow-paper][as a repository on GitHub]].
 
 
 *** Use Revision Control
@@ -864,7 +864,7 @@ the first one broke. It never did.
 [fn:merlin] See [[http://inboxzero.com/][Merlin Mann]], amongst others, for more on this point.
 
 [fn:devil] Mike Hall's brilliant "[[http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/][Org-Mode in your Pocket is a
-GNU-Shaped Devil]]" makes this point very well.
+GNU-Shaped Devil]] makes this point very well.
 
 \printbibliography 
 
