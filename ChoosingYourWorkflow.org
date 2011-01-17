@@ -639,7 +639,7 @@ without you having to remember to do anything. On Macs, Apple's *Time
 Machine* software is built in to the operating system and makes
 backups very easy. On Linux, you can use [[http://www.psychocats.net/ubuntu/backup][rsync]] for backups. It is also
 worth looking into a secure, peer-to-peer or offsite backup service
-like *[[http://www.crashplan.com/][Crashplan]]* or [[https://spideroak.com/][Spider Oak]]. Offsite backup means that in the event
+like [[http://www.crashplan.com/][Crashplan]] or [[https://spideroak.com/][Spider Oak]]. Offsite backup means that in the event
 (unlikely, but not unheard of) that your computer /and/ your local
 backups are stolen or destroyed, you will still have copies of your
 files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.html][has remarked]], when it comes to
@@ -723,9 +723,9 @@ less true in the case of R, but remains so for LaTeX. (It also varies
 across social science disciplines.) Most people use Microsoft Word to
 write papers, and if you're collaborating with people (people you
 can't boss around, I mean) this can be an issue. Similarly, journals
-and presses in my field generally don't accept material marked up in
-LaTeX, though again there are exceptions. Converting files to a format
-Word understands can be tedious (although it is quite
+and presses in my field often do not accept material marked up in
+LaTeX, though again there are important exceptions. Converting files
+to a format Word understands can be tedious (although it is quite
 doable).[fn:lightweight] I find these difficulties are outweighed by
 the day-to-day benefits of using these applications, on the one hand,
 and their longer-term advantages of portability and simplicity, on the
@@ -736,8 +736,8 @@ if you really want to maximize the portability of your papers or
 especially your reading notes or memos, consider writing them in a
 modern lightweight markup format. Org-mode's native format is
 effectively one of these already, and it provides built-in support for
-export to many such formats. An org-mode file can be exported easily
-to rich-text or HTML, and from there Word or Google Docs will open
+export to many others. An org-mode file can also be exported easily to
+rich-text or HTML, and from there Word or Google Docs will open
 it. Other options for lightweight markup include [[http://en.wikipedia.org/wiki/Markdown][Markdown]] or its close
 relation, [[http://fletcherpenney.net/MultiMarkdown][MultiMarkdown]]. Documents written in these formats are easy
 to read in their plain-text form but can be simply and directly
