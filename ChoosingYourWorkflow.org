@@ -80,7 +80,7 @@ at least a precise reference to it.
 Why should you bother to do any of this? Because when you inevitably
 return to your table or figure or quotation nine months down the line,
 your future self will have been saved hours spent wondering what it
-was you thought you were doing and where in the hell got that stuff
+was you thought you were doing and where in the hell you got that stuff
 from, anyway.
 
 A second principle is that a document, file or folder should always be
