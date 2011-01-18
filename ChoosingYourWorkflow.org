@@ -760,8 +760,8 @@ support for citations.
 
 *** Some Alternatives
 There are many other applications you might put at the center of your
-workflow, depending on one's needs, personal preferences, willingness
-to pay some money, or desire to work on a specific platform. For text
+workflow, depending on need, personal preference, willingness to pay
+some money, or desire to work on a specific platform. For text
 editing, especially, there is a plethora of choices. On the Mac,
 quality editors include [[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers),
 [[http://smultron.sourceforge.net/][Smultron]], and [[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). TextMate has
