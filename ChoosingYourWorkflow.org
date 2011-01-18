@@ -824,13 +824,13 @@ going to solve those problems for you. Too much concern with the
 details of your setup hinders your work. Indeed --- and I speak from
 experience here --- this concern is itself a kind self-imposed
 distraction that placates work-related anxiety in the short term while
-generating more of it later.[fn:merlin] On the hardware side, there's
-the absurd productivity counterpart to the hedonic treadmill, where
-for some reason it's hard to get through the to-do list even though
-the café you're at contains more computing power than was available to
-the Pentagon in 1965. On the software side, the besetting vice of
-productivity-enhancing software is the tendency to waste a lot of your
-time installing, updating and generally obsessing about your
+storing up more of it for later.[fn:merlin] On the hardware side,
+there's the absurd productivity counterpart to the hedonic treadmill,
+where for some reason it's hard to get through the to-do list even
+though the café you're at contains more computing power than was
+available to the Pentagon in 1965. On the software side, the besetting
+vice of productivity-enhancing software is the tendency to waste a lot
+of your time installing, updating, and generally obsessing about your
 productivity-enhancing software.[fn:devil] Even more generally,
 efficient workflow habits are themselves just a means to the end of
 completing the projects you are really interested in, of making the
