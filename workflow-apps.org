@@ -4,15 +4,15 @@
 #+OPTIONS: toc:nil num:nil
 
 #+BEGIN_LaTeX
-\lstset{frame=single}
-\chapterstyle{article-4-sans}
-\setkeys{Gin}{width=1\textwidth} 
-\pagestyle{kjh}
-\title{\bigskip \bigskip Choosing Your Workflow Applications}
-\author{\normalsize Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
-\published{The latest version of this document is at \href{http://kieranhealy.org/files/misc/workflow-apps.pdf}{\texttt{http://kieranhealy.org/files/misc/workflow-apps.pdf}}. The source file is available at \href{https://github.com/kjhealy/workflow-paper}{\texttt{https://github.com/kjhealy/workflow-paper}}.}
-\maketitle
-\thispagestyle{kjhgit}
+\lstset{frame=single} \chapterstyle{article-4-sans}
+\setkeys{Gin}{width=1\textwidth} \pagestyle{kjh} \title{\bigskip
+\bigskip Choosing Your Workflow Applications} \author{\normalsize
+Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
+\published{The latest version of this document is at
+\href{http://kieranhealy.org/files/misc/workflow-apps.pdf}{\texttt{http://kieranhealy.org/files/misc/workflow-apps.pdf}}. The
+source file is available at
+\href{https://github.com/kjhealy/workflow-paper}{\texttt{https://github.com/kjhealy/workflow-paper}}.}
+\maketitle \thispagestyle{kjhgit}
 #+END_LaTeX
 
 #+begin_abstract 
@@ -80,8 +80,8 @@ at least a precise reference to it.
 Why should you bother to do any of this? Because when you inevitably
 return to your table or figure or quotation nine months down the line,
 your future self will have been saved hours spent wondering what it
-was you thought you were doing and where in the hell you got that stuff
-from, anyway.
+was you thought you were doing and where in the hell you got that
+stuff from, anyway.
 
 A second principle is that a document, file or folder should always be
 able to tell you what it is. Beyond making your work reproducible, you
@@ -238,7 +238,7 @@ Processors: Stupid and Inefficient]].''
  the box. The latter makes an effort to integrate Emacs with the Mac
  OS. For Windows users who would like to use Emacs, the developers
  maintain an [[http://www.gnu.org/software/emacs/windows/faq.html][extensive FAQ]] including information on where to download
- a copy and how to install it. 
+ a copy and how to install it.
 
 While very powerful and flexible, Emacs is not particularly easy to
 learn. Indeed, to many first-time users (especially those used to
@@ -296,17 +296,16 @@ system.
 
 #+LaTeX: \begin{figure} 
 #+begin_src [latex]tex :exports code
-  \subsection{Edit Text}
-  This is what \textbf{LaTeX} is for. LaTeX is a freely-available,
-  professional-quality typesetting system. It takes text marked up in
-  a way that describes the structure and formatting of the document
-  (where the sections and subsections are, for example, or whether
-  text should be \textbf{in bold face} or \emph{emphasized}) and
-  typesets it properly. If you have ever edited the HTML of a web
-  page, you'll know the general idea of a markup language. If you
-  haven't, the easiest way to understand what I mean is to look at a
-  segment of LaTeX markup. An example is shown in Figure
-  \ref{fig:latex}.
+  \subsection{Edit Text} This is what \textbf{LaTeX} is for. LaTeX is
+  a freely-available, professional-quality typesetting system. It
+  takes text marked up in a way that describes the structure and
+  formatting of the document (where the sections and subsections are,
+  for example, or whether text should be \textbf{in bold face} or
+  \emph{emphasized}) and typesets it properly. If you have ever edited
+  the HTML of a web page, you'll know the general idea of a markup
+  language. If you haven't, the easiest way to understand what I mean
+  is to look at a segment of LaTeX markup. An example is shown in
+  Figure \ref{fig:latex}.
 #+end_src
 #+LaTeX: \caption{Part of the \LaTeX\ source for an earlier version of this document.}
 #+LaTeX: \label{fig:latex}
@@ -331,15 +330,14 @@ overcome some of BibTeX's limitations. BibLaTeX is not yet officially
 stable, but it is very well-documented, very usable, and has many nice
 features.
 
-*[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are
-available for Emacs. These packages
-allow Emacs to understand the ins-and-outs of typesetting LaTeX
-documents, color-coding the marked-up text to make it easier to read,
-providing shortcuts to LaTeX's formatting commands, and helping you
-manage references to Figures, Tables and bibliographic citations in
-the text. These packages could also be listed under the ``Minimize
-Error'' section below, because they help ensure that, e.g., your
-references and bibliography will be complete and consistently
+*[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are available for Emacs. These packages allow
+Emacs to understand the ins-and-outs of typesetting LaTeX documents,
+color-coding the marked-up text to make it easier to read, providing
+shortcuts to LaTeX's formatting commands, and helping you manage
+references to Figures, Tables and bibliographic citations in the
+text. These packages could also be listed under the ``Minimize Error''
+section below, because they help ensure that, e.g., your references
+and bibliography will be complete and consistently
 formatted.[fn:fonts]
 
 [fn:fonts] A note about fonts and LaTeX. It used to be that getting
@@ -468,10 +466,9 @@ symbol.
 
 #+LaTeX: \begin{figure}
 #+begin_src r :exports code
-  \subsection{Some exploratory analysis}
-  In this section we do some exploratory analysis of the data. We begin by
-  reading in the data file:
-  <<load-data, echo=true>>=
+  \subsection{Some exploratory analysis} In this section we do some
+  exploratory analysis of the data. We begin by reading in the data
+  file: <<load-data, echo=true>>=
   # load the data. 
   my.data <- read.csv("data/sampledata.csv",header=TRUE)
   
@@ -481,9 +478,8 @@ symbol.
   summary(out)
   
   # ... More R code would follow until the end delimiter:
-  @ 
-  % now we are back to normal latex 
-  This concludes the exploratory analysis. 
+  @ % now we are back to normal latex This concludes the exploratory
+  analysis.
 #+end_src
 #+LaTeX: \caption{\LaTeX\ and R code mixed together in an Sweave file.}
 #+LaTeX: \label{fig:codechunk}
@@ -579,7 +575,7 @@ contents of these folders (using Subversion behind the scenes).
 
 [fn:magit] Emacs comes with support for a variety of VCS systems built
 in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
-specifically to Git. 
+specifically to Git.
 
 Revision control has significant benefits. A tool like Git or
 Mercurial combines the virtues of version control with backups,
@@ -611,11 +607,10 @@ collaboration and documentation of your work.
 
 [fn:dvcs] Mercurial and Git are /distributed/ revision control systems
 (DVCSs) which can handle projects with many contributors and very
-complex, decentralized structures. Bryan O'Sullivan's
-/[[http://hgbook.red-bean.com/hgbook.pdf][Distributed Version Control
-with Mercurial]]/ is a free, comprehensive guide to one of the main
-DVCS tools, but also provides a clear account of how modern
-version-control systems have developed, together with the main
+complex, decentralized structures. Bryan O'Sullivan's /[[http://hgbook.red-bean.com/hgbook.pdf][Distributed
+Version Control with Mercurial]]/ is a free, comprehensive guide to one
+of the main DVCS tools, but also provides a clear account of how
+modern version-control systems have developed, together with the main
 concepts behind them. For Git, I recommend starting [[http://git-scm.com/][at this site]] and
 following the links to the documentation.
 
@@ -854,5 +849,5 @@ the first one broke. It never did.
 [fn:devil] Mike Hall's brilliant "[[http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/][Org-Mode in your Pocket is a
 GNU-Shaped Devil]]" makes this point very well.
 
-\printbibliography 
+\printbibliography
 
