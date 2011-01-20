@@ -8,7 +8,7 @@
 \setsansfont[Mapping=tex-text, BoldFont={Unit-Bold}, ItalicFont={Unit-Regular}]{Unit-Bold} 
 \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
 \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro} 
-\\bibliography{socbib} % Available at https://github.com/kjhealy/socbibs
+\bibliography{socbib} % Available at https://github.com/kjhealy/socbibs
 \lstset{frame=single} \chapterstyle{article-4-sans}
 \setkeys{Gin}{width=1\textwidth} \pagestyle{kjh} \title{\bigskip
 \bigskip Choosing Your Workflow Applications} \author{\normalsize
