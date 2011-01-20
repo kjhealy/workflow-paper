@@ -2,8 +2,13 @@
 #+AUTHOR: 
 #+DATE:
 #+OPTIONS: toc:nil num:nil
+#+LATEX_CMD: xelatex
 
 #+BEGIN_LaTeX
+\setsansfont[Mapping=tex-text, BoldFont={Unit-Bold}, ItalicFont={Unit-Regular}]{Unit-Bold} 
+\setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
+\setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro} 
+\\bibliography{socbib} % Available at https://github.com/kjhealy/socbibs
 \lstset{frame=single} \chapterstyle{article-4-sans}
 \setkeys{Gin}{width=1\textwidth} \pagestyle{kjh} \title{\bigskip
 \bigskip Choosing Your Workflow Applications} \author{\normalsize
@@ -531,6 +536,11 @@ website, does a good job alleviating the problem.
  can treat Org-Babel just as you would Sweave, or you can take
  advantage of the fact that it's fully part of org-mode and get all of
  the latter's functionality for free.
+
+#+CAPTION: Editing this document in Emacs.
+#+LABEL:   fig:emacsorg
+#+ATTR_LaTeX: width=4in
+[[file:figures/editing-org-in-emacs.png]]
 
 
 *** Use Revision Control
