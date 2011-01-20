@@ -1,7 +1,7 @@
 #+TITLE: 
 #+AUTHOR: 
 #+DATE:
-#+OPTIONS: toc:nil :num nil
+#+OPTIONS: toc:nil num:nil
 
 #+BEGIN_LaTeX
 \lstset{frame=single}
