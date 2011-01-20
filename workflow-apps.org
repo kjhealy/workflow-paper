@@ -8,15 +8,12 @@
 \setsansfont[Mapping=tex-text, BoldFont={Unit-Bold}, ItalicFont={Unit-Regular}]{Unit-Bold} 
 \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
 \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro} 
-\bibliography{socbib} % Available at https://github.com/kjhealy/socbibs
 \lstset{frame=single} \chapterstyle{article-4-sans}
 \setkeys{Gin}{width=1\textwidth} \pagestyle{kjh} \title{\bigskip
 \bigskip Choosing Your Workflow Applications} \author{\normalsize
 Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
 \published{The latest version of this document is at
-\href{http://kieranhealy.org/files/misc/workflow-apps.pdf}{\texttt{http://kieranhealy.org/files/misc/workflow-apps.pdf}}. The
-source file is available at
-\href{https://github.com/kjhealy/workflow-paper}{\texttt{https://github.com/kjhealy/workflow-paper}}.}
+\href{http://kieranhealy.org/files/misc/workflow-apps.pdf}{\texttt{http://kieranhealy.org/files/misc/workflow-apps.pdf}}. The source file is available at \href{https://github.com/kjhealy/workflow-paper}{\texttt{https://github.com/kjhealy/workflow-paper}}.}
 \maketitle \thispagestyle{kjhgit}
 #+END_LaTeX
 
