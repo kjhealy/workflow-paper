@@ -20,7 +20,7 @@ Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
 #+END_LaTeX
 
 #+begin_abstract 
-womble As a beginning graduate student in the social sciences, what
+As a beginning graduate student in the social sciences, what
 sort of software should you use to do your work? More importantly,
 what principles should guide your choices? This article offers some
 answers. The short version is: write using a good text editor (there
