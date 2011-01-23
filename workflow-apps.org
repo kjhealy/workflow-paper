@@ -5,10 +5,12 @@
 #+LATEX_CMD: xelatex
 
 #+BEGIN_LaTeX
+\usemintedstyle{tango}
+\fvset{frame=single}
 \setsansfont[Mapping=tex-text, BoldFont={Unit-Bold}, ItalicFont={Unit-Regular}]{Unit-Bold} 
 \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
 \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro} 
-\lstset{frame=single} \chapterstyle{article-4-sans}
+\chapterstyle{article-4-sans}
 \setkeys{Gin}{width=1\textwidth} \pagestyle{kjh} \title{\bigskip
 \bigskip Choosing Your Workflow Applications} \author{\normalsize
 Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
@@ -18,7 +20,7 @@ Kieran Healy {\par\vskip 0.15em} \emph{Duke University}}
 #+END_LaTeX
 
 #+begin_abstract 
-As a beginning graduate student in the social sciences, what
+womble As a beginning graduate student in the social sciences, what
 sort of software should you use to do your work? More importantly,
 what principles should guide your choices? This article offers some
 answers. The short version is: write using a good text editor (there
@@ -282,7 +284,7 @@ whether text should be *in bold face* or /emphasized/) and typesets it
 properly. If you have ever edited the HTML of a web page, you'll know
 the general idea of a markup language. If you haven't, the easiest way
 to understand what I mean is to look at a segment of LaTeX markup. An
-example is shown in Figure \ref{fig:latex}. You can get started with
+example is shown in Listing \ref{lst:latex}. You can get started with
 LaTeX for Mac OS X by downloading [[http://tug.org/mactex/][the MacTeX distribution]]. On Windows,
 [[http://www.tug.org/protext/][ProTeXt]] and [[http://www.miktex.org/][MiKTeX]] are both widely-used. Linux vendors have their own
 distributions, or you can install [[http://www.tug.org/texlive][TeXLive]] yourself.[fn:distributions]
@@ -296,8 +298,8 @@ particular program or utility that comes with these distributions
 software that allows something else to work with or talk to the TeX
 system.
 
-#+LaTeX: \begin{figure} 
-#+begin_src [latex]tex :exports code
+#+LaTeX: \begin{listing} 
+#+begin_src tex :exports code
   \subsection{Edit Text} This is what \textbf{LaTeX} is for. LaTeX is
   a freely-available, professional-quality typesetting system. It
   takes text marked up in a way that describes the structure and
@@ -307,11 +309,11 @@ system.
   the HTML of a web page, you'll know the general idea of a markup
   language. If you haven't, the easiest way to understand what I mean
   is to look at a segment of LaTeX markup. An example is shown in
-  Figure \ref{fig:latex}.
+  Listing \ref{lst:latex}.
 #+end_src
 #+LaTeX: \caption{Part of the \LaTeX\ source for an earlier version of this document.}
-#+LaTeX: \label{fig:latex}
-#+LaTeX: \end{figure}
+#+LaTeX: \label{lst:latex}
+#+LaTeX: \end{listing}
 
 
 LaTeX works best with some tools that help you take full advantage of
@@ -459,14 +461,14 @@ to run a model, produce a table or display a figure, rather than paste
 in the results of your work from elsewhere, you write down the R code
 that will produce the output you want. These ``chunks'' of code are
 distinguished from the regular text by a special delimiter at their
-beginning and end. A small sample is shown in Figure
-\ref{fig:codechunk}. The code chunk begins with the line =<<load-data,
+beginning and end. A small sample is shown in Listing
+\ref{lst:codechunk}. The code chunk begins with the line =<<load-data,
 echo=true>>==. The character sequence =<<>>== is the marker for the
 beginning of a chunk: =load-data= is just a label for the chunk and
 =echo=true= is an option. The end of each chunk is marked by the =@=
 symbol.
 
-#+LaTeX: \begin{figure}
+#+LaTeX: \begin{listing}
 #+begin_src r :exports code
   \subsection{Some exploratory analysis} In this section we do some
   exploratory analysis of the data. We begin by reading in the data
@@ -484,8 +486,8 @@ symbol.
   analysis.
 #+end_src
 #+LaTeX: \caption{\LaTeX\ and R code mixed together in an Sweave file.}
-#+LaTeX: \label{fig:codechunk}
-#+LaTeX: \end{figure}
+#+LaTeX: \label{lst:codechunk}
+#+LaTeX: \end{listing}
  
 When you're ready, you "weave" the file: you feed it to R, which
 processes the code chunks, and spits out a finished version where the
