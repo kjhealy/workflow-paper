@@ -301,16 +301,18 @@ system.
 
 #+LaTeX: \begin{listing} 
 #+begin_src tex :exports code
-  \subsection{Edit Text} This is what \textbf{LaTeX} is for. LaTeX is
-  a freely-available, professional-quality typesetting system. It
-  takes text marked up in a way that describes the structure and
-  formatting of the document (where the sections and subsections are,
-  for example, or whether text should be \textbf{in bold face} or
-  \emph{emphasized}) and typesets it properly. If you have ever edited
-  the HTML of a web page, you'll know the general idea of a markup
-  language. If you haven't, the easiest way to understand what I mean
-  is to look at a segment of LaTeX markup. An example is shown in
-  Listing \ref{lst:latex}.
+  \subsection{Edit Text} 
+  This is what \textbf{LaTeX} is for. LaTeX is a freely-available,
+  professional-quality typesetting system. It takes text marked up in
+  a way that describes the structure and formatting of the document
+  (where the sections and subsections are, for example, or whether
+  text should be \textbf{in bold face} or \emph{emphasized}) and
+  typesets it properly. If you have ever edited the HTML of a web
+  page, you'll know the general idea of a markup language. If you
+  haven't, the easiest way to understand what I mean is to look at a
+  segment of LaTeX markup. An example is shown in Listing
+  \ref{lst:latex}.
+
 #+end_src
 #+LaTeX: \caption{Part of the \LaTeX\ source for an earlier version of this document.}
 #+LaTeX: \label{lst:latex}
