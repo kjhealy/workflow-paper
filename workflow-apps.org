@@ -34,26 +34,28 @@ with them.
 
 ** Introduction
 You can do productive, maintainable and reproducible work with all
-kinds of different software set-ups.\symbolfootnote[0]{I thank Jake
-Bowers for helpful comments.} This is the main reason I don't go
-around encouraging everyone to convert to the applications I use. (My
-rule is that I don't try to persuade anyone to switch if I can't
-commit to offering them technical support during and after their
-move.) So this discussion is not geared toward convincing you there is
-One True Way to organize things. I do think, however, that if you're
-in the early phase of your career as a graduate student in, say,
-Sociology, or Economics, or Political Science, you should give some
-thought to how you're going to organize and manage your
-work.[fn:faculty] This is so for two reasons. First, the transition to
-graduate school is a good time to make changes. Early on, there's less
-inertia and cost associated with switching things around than there
-will be later. Second, in the social sciences, text and data
-management skills are usually not taught to students explicitly. This
-means that you may end up adopting the practices of your advisor or
-mentor, continue to use what you are taught in your methods classes,
-or just copy whatever your peers are doing. Following these paths may
-lead you to an arrangement that you will be happy with. But maybe
-not. It's worth looking at the options.
+kinds of different software set-ups.\symbolfootnote[0]{Email:
+\url{kjhealy@soc.duke.edu}. Address: Sociology Dept, Duke
+University, Durham, NC 27708, USA. I thank Jake Bowers for helpful
+comments.} This is the main reason I don't go around encouraging
+everyone to convert to the applications I use. (My rule is that I
+don't try to persuade anyone to switch if I can't commit to offering
+them technical support during and after their move.) So this
+discussion is not geared toward convincing you there is One True Way
+to organize things. I do think, however, that if you're in the early
+phase of your career as a graduate student in, say, Sociology, or
+Economics, or Political Science, you should give some thought to how
+you're going to organize and manage your work.[fn:faculty] This is so
+for two reasons. First, the transition to graduate school is a good
+time to make changes. Early on, there's less inertia and cost
+associated with switching things around than there will be
+later. Second, in the social sciences, text and data management skills
+are usually not taught to students explicitly. This means that you may
+end up adopting the practices of your advisor or mentor, continue to
+use what you are taught in your methods classes, or just copy whatever
+your peers are doing. Following these paths may lead you to an
+arrangement that you will be happy with. But maybe not. It's worth
+looking at the options.
 
 [fn:faculty] This may also be true if you are about to move from being
 a graduate student to starting as a faculty member, though perhaps the
