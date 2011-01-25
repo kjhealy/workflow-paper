@@ -471,20 +471,26 @@ symbol.
 
 #+LaTeX: \begin{listing}
 #+begin_src r :exports code
-  \subsection{Some exploratory analysis} In this section we do some
-  exploratory analysis of the data. We begin by reading in the data
-  file: <<load-data, echo=true>>=
-  # load the data. 
-  my.data <- read.csv("data/sampledata.csv",header=TRUE)
-  
-  # OLS model
-  out <- lm(y ~ x1 + x2,data=my.data)
-  
-  summary(out)
-  
-  # ... More R code would follow until the end delimiter:
-  @ % now we are back to normal latex This concludes the exploratory
-  analysis.
+\subsection{Some exploratory analysis}   
+ In this section we do some exploratory analysis of the data. We begin
+ by reading in the data file:
+ 
+   <<load-data, echo=true>>=
+    ## load the data. 
+    my.data <- read.csv("data/sampledata.csv",header=TRUE)
+
+    ## make some plots.
+    with(my.data, plot(x,y))
+         
+    ## OLS model
+    out <- lm(y ~ x1 + x2,data=my.data)
+    summary(out)
+     
+    ## ... More R code would follow until the end delimiter
+        
+  @ % now we are back to normal latex 
+       
+This concludes the exploratory analysis.
 #+end_src
 #+LaTeX: \caption{\LaTeX\ and R code mixed together in an Sweave file.}
 #+LaTeX: \label{lst:codechunk}
