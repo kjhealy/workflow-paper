@@ -11,7 +11,7 @@
 #+LATEX_HEADER: \usemintedstyle{tango}
 #+LATEX_HEADER: \fvset{frame=single}
 #+LATEX_HEADER: \setkeys{Gin}{width=1\textwidth} 
-#+LATEX_HEADER: \renewcommand{\abstractname}{}
+#+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
 #+BEGIN_LaTeX
 \thispagestyle{kjhgit} 
@@ -29,7 +29,7 @@ version control system. Back everything up regularly and
 automatically. Don't get bogged down by gadgets, utilities or other
 accoutrements: they are there to help you do your work, but often
 waste your time by tempting you to tweak, update and generally futz
-with them.
+with them. 
 #+end_abstract
 
 ** Introduction
