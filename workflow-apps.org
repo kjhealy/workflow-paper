@@ -545,7 +545,7 @@ website, does a good job alleviating the problem.
  advantage of the fact that it's fully part of org-mode and get all of
  the latter's functionality for free.
 
-#+CAPTION: Editing the =.org= source of this document in an Emacs configured with the Starter Kit.
+#+CAPTION: Editing the =.org= source of this document in an Emacs window configured with the Starter Kit.
 #+LABEL:   fig:emacsorg
 #+ATTR_LaTeX: width=4in
 [[file:figures/editing-org-in-emacs.png]]
