@@ -35,8 +35,7 @@ with them.
 ** Introduction
 You can do productive, maintainable and reproducible work with all
 kinds of different software set-ups.\symbolfootnote[0]{Email:
-\url{kjhealy@soc.duke.edu}. Address: Sociology Dept, Duke
-University, Durham, NC 27708, USA. I thank Jake Bowers for helpful
+\url{kjhealy@soc.duke.edu}. I thank Jake Bowers for helpful
 comments.} This is the main reason I don't go around encouraging
 everyone to convert to the applications I use. (My rule is that I
 don't try to persuade anyone to switch if I can't commit to offering
