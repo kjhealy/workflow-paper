@@ -1,5 +1,5 @@
 #+TITLE: Choosing Your Workflow Applications
-#+AUTHOR: Kieran Healy
+#+AUTHOR: Kieran Healy \newline /Duke University/
 #+DATE: 
 #+OPTIONS: toc:nil num:nil
 #+LATEX_CMD: xelatex
