@@ -471,25 +471,30 @@ beginning of a chunk: =load-data= is just a label for the chunk and
 symbol.
 
 #+LaTeX: \begin{listing}
-#+begin_src r :exports code
+#+begin_src Sweave :exports code
 \subsection{Some exploratory analysis}   
  In this section we do some exploratory analysis of the data. We begin
  by reading in the data file:
  
-   <<load-data, echo=true>>=
+<<load-data, echo=true>>=
     ## load the data. 
     my.data <- read.csv("data/sampledata.csv",header=TRUE)
+@  % The closing delimiter ends the code chunk.
 
+ We should \emph{plot the data} to take a look at it:
+
+<<plot-data, echo=true>>=
     ## make some plots.
     with(my.data, plot(x,y))
-         
+@
+
+Maybe run some models, too.
+
+<<ols-model echo=true>>=         
     ## OLS model
     out <- lm(y ~ x1 + x2,data=my.data)
     summary(out)
-     
-    ## ... More R code would follow until the end delimiter
-        
-  @ % now we are back to normal latex 
+@ 
        
 This concludes the exploratory analysis.
 #+end_src
