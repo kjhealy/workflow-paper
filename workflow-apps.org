@@ -334,7 +334,7 @@ the bibliography.[fn:biblatex]
 take a look at [[http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html][BibLaTeX]], a package by Philipp Lehman, in conjunction
 with [[http://biblatex-biber.sourceforge.net/][Biber]], a replacement for BibTeX. BibLaTeX and Biber are not yet
 officially stable, but they are very well-documented, in wide use, and
-will soon replace jointly replace BibTeX as the standard way to
+will soon jointly replace BibTeX as the standard way to
 process bibliographies in LaTeX.
 
 *[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are available for Emacs. These packages allow
