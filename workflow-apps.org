@@ -14,7 +14,7 @@
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
 #+BEGIN_LaTeX
-\thispagestyle{kjhgit} 
+\thispagestyle{kjhgit}  
 #+END_LaTeX
 
 #+begin_abstract 
@@ -548,7 +548,7 @@ website, does a good job alleviating the problem.
  version is available for inspection [[https://github.com/kjhealy/workflow-paper][as a repository on GitHub]]. You
  can treat Org-Babel just as you would Sweave, or you can take
  advantage of the fact that it's fully part of org-mode and get all of
- the latter's functionality for free.
+ the latter's functionality for free. 
 
 #+CAPTION: Editing the =.org= source of this document in an Emacs window configured with the Starter Kit.
 #+LABEL:   fig:emacsorg
