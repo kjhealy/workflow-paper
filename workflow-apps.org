@@ -2,6 +2,7 @@
 #+AUTHOR: Kieran Healy \newline /Duke University/
 #+DATE: 
 #+OPTIONS: toc:nil num:nil
+#+BABEL: :results output :exports both :session
 #+LATEX_CMD: xelatex
 #+LATEX_HEADER: \setsansfont[Mapping=tex-text, BoldFont={* Bold SemiCondensed}, ItalicFont={* Semibold SemiCondensed Italic}]{Myriad Pro}
 #+LATEX_HEADER: \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
@@ -29,7 +30,7 @@ version control system. Back everything up regularly and
 automatically. Don't get bogged down by gadgets, utilities or other
 accoutrements: they are there to help you do your work, but often
 waste your time by tempting you to tweak, update and generally futz
-with them. 
+with them.
 #+end_abstract
 
 ** Introduction
@@ -472,7 +473,7 @@ beginning of a chunk: =load-data= is just a label for the chunk and
 symbol.
 
 #+LaTeX: \begin{listing}
-#+begin_src Sweave :exports code
+#+begin_src sweave :exports code
 \subsection{Some exploratory analysis}   
  In this section we do some exploratory analysis of the data. We begin
  by reading in the data file:
@@ -550,12 +551,35 @@ website, does a good job alleviating the problem.
  advantage of the fact that it's fully part of org-mode and get all of
  the latter's functionality for free. 
 
-#+CAPTION: Editing the =.org= source of this document in an Emacs window configured with the Starter Kit.
-#+LABEL:   fig:emacsorg
-#+ATTR_LaTeX: width=4in
-[[file:figures/editing-org-in-emacs.png]]
+For example, Figure \ref{fig:org-babel-example} is generated on the
+fly from source-code blocks included in the =.org= source for this
+article. A piece of code can be executed, displayed, or both --- like
+this:
+
+#+LaTeX: \begin{listing}
+#+source: setup
+#+begin_src R 
+  library(ggplot2)
+  tea <- rnorm(100)
+  biscuits <- tea + rnorm(100,0,1.3)
+#+end_src 
+#+LaTeX: \caption{``Live'' code contained in this document.}
+#+LaTeX: \label{lst:babel}
+#+LaTeX: \end{listing}
 
 
+Then the figure can be created directly. Look in the [[https://github.com/kjhealy/workflow-paper][source file for
+this article]] to see the code used to create it.
+
+#+CAPTION: A figure produced from code embedded in the source (=.org=) file for this article.
+#+LABEL:   fig:org-babel-example
+#+ATTR_LaTeX: width=5in
+#+source: ggplot-example
+#+begin_src R :results output graphics :file figures/ggplot-example.pdf :exports results
+  qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits")
+#+end_src
+
+ 
 *** Use Revision Control
 The task of documenting your work at the level of particular pieces of
 code or edits to paragraphs in individual files can become more
