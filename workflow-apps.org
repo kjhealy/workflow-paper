@@ -529,7 +529,7 @@ time. You can go a little ways toward working around this by designing
 projects so that they are relatively modular, which is good practice
 anyway. But for projects that are unavoidably large or computationally
 intensive, the add-on package =cacheSweave=, available from the R
-website, does a good job alleviating the problem.
+website, does a good job alleviating the problem. 
 
 *** Literate Programming with Org-mode
 *[[http://orgmode.org/][Org-mode]]* is an Emacs mode originally designed to make it easier to
@@ -575,7 +575,7 @@ this article]] to see the code used to create it.
 #+LABEL:   fig:org-babel-example
 #+ATTR_LaTeX: width=5in
 #+source: ggplot-example
-#+begin_src R :results output graphics :file figures/ggplot-example.pdf :exports results
+#+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :exports results
   qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits")
 #+end_src
 
