@@ -10,7 +10,7 @@
 #+LATEX_HEADER: \chapterstyle{article-4-sans}
 #+LATEX_HEADER: \pagestyle{kjh}
 #+LATEX_HEADER: \usemintedstyle{tango}
-#+LATEX_HEADER: \fvset{frame=single}
+#+LATEX_HEADER: \definecolor{bg}{rgb}{0.95,0.95,0.95}
 #+LATEX_HEADER: \setkeys{Gin}{width=1\textwidth} 
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
