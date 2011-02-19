@@ -9,7 +9,7 @@
 #+LATEX_HEADER: \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro}
 #+LATEX_HEADER: \chapterstyle{article-4-sans}
 #+LATEX_HEADER: \pagestyle{kjh}
-#+LATEX_HEADER: \usemintedstyle{tango}
+#+LATEX_HEADER: \usemintedstyle{tango} 
 #+LATEX_HEADER: \definecolor{bg}{rgb}{0.95,0.95,0.95}
 #+LATEX_HEADER: \setkeys{Gin}{width=1\textwidth} 
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
@@ -568,8 +568,9 @@ this:
 #+LaTeX: \end{listing}
 
 
-Then the figure can be created directly. Look in the [[https://github.com/kjhealy/workflow-paper][source file for
-this article]] to see the code used to create it.
+Then the figure can be created directly. I don't show the code for
+this here, but you can look in the [[https://github.com/kjhealy/workflow-paper][source file for this article]] to see
+how it's done. 
 
 #+CAPTION: A figure produced from code embedded in the source (=.org=) file for this article.
 #+LABEL:   fig:org-babel-example
@@ -853,7 +854,6 @@ full-featured applications designed to make it easy to use
 Subversion. Taking a longer view, version control is likely to become
 more widely available through intermediary services or even as part of
 the basic functionality of operating systems.
-
 
 ** A Broader Perspective 
 It would be nice if all you needed to do your work was a box software
