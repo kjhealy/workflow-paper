@@ -553,8 +553,10 @@ website, does a good job alleviating the problem.
 
 For example, Figure \ref{fig:org-babel-example} is generated on the
 fly from source-code blocks included in the =.org= source for this
-article. A piece of code can be executed, displayed, or both --- like
-this:
+article. A piece of code can be executed, displayed, or both --- as in
+the case of Listing \ref{lst:babel}. Then the figure can be created
+directly. I don't show the code for this here, but you can look in the
+[[https://github.com/kjhealy/workflow-paper][source file for this article]] to see how it's done.
 
 #+LaTeX: \begin{listing}
 #+source: setup
@@ -566,11 +568,6 @@ this:
 #+LaTeX: \caption{``Live'' code contained in this document.}
 #+LaTeX: \label{lst:babel}
 #+LaTeX: \end{listing}
-
-
-Then the figure can be created directly. I don't show the code for
-this here, but you can look in the [[https://github.com/kjhealy/workflow-paper][source file for this article]] to see
-how it's done. 
 
 #+CAPTION: A figure produced from code embedded in the source (=.org=) file for this article.
 #+LABEL:   fig:org-babel-example
