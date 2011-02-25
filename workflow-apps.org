@@ -4,15 +4,10 @@
 #+OPTIONS: toc:nil num:nil
 #+BABEL: :results output :exports both :session
 #+LATEX_CMD: xelatex
-#+LATEX_CMD: %%\renewcommand{\scdefault}{ssc} % Better sc subheadings in MinionPro (pdflatex only)
 #+LATEX_HEADER: \setsansfont[Mapping=tex-text, BoldFont={* Bold SemiCondensed}, ItalicFont={* Semibold SemiCondensed Italic}]{Myriad Pro}
 #+LATEX_HEADER: \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
 #+LATEX_HEADER: \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro}
 #+LATEX_HEADER: \chapterstyle{article-4-sans}
-#+LATEX_HEADER: \pagestyle{kjh}
-#+LATEX_HEADER: \usemintedstyle{tango} 
-#+LATEX_HEADER: \definecolor{bg}{rgb}{0.95,0.95,0.95}
-#+LATEX_HEADER: \setkeys{Gin}{width=1\textwidth} 
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
 #+BEGIN_LaTeX
@@ -521,7 +516,11 @@ analysis and the writeup. The output of the analysis is created on the
 fly, and the code to do it is embedded in the paper. If you need to do
 multiple but identical (or very similar) analyses of different bits of
 data, Sweave can make generating consistent and reliable reports much
-easier.
+easier.[fn:rrexamples]
+
+[fn:rrexamples] For some real-world case-studies of reproductions of
+peer-reviewed studies using Sweave, and the errors uncovered as a
+result, see \autocite{hothorn11:_case_studies_reprod}.
 
 A weakness of the Sweave model is that when you make changes, you have
 to reprocess the all of the code to reproduce the final LaTeX file. If
