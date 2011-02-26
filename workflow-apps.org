@@ -520,7 +520,7 @@ easier.[fn:rrexamples]
 
 [fn:rrexamples] For some real-world case-studies of reproductions of
 peer-reviewed studies using Sweave, and the errors uncovered as a
-result, see \autocite{hothorn11:_case_studies_reprod}.
+result, see \textcite{hothorn11:_case_studies_reprod}.
 
 A weakness of the Sweave model is that when you make changes, you have
 to reprocess the all of the code to reproduce the final LaTeX file. If
