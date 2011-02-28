@@ -11,7 +11,7 @@
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
 #+BEGIN_LaTeX
-\thispagestyle{kjhgit}  
+\thispagestyle{kjhgit}
 #+END_LaTeX
 
 #+begin_abstract 
@@ -26,7 +26,7 @@ version control system. Back everything up regularly and
 automatically. Don't get bogged down by gadgets, utilities or other
 accoutrements: they are there to help you do your work, but often
 waste your time by tempting you to tweak, update and generally futz
-with them.
+with them. 
 #+end_abstract
 
 ** Introduction
@@ -191,7 +191,7 @@ together well (by design) and are all freely available for Windows,
 Linux and Mac OS X. They are not perfect, by any means --- in fact,
 some of them are kind of a pain in the ass to learn. (I'll discuss
 some nicer alternatives, too.) But graduate-level research and writing
-is kind of a pain in the ass to learn, too. Specialized tasks need
+is also kind of a pain in the ass to learn. Specialized tasks need
 specialized tools and, unfortunately, even if they are very good at
 what they do these tools don't always go out of their way to be
 friendly.
