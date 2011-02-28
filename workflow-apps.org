@@ -57,12 +57,16 @@ looking at the options.
 a graduate student to starting as a faculty member, though perhaps the
 rationale is less compelling given the costs.
 
-Although in what follows I advocate you take a look at several
+Two remarks at the outset. First, because this discussion is aimed at
+ beginning students, some readers may find much with which they are
+ already familiar. Even so, some sections may still be of interest, as
+ I have tried to keep the software references quite current. Second,
+ although in what follows I advocate you take a look at several
  applications in particular, it's not really about the gadgets or
  utilities. The Zen of Organization is Not to be Found in Fancy
  Software. Nor shall the true path of Getting Things Done be revealed
  to you through the purchase of a nice [[http://www.moleskineus.com/][Moleskine Notebook]]. Instead, it
- lies within. Unfortunately.
+ lies within---unfortunately.
 
 ** Just Make Sure You Know What You Did 
 
@@ -204,7 +208,7 @@ lot of revision, such as a scholarly paper. Text editors are different
 from word processors. Unlike applications such as Microsoft Word, text
 editors generally don't make a big effort to make what you write look
 like as though it is being written on a printed page.[fn:cottrell]
-Instead, they focus on manipulating text efficiently and assisting you
+Instead, they focus on working with text efficiently and assisting you
 with visualizing the logical structure of what you're writing. If you
 are writing code to do some statistical analysis, for instance, then
 at a minimum a good editor will highlight keywords and operators in a
@@ -220,8 +224,8 @@ your stats program --- not your text editor --- the typesetting of
 your paper is handled by a specialized application, too. Perhaps more
 importantly, a text editor /manipulates plain text/ as opposed to
 binary file formats like =.doc= or =.pdf=, and plain text is the
-easiest format to manage, control, manipulate, back up, and come back
-to later with some other application.
+easiest format to manage, control, back up, and come back to later
+with some other application.
 
 [fn:cottrell] For further argument about the advantages of
 text-editors over word processors see Allin Cottrell's polemic, ``[[http://www.ecn.wfu.edu/~cottrell/wp.html][Word
@@ -244,7 +248,7 @@ Processors: Stupid and Inefficient]].''
 While very powerful and flexible, Emacs is not particularly easy to
 learn. Indeed, to many first-time users (especially those used to
 standard applications on Windows or Mac OS) its conventions seem
-bizarre any byzantine. As applications go, Emacs is quite ancient: the
+bizarre and byzantine. As applications go, Emacs is quite ancient: the
 first version was written by Richard Stallman in the 1970s. Because it
 evolved in a much earlier era of computing (before decent graphical
 displays, for instance, and possibly also fire), it doesn't share many
@@ -267,8 +271,7 @@ good, in fact, that Emacs has recently become quite popular amongst a
 set of software developers pretty much all of whom are much younger
 than Emacs itself. The upshot is that there has been a run of good,
 new resources available for learning it and optimizing it easily. [[http://peepcode.com/products/meet-emacs][Meet
-Emacs]], a screencast from PeepCode, walks you through the basics of the
-application.
+Emacs]], a screencast available for purchase from PeepCode, walks you through the basics of the application. Emacs itself also has a built-in tutorial.
 
 If text editors like Emacs are not concerned with formatting your
 documents nicely, then how do you produce properly typeset papers? You
@@ -328,11 +331,11 @@ every item referenced in your dissertation or paper is contained in
 the bibliography.[fn:biblatex]
 
 [fn:biblatex] If you plan to use BibTeX to manage your references,
-take a look at [[http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html][BibLaTeX]], a package by Philipp Lehman, in conjunction
-with [[http://biblatex-biber.sourceforge.net/][Biber]], a replacement for BibTeX. BibLaTeX and Biber are not yet
+take a look at [[http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html][BibLaTeX]], a package by Philipp Lehman, together with
+[[http://biblatex-biber.sourceforge.net/][Biber]], a replacement for BibTeX. BibLaTeX and Biber are not yet
 officially stable, but they are very well-documented, in wide use, and
-will soon jointly replace BibTeX as the standard way to
-process bibliographies in LaTeX.
+will soon jointly replace BibTeX as the standard way to process
+bibliographies in LaTeX. I recommend you use them instead of older configurations (such as BibTeX and the Natbib package) which you may come across in other introductory discussions.
 
 *[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are available for Emacs. These packages allow
 Emacs to understand the ins-and-outs of typesetting LaTeX documents,
@@ -349,7 +352,9 @@ LaTeX to use anything but a relatively small set of fonts was a very
 tedious business. This is no longer the case. The [[http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=xetex][XeTeX]] engine makes
 it trivially easy to use any Postscript, TrueType or OpenType font
 installed on your system. XeTeX was originally developed for use on
-the Mac, but is available now for Linux and Windows as well.
+the Mac, but is available now for Linux and Windows as well. If you
+want to use a variety of fonts with an absolute minimum of fuss, use
+the =xelatex= command to typset your documents instead of =pdflatex=.
 
 More information on Emacs and LaTeX is readily available via Google,
 and there are several excellent books available to help you get
