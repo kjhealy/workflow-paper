@@ -2,7 +2,7 @@
 #+AUTHOR: Kieran Healy \newline /Duke University/
 #+DATE: 
 #+OPTIONS: toc:nil num:nil
-#+BABEL: :results output :exports both :session
+#+BABEL: :results output :session
 #+LATEX_CMD: xelatex
 #+LATEX_HEADER: \setsansfont[Mapping=tex-text, BoldFont={* Bold SemiCondensed}, ItalicFont={* Semibold SemiCondensed Italic}]{Myriad Pro}
 #+LATEX_HEADER: \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
