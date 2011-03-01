@@ -6,7 +6,7 @@
 #+LATEX_CMD: xelatex
 #+LATEX_HEADER: \setsansfont[Mapping=tex-text, BoldFont={* Bold SemiCondensed}, ItalicFont={* Semibold SemiCondensed Italic}]{Myriad Pro}
 #+LATEX_HEADER: \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
-#+LATEX_HEADER: \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro}
+#+LATEX_HEADER: \setromanfont[Mapping=tex-text, Numbers=OldStyle, BoldFont={* Semibold}]{Minion Pro}
 #+LATEX_HEADER: \chapterstyle{article-4-sans}
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
 
