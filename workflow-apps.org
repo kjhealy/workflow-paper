@@ -74,22 +74,21 @@ Two remarks at the outset. First, because this discussion is aimed at
 ** Just Make Sure You Know What You Did 
 
 For any kind of formal data analysis that leads to a scholarly paper,
-however you do it, there are basic principles that you will want to
-adhere to. Perhaps the most important thing is to do your work in a
-way that leaves a coherent record of your actions. Instead of doing a
-bit of statistical work and then just keeping the resulting table of
-results or graphic that you produced, for instance, write down what
-you did as a documented piece of code. Rather than figuring out but
-not recording a solution to a problem you might have again, write down
-the answer as an explicit procedure. Instead of copying out some
-archival material without much context, file the source properly, or
-at least a precise reference to it.
+however you do it, there are some basic principles to adhere
+to. Perhaps the most important thing is to do your work in a way that
+leaves a coherent record of your actions. Instead of doing a bit of
+statistical work and then just keeping the resulting table of results
+or graphic that you produced, for instance, write down what you did as
+a documented piece of code. Rather than figuring out but not recording
+a solution to a problem you might have again, write down the answer as
+an explicit procedure. Instead of copying out some archival material
+without much context, file the source properly, or at least a precise
+reference to it.
 
 Why should you bother to do any of this? Because when you inevitably
 return to your table or figure or quotation nine months down the line,
 your future self will have been saved hours spent wondering what it
-was you thought you were doing and where in the hell you got that
-stuff from, anyway.
+was you thought you were doing and where you got that result from.
 
 A second principle is that a document, file or folder should always be
 able to tell you what it is. Beyond making your work reproducible, you
@@ -164,9 +163,10 @@ this way:
   running Windows is easy, and even catered to by Mac OS's Boot Camp
   utility. Beyond installing OS X and Windows side-by-side,
   third-party virtualization software is available (for about \$80
-  from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]]) that allows you to run Windows or Linux
-  seamlessly within OS X. Thus, Apple hardware is the only setup where
-  you can easily try out each of the main desktop operating systems.
+  from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]], or free from [[http://www.virtualbox.org/][VirtualBox]]) that allows you
+  to run Windows or Linux seamlessly within OS X. Thus, Apple hardware
+  is the only setup where you can easily try out each of the main
+  desktop operating systems.
 
 - Linux is stable, secure, and free. User-oriented distributions such
   as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the
@@ -183,9 +183,8 @@ this way:
 
 These days, I use Mac OS X, and the discussion here reflects that
 choice to some extent. But the other two options are also perfectly
-viable alternatives. Rather than try to convince you to plump for one
-option or another, let's look at some applications that will run on
-all of these operating systems.
+viable alternatives, and most of the applications I will discuss are
+freely available for all of these operating systems.
 
 The dissertation, book, or articles you write will generally consist
 of the main text, the results of data analysis (perhaps presented in
@@ -196,11 +195,10 @@ data* and *minimize error*. In the next section I describe some
 applications and tools designed to let you do this easily. They fit
 together well (by design) and are all freely available for Windows,
 Linux and Mac OS X. They are not perfect, by any means --- in fact,
-some of them are kind of a pain in the ass to learn. (I'll discuss
-some nicer alternatives, too.) But graduate-level research and writing
-is also kind of a pain in the ass to learn. Specialized tasks need
-specialized tools and, unfortunately, even if they are very good at
-what they do these tools don't always go out of their way to be
+some of them can be awkward to learn. But graduate-level research and
+writing can also be awkward to learn. Specialized tasks need
+specialized tools and, unfortunately, although they are very good at
+what they do, these tools don't always go out of their way to be
 friendly.
 
 ** Edit Text
@@ -257,9 +255,9 @@ evolved in a much earlier era of computing (before decent graphical
 displays, for instance, and possibly also fire), it doesn't share many
 of the conventions of modern applications.[fn:emacs] Emacs offers many
 opportunities to waste your time learning its particular conventions,
-tweaking its settings, and generally customizing the bejaysus out of
-it. There are several good alternatives on each major platform, and I
-discuss some of them below.
+tweaking its settings, and generally customizing it. There are several
+good alternatives on each major platform, and I discuss some of them
+below.
 
 [fn:emacs] One of the reasons that Emacs' keyboard shortcuts are so
 strange is that they have their roots in a model of computer that laid
@@ -274,7 +272,9 @@ good, in fact, that Emacs has recently become quite popular amongst a
 set of software developers pretty much all of whom are much younger
 than Emacs itself. The upshot is that there has been a run of good,
 new resources available for learning it and optimizing it easily. [[http://peepcode.com/products/meet-emacs][Meet
-Emacs]], a screencast available for purchase from PeepCode, walks you through the basics of the application. Emacs itself also has a built-in tutorial.
+Emacs]], a screencast available for purchase from PeepCode, walks you
+through the basics of the application. Emacs itself also has a
+built-in tutorial.
 
 If text editors like Emacs are not concerned with formatting your
 documents nicely, then how do you produce properly typeset papers? You
@@ -346,9 +346,8 @@ color-coding the marked-up text to make it easier to read, providing
 shortcuts to LaTeX's formatting commands, and helping you manage
 references to Figures, Tables and bibliographic citations in the
 text. These packages could also be listed under the ``Minimize Error''
-section below, because they help ensure that, e.g., your references
-and bibliography will be complete and consistently
-formatted.[fn:fonts]
+section below, because they help ensure that your references and
+bibliography will be complete and consistently formatted.[fn:fonts]
 
 [fn:fonts] A note about fonts and LaTeX. It used to be that getting
 LaTeX to use anything but a relatively small set of fonts was a very
@@ -443,21 +442,20 @@ error. In particular, it is easy for a table of results to get
 detached from the sequence of steps that produced it. Almost everyone
 who has written a quantitative paper has been confronted with the
 problem of reading an old draft containing results or figures that
-need to be revisited or reproduced (as a result of the peer-review
-process, say) but which lack any information about the circumstances
-of their creation. Academic papers take a long time to get through the
-cycle of writing, review, revision, and publication, even when you're
-working hard the whole time. It is not uncommon to have to return to
-something you did two years previously in order to answer some
-question or other from a reviewer. You do not want to have to do
-everything over from scratch in order to get the right answer. I am
-not exaggerating when I say that, whatever the challenges of
-replicating the results of someone else's quantitative analysis, after
-a fairly short period of time authors themselves find it hard to
-replicate their /own/ work. Computer Science people have a term of art
-for the inevitable process of decay that overtakes a project simply in
-virtue of its being left alone on the hard drive for six months or
-more: bit--rot.
+need to be revisited or reproduced (as a result of peer-review, say)
+but which lack any information about the circumstances of their
+creation. Academic papers take a long time to get through the cycle of
+writing, review, revision, and publication, even when you're working
+hard the whole time. It is not uncommon to have to return to something
+you did two years previously in order to answer some question or other
+from a reviewer. You do not want to have to do everything over from
+scratch in order to get the right answer. I am not exaggerating when I
+say that, whatever the challenges of replicating the results of
+someone else's quantitative analysis, after a fairly short period of
+time authors themselves find it hard to replicate their /own/
+work. Computer Science people have a term of art for the inevitable
+process of decay that overtakes a project simply in virtue of its
+being left alone on the hard drive for six months or more: bit--rot.
 
 *** Literate Programming with Sweave 
 A first step toward closing this gap is to use *Sweave* when doing
@@ -531,13 +529,13 @@ peer-reviewed studies using Sweave, and the errors uncovered as a
 result, see \textcite{hothorn11:_case_studies_reprod}.
 
 A weakness of the Sweave model is that when you make changes, you have
-to reprocess the all of the code to reproduce the final LaTeX file. If
+to reprocess all of the code to reproduce the final LaTeX file. If
 your analysis is computationally intensive this can take a long
 time. You can go a little ways toward working around this by designing
 projects so that they are relatively modular, which is good practice
 anyway. But for projects that are unavoidably large or computationally
 intensive, the add-on package =cacheSweave=, available from the R
-website, does a good job alleviating the problem. 
+website, does a good job alleviating the problem.
 
 *** Literate Programming with Org-mode
 *[[http://orgmode.org/][Org-mode]]* is an Emacs mode originally designed to make it easier to
@@ -582,7 +580,7 @@ directly. I don't show the code for this here, but you can look in the
 #+ATTR_LaTeX: width=5in
 #+source: ggplot-example
 #+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :exports results
-  qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits")
+  qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits") + theme_bw()
 #+end_src
 
  
@@ -611,9 +609,8 @@ control as a way to keep track of whole projects (not just individual
 documents) in a much better-organized, comprehensive, and transparent
 fashion. Modern version control systems such as [[http://subversion.tigris.org/][Subversion]], [[http://www.selenic.com/mercurial/][Mercurial]]
 and [[http://git.or.cz/][Git]] can, if needed, manage very large projects with many branches
-spread across multiple users. As such, they require a little time to
-get comfortable with, mostly because you have to get used to some new
-concepts related to tracking your files, and then learn how your
+spread across multiple users. As such, you have to get used to some
+new concepts related to tracking your files, and then learn how your
 version control system implements these concepts. Because of their
 power, these tools might seem like overkill for individual
 users. (Again, though, many people find Word's ``Track Changes''
@@ -624,7 +621,7 @@ with your text editor.[fn:magit] Moreover, you can meet these systems
 half way. The excellent [[https://www.getdropbox.com/][DropBox]], for example, allows you to share
 files between different computers you own, or with collaborators or
 general public. But it also automatically version-controls the
-contents of these folders (using Subversion behind the scenes).
+contents of these folders.
 
 [fn:magit] Emacs comes with support for a variety of VCS systems built
 in. There's also a very good add-on package, [[http://philjackson.github.com/magit/][Magit]], devoted
@@ -686,13 +683,13 @@ up everything automatically to an external (or remote) hard disk
 without you having to remember to do anything. On Macs, Apple's *Time
 Machine* software is built in to the operating system and makes
 backups very easy. On Linux, you can use [[http://www.psychocats.net/ubuntu/backup][rsync]] for backups. It is also
-worth looking into a secure, peer-to-peer or offsite backup service
-like [[http://www.crashplan.com/][Crashplan]] or [[https://spideroak.com/][Spider Oak]]. Offsite backup means that in the event
-(unlikely, but not unheard of) that your computer /and/ your local
-backups are stolen or destroyed, you will still have copies of your
-files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.html][has remarked]], when it comes to
-losing your data ``The universe tends toward maximum irony. Don't push
-it.''
+worth looking into a secure, peer-to-peer, or offsite backup service
+like [[http://www.crashplan.com/][Crashplan]], [[https://spideroak.com/][Spider Oak]], or [[http://www.backblaze.com/][Backblaze]]. Offsite backup means that in
+the event (unlikely, but not unheard of) that your computer /and/ your
+local backups are stolen or destroyed, you will still have copies of
+your files.[fn:tornado] As Jamie Zawinski [[http://jwz.livejournal.com/801607.html][has remarked]], when it comes
+to losing your data ``The universe tends toward maximum irony. Don't
+push it.''
 
 [fn:tornado] I know of someone whose office building was hit by a
 tornado. She returned to find her files and computer sitting in a foot
