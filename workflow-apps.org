@@ -566,7 +566,7 @@ directly. I don't show the code for this here, but you can look in the
 
 #+LaTeX: \begin{listing}
 #+source: setup
-#+begin_src R 
+#+begin_src R :results output :exports both
   library(ggplot2)
   tea <- rnorm(100)
   biscuits <- tea + rnorm(100,0,1.3)
@@ -577,9 +577,11 @@ directly. I don't show the code for this here, but you can look in the
 
 #+CAPTION: A figure produced from code embedded in the source (=.org=) file for this article.
 #+LABEL:   fig:org-babel-example
-#+ATTR_LaTeX: width=5in
+#+ATTR_LaTeX: width=4.5in
 #+source: ggplot-example
-#+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :exports results
+#+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :width=4.5in :height=5in :exports results
+  theme_bw$grid.colour = "grey80"
+  theme_bw$border.colour = "gray70"
   qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits") + theme_bw()
 #+end_src
 
@@ -662,7 +664,7 @@ Version Control with Mercurial]]/ is a free, comprehensive guide to one
 of the main DVCS tools, but also provides a clear account of how
 modern version-control systems have developed, together with the main
 concepts behind them. For Git, I recommend starting [[http://git-scm.com/][at this site]] and
-following the links to the documentation.
+following the links to the documentation. 
 
 *** You don't need backups until you really, really need them
 Regardless of whether you choose to use a formal revision control
