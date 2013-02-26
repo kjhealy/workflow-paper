@@ -4,17 +4,18 @@
 #+OPTIONS: toc:nil num:nil
 #+BABEL: :results output :session
 #+LATEX_CMD: xelatex
+#+LATEX_CLASS: memarticle
 #+LATEX_HEADER: \setsansfont[Mapping=tex-text, BoldFont={* Bold SemiCondensed}, ItalicFont={* Semibold SemiCondensed Italic}]{Myriad Pro}
 #+LATEX_HEADER: \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro} 
 #+LATEX_HEADER: \setromanfont[Mapping=tex-text, Numbers=OldStyle, BoldFont={* Semibold}]{Minion Pro}
 #+LATEX_HEADER: \chapterstyle{article-4-sans}
 #+LATEX_HEADER: \published{The source file for this document is available at \url{https://github.com/kjhealy/workflow-paper}}
-
+ 
 #+BEGIN_LaTeX
 \thispagestyle{kjhgit}
 #+END_LaTeX
 
-#+begin_abstract 
+#+begin_abstract
 As a beginning graduate student in the social sciences, what sort of
 software should you use to do your work? More importantly, what
 principles should guide your choices? This article offers some
@@ -26,10 +27,10 @@ version control system. Back everything up regularly and
 automatically. Don't get bogged down by gadgets, utilities or other
 accoutrements: they are there to help you do your work, but often
 waste your time by tempting you to tweak, update and generally futz
-with them. To help you get started, I provide a short discussion of
-the [[http://kjhealy.github.com/emacs-starter-kit/][Emacs Starter Kit for the Social Sciences]], a drop-in set of useful
+with them. To help you get started, I briefly discuss 
+the [[http://kieranhealyo.org/resources/emacs-starter-kit.html][Emacs Starter Kit for the Social Sciences]], a drop-in set of useful
 defaults designed to help you get started using Emacs (a powerful,
-free text-editor) for data analysis and writing.
+free text-editor) for data analysis and writing. I also point to several alternatives. 
 #+end_abstract
 
 ** Introduction
@@ -70,6 +71,20 @@ Two remarks at the outset. First, because this discussion is aimed at
  Software. Nor shall the true path of Getting Things Done be revealed
  to you through the purchase of a nice [[http://www.moleskineus.com/][Moleskine Notebook]]. Instead, it
  lies within---unfortunately.
+
+** What Sort of Computer Should You Use?
+
+The earliest choice you will face is buying your computer and deciding what operating system to run on it. The leading candidates are Microsoft Windows, Apple's Mac OS X, and some distribution of Linux. Each of these platforms has gone some of the way---in some cases a long way---toward remedying the defects stereotypically associated with it. 
+
+I would characterize the present state of things this way. Windows dominates the market in terms of sheer numbers. Many long-standing security, design, and usability problems have been somewhat ameliorated in recent years. Mac OS X runs only on computers made by Apple (the existence of "hackintoshes" notwithstanding). In the past, it was harder to make direct comparisons between Apple machines and Windows PCs, but this is no longer the case. In general, the more similarly kitted-out a PC is to an Apple machine, the more the price difference between the two goes away.[fn:compare] However, Apple does not compete at all price-points in the market, so it will always be possible to configure a cheaper PC (with fewer features) than one Apple sells. For the same reason, it is also easier to find a PC configuration precisely tailored to some particular set of needs or preferences (e.g., with a better display but without some other feature or other) than may be available from Apple.
+
+Because Apple now runs Intel-based hardware, installing and running Windows is easy, and even catered to by Mac OS's Boot Camp utility. Beyond installing OS X and Windows side-by-side, third-party virtualization software is available (for about \$80 from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]]) that allows you to run Windows or Linux seamlessly within OS X. Thus, Apple hardware is the only setup where you can easily try out each of the main desktop operating systems.
+
+Linux is stable, secure, and free. User-oriented distributions such as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the past. The user environment is friendlier now. Installing, upgrading and updating software---a key point of frustration and time-wasting in older Linux distributions---is also much better than it used to be, as Linux's package-management systems have matured. It remains true that Linux users are much more likely to be forced at some point to learn more than they might want to about the guts of their operating system.
+
+[fn:compare] Comparisons should still take account of remaining differences in hardware design quality, and of course the OS itself.
+
+I use Mac OS X these days, and I recommend you do, too, so the discussion here reflects that choice to some extent. But the other two options are also viable alternatives. I will not spend any more time trying to convince you one way or the other. 
 
 ** Just Make Sure You Know What You Did 
 
@@ -125,73 +140,12 @@ to invest some time learning about the alternatives. Many of them are
 free to use or try out, and you are at a point in your career where
 you can afford to play with different setups without too much trouble.
 
-** What Sort of Computer Should You Use?
-
-The earliest choice you will face is buying your computer and deciding
-what operating system to run on it. The leading candidates are
-Microsoft Windows, Apple's Mac OS X, and some distribution of
-Linux. Each of these platforms has gone some of the way --- in some
-cases a long way --- toward remedying the main defects stereotypically
-associated with it. I would characterize the present state of things
-this way:
-
-- Windows dominates the market. Because of this, far more viruses and
-  malware target Windows than any other OS. Long-standing design and
-  usability problems have been somewhat ameliorated in recent
-  years. The previous major version, Windows Vista, was not very
-  popular, though its main problems were not primarily related to
-  security. Its successor, Windows 7, is generally accepted to be a
-  solid improvement.
-
-- Mac OS X runs only on computers made by Apple (the existence of
-  "hackintoshes" notwithstanding). Unlike in the past, Apple computers
-  today have the same basic hardware as computers that run
-  Windows. This has two consequences for those considering Mac OS
-  X. First, one can now make direct price comparisons between Apple
-  computers and PC alternatives (such as Dells, Lenovos, etc). In
-  general, the more similarly kitted-out a PC is to an Apple machine,
-  the more the price difference between the two goes away.[fn:compare]
-  However, Apple does not compete at all price-points in the market,
-  so it will always be possible to configure a cheaper PC (with fewer
-  features) than one Apple sells. For the same reason, it is also
-  easier to find a PC configuration precisely tailored to some
-  particular set of needs or preferences (e.g., with a better display
-  but without some other feature or other) than may be available from
-  Apple.
-
-  Second, because Apple now runs Intel-based hardware, installing and
-  running Windows is easy, and even catered to by Mac OS's Boot Camp
-  utility. Beyond installing OS X and Windows side-by-side,
-  third-party virtualization software is available (for about \$80
-  from [[http://www.vmware.com/products/fusion/][VMWare]] or [[http://www.parallels.com/][Parallels]], or free from [[http://www.virtualbox.org/][VirtualBox]]) that allows you
-  to run Windows or Linux seamlessly within OS X. Thus, Apple hardware
-  is the only setup where you can easily try out each of the main
-  desktop operating systems.
-
-- Linux is stable, secure, and free. User-oriented distributions such
-  as [[http://www.ubuntu.com/][Ubuntu]] are much better-integrated and well-organized than in the
-  past. The user environment is friendlier now. Installing, upgrading
-  and updating software --- a key point of frustration and
-  time-wasting in older Linux distributions --- is also much better
-  than it used to be, as Linux's package-management systems have
-  matured. It remains true that Linux users are much more likely to be
-  forced at some point to learn more than they might want to about the
-  guts of their operating system.
-
-[fn:compare] Comparisons should still take account of remaining
-  differences in hardware design quality, and of course the OS itself.
-
-These days, I use Mac OS X, and the discussion here reflects that
-choice to some extent. But the other two options are also perfectly
-viable alternatives, and most of the applications I will discuss are
-freely available for all of these operating systems.
-
 The dissertation, book, or articles you write will generally consist
 of the main text, the results of data analysis (perhaps presented in
 tables or figures) and the scholarly apparatus of notes and
 references. Thus, as you put a paper or an entire dissertation
-together you will want to be able to easily *edit text*, *analyze
-data* and *minimize error*. In the next section I describe some
+together you will want to be able to easily /edit text/, /analyze
+data/ and /minimize error/. In the next section I describe some
 applications and tools designed to let you do this easily. They fit
 together well (by design) and are all freely available for Windows,
 Linux and Mac OS X. They are not perfect, by any means --- in fact,
@@ -242,14 +196,14 @@ Processors: Stupid and Inefficient]].''
  are [[http://emacsformacosx.com/][GNU Emacs]] itself and [[http://aquamacs.org/][Aquamacs]]. The former is the ``purest''
  version of Emacs and does not implement many Mac conventions out of
  the box. The latter makes an effort to integrate Emacs with the Mac
- OS. For Windows users who would like to use Emacs, the developers
+ OS. I prefer GNU Emacs. For Windows users who would like to use Emacs, the developers
  maintain an [[http://www.gnu.org/software/emacs/windows/faq.html][extensive FAQ]] including information on where to download
  a copy and how to install it.
 
 While very powerful and flexible, Emacs is not particularly easy to
-learn. Indeed, to many first-time users (especially those used to
-standard applications on Windows or Mac OS) its conventions seem
-bizarre and byzantine. As applications go, Emacs is quite ancient: the
+learn. Indeed, to many first-time users---especially those used to
+standard applications on Windows or Mac OS---its conventions seem
+bizarre and byzantine. As applications go, Emacs is quite ancient. The
 first version was written by Richard Stallman in the 1970s. Because it
 evolved in a much earlier era of computing (before decent graphical
 displays, for instance, and possibly also fire), it doesn't share many
@@ -272,9 +226,7 @@ good, in fact, that Emacs has recently become quite popular amongst a
 set of software developers pretty much all of whom are much younger
 than Emacs itself. The upshot is that there has been a run of good,
 new resources available for learning it and optimizing it easily. [[http://peepcode.com/products/meet-emacs][Meet
-Emacs]], a screencast available for purchase from PeepCode, walks you
-through the basics of the application. Emacs itself also has a
-built-in tutorial.
+Emacs]], a screencast available for purchase from PeepCode, walks you through the basics of the application. Emacs itself also has a built-in tutorial.
 
 If text editors like Emacs are not concerned with formatting your
 documents nicely, then how do you produce properly typeset papers? You
@@ -337,8 +289,7 @@ the bibliography.[fn:biblatex]
 take a look at [[http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html][BibLaTeX]], a package by Philipp Lehman, together with
 [[http://biblatex-biber.sourceforge.net/][Biber]], a replacement for BibTeX. BibLaTeX and Biber are not yet
 officially stable, but they are very well-documented, in wide use, and
-will soon jointly replace BibTeX as the standard way to process
-bibliographies in LaTeX. I recommend you use them instead of older configurations (such as BibTeX and the Natbib package) which you may come across in other introductory discussions.
+will soon jointly replace BibTeX as the standard way to process bibliographies in LaTeX. I strongly recommend you use them instead of older configurations (such as BibTeX and the Natbib package) which you may come across in other introductory discussions.
 
 *[[http://www.gnu.org/software/auctex/][AUCTeX]]* and *RefTeX* are available for Emacs. These packages allow
 Emacs to understand the ins-and-outs of typesetting LaTeX documents,
@@ -355,7 +306,7 @@ tedious business. This is no longer the case. The [[http://scripts.sil.org/cms/s
 it trivially easy to use any Postscript, TrueType or OpenType font
 installed on your system. XeTeX was originally developed for use on
 the Mac, but is available now for Linux and Windows as well. If you
-want to use a variety of fonts with an absolute minimum of fuss, use
+want to use a variety of fonts with an absolute minimum of fuss, use 
 the =xelatex= command to typset your documents instead of =pdflatex=.
 
 More information on Emacs and LaTeX is readily available via Google,
@@ -410,7 +361,7 @@ in presentations.[fn:giving]
 is beyond the scope of this discussion. Suffice to say that there is
 plenty of good advice available via Google, and you should pay
 attention to it.
-                          
+
 ** Minimize Error  
 We have already seen how the right set of tools can save you time by
 automatically highlighting the syntax of your code, ensuring
@@ -457,7 +408,7 @@ work. Computer Science people have a term of art for the inevitable
 process of decay that overtakes a project simply in virtue of its
 being left alone on the hard drive for six months or more: bit--rot.
 
-*** Literate Programming with Sweave 
+*** Literate Programming with Sweave and Knitr
 A first step toward closing this gap is to use *Sweave* when doing
 quantitative analysis in R. Sweave is a /literate programming/
 framework designed to integrate the documentation of a data analysis
@@ -475,7 +426,7 @@ beginning of a chunk: =load-data= is just a label for the chunk and
 symbol.
 
 #+LaTeX: \begin{listing}
-#+begin_src sweave :exports code
+#+begin_src r :exports code
 \subsection{Some exploratory analysis}   
  In this section we do some exploratory analysis of the data. We begin
  by reading in the data file:
@@ -535,9 +486,10 @@ time. You can go a little ways toward working around this by designing
 projects so that they are relatively modular, which is good practice
 anyway. But for projects that are unavoidably large or computationally
 intensive, the add-on package =cacheSweave=, available from the R
-website, does a good job alleviating the problem.
+website, does a good job alleviating the problem. 
 
-*** Literate Programming with Org-mode
+
+*** Literate Programming with Org-mode or Knitr
 *[[http://orgmode.org/][Org-mode]]* is an Emacs mode originally designed to make it easier to
  take notes, make outlines and manage to-do lists. Very much in the
  spirit of Emacs itself, its users have extended it so that it is
@@ -556,35 +508,22 @@ website, does a good job alleviating the problem.
  can treat Org-Babel just as you would Sweave, or you can take
  advantage of the fact that it's fully part of org-mode and get all of
  the latter's functionality for free. 
-
-For example, Figure \ref{fig:org-babel-example} is generated on the
-fly from source-code blocks included in the =.org= source for this
-article. A piece of code can be executed, displayed, or both --- as in
-the case of Listing \ref{lst:babel}. Then the figure can be created
-directly. I don't show the code for this here, but you can look in the
-[[https://github.com/kjhealy/workflow-paper][source file for this article]] to see how it's done.
-
-#+LaTeX: \begin{listing}
-#+source: setup
-#+begin_src R :results output :exports both
-  library(ggplot2)
-  tea <- rnorm(100)
-  biscuits <- tea + rnorm(100,0,1.3)
-#+end_src 
-#+LaTeX: \caption{``Live'' code contained in this document.}
-#+LaTeX: \label{lst:babel}
-#+LaTeX: \end{listing}
+ 
 
 #+CAPTION: A figure produced from code embedded in the source (=.org=) file for this article.
 #+LABEL:   fig:org-babel-example
-#+ATTR_LaTeX: width=4.5in
-#+source: ggplot-example
-#+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :width=4.5in :height=5in :exports results
-  theme_bw$grid.colour = "grey80"
-  theme_bw$border.colour = "gray70"
-  qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") +  scale_y_continuous(name="Biscuits") + theme_bw()
+#+ATTR_LaTeX: width=5in
+#+src: org-babel-example
+#+begin_src R :results output graphics :file figures/ggplot-example.pdf :useDingbats FALSE :exports results
+  library(ggplot2)
+  tea <- rnorm(100)
+  biscuits <- tea + rnorm(100,0,1.3)
+  qplot(tea, biscuits) + geom_smooth(method="lm") + scale_x_continuous(name="Tea") + scale_y_continuous(name="Biscuits") + theme_bw() 
 #+end_src
 
+For example, Figure \ref{fig:org-babel-example} is generated on the fly from source-code blocks included in the =.org= source for this article. A piece of code can be executed, displayed, or both. Then the figure can be created directly. I don't show the code for this here, but you can look in the [[https://github.com/kjhealy/workflow-paper][source file for this article]] to see how it's done. 
+
+Finally, *[[http://yihui.name/knitr/][Knitr]]* is another generalization and extension of Sweave, and of particular interest if you don't want to commit to using org-mode for everything. While Sweave is designed specifically for the combination of papers written in LaTeX and data analysis conducted in R, Knitr supports a wider array of formats, and in particular is designed to make it easy to use the lightweight *[[http://en.wikipedia.org/wiki/Markdown][Markdown]]* format on the input side and produce LaTeX-based PDF reports or nice HTML as output. Knitr is available as a package for R. 
  
 *** Use Revision Control
 The task of documenting your work at the level of particular pieces of
@@ -771,57 +710,41 @@ across social science disciplines.) Most people use Microsoft Word to
 write papers, and if you're collaborating with people (people you
 can't boss around, I mean) this can be an issue. Similarly, journals
 and presses in my field often do not accept material marked up in
-LaTeX, though again there are important exceptions. Converting files
-to a format Word understands can be tedious (although it is quite
-doable).[fn:lightweight] I find these difficulties are outweighed by
-the day-to-day benefits of using these applications, on the one hand,
-and their longer-term advantages of portability and simplicity, on the
-other. Your mileage, as they say, may vary.
+LaTeX, though again there are important exceptions. 
 
-[fn:lightweight] Getting from LaTeX to Word is easiest via HTML. But
+Converting files to a format Word understands can be tedious, although it is quite
+doable. Getting from LaTeX to Word is easiest via HTML. But
 if you really want to maximize the portability of your papers or
 especially your reading notes or memos, consider writing them in a
 modern lightweight markup format. Org-mode's native format is
 effectively one of these already, and it provides built-in support for
 export to many others. An org-mode file can also be exported easily to
 rich-text or HTML, and from there Word or Google Docs will open
-it. Other options for lightweight markup include [[http://en.wikipedia.org/wiki/Markdown][Markdown]] or its close
-relation, [[http://fletcherpenney.net/MultiMarkdown][MultiMarkdown]]. Documents written in these formats are easy
-to read in their plain-text form but can be simply and directly
-converted into HTML, Rich Text, LaTeX, Word, or other
-formats. TextMate has good support for Markdown and MultiMarkdown,
-allowing you to do these conversions more or less automatically. John
-MacFarlane's [[http://johnmacfarlane.net/pandoc/][Pandoc]] is a powerful tool that can read markdown and
-(subsets of) reStructuredText, HTML, Org, and LaTeX; and it can write
-to MarkDown, reStructuredText, HTML, LaTeX, ConTeXt, RTF, DocBook XML,
-groff man, and S5 HTML slide shows. Pandoc is terrifically useful and
-I recommend checking it out. Lightweight markup languages like
-Markdown and Textile have a harder time dealing with some of the
-requirements of scholarly writing, especially the machinery of
-bibliographies and citations. If they could handle this task elegantly
-they would be almost perfect, but in practice this would probably just
-turn them back into something much less lightweight. Even here,
-though, good progress is being made as Pandoc will soon include
-support for citations.
+it. 
 
+Other options for lightweight markup include [[http://en.wikipedia.org/wiki/Markdown][Markdown]] or its close relation, [[http://fletcherpenney.net/MultiMarkdown][MultiMarkdown]]. Documents written in these formats are easy to read in their plain-text form but can be simply and directly converted into HTML, Rich Text, LaTeX, Word, or other formats. In recent years Markdown has almost become a standard for plain-text markup, especially where the target output is HTML. As a result it's very widely supported. Most major editors have syntax and other support for Markdown. Annoyingly, working in Markdown is not easily integrated with org-mode. 
+
+For conversion of plain-text documents, by far the most useful and powerful tool available is John
+MacFarlane's [[http://johnmacfarlane.net/pandoc/][Pandoc.]] It is a command-line utility that can read Markdown and (subsets of) reStructuredText, HTML, Org, and LaTeX; and it can write to MarkDown, reStructuredText, ePub, HTML, LaTeX, ConTeXt, RTF, DocBook XML,
+groff man, and S5 HTML slide shows. Pandoc is terrifically useful and I recommend checking it out. There is an Emacs mode for Markdown and Pandoc that integrates them into the editor. 
+
+Lightweight markup languages like Markdown and Textile have a harder time dealing with some of the requirements of scholarly writing, especially the machinery of bibliographies and citations. If they could handle this task elegantly they would be almost perfect, but in practice this would probably just turn them back into something much less lightweight. Even here, though, good progress is being made and the most recent version of Pandoc includes
+pretty good support for citations. Markdown and R together with Knitr and Pandoc form a very useful toolchain. 
 
 *** Some Alternatives
 There are many other applications you might put at the center of your
 workflow, depending on need, personal preference, willingness to pay
 some money, or desire to work on a specific platform. For text
 editing, especially, there is a plethora of choices. On the Mac,
-quality editors include [[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers),
-[[http://smultron.sourceforge.net/][Smultron]], and [[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). TextMate has
-strong support for LaTeX and good (meaning, ESS-like) support for
-R. Because it is a modern application written specifically for the Mac
+quality editors include [[http://www.barebones.com/products/bbedit/index.shtml][BBEdit]] (beloved of many web developers, but with relatively little support for R beyond syntax highlighting), and [[http://macromates.com/][TextMate]] (shown in Figure \ref{fig:tm}). TextMate has strong support for LaTeX and good (meaning, ESS-like) support for R. Because it is a modern application written specifically for the Mac
 it can take advantage of features of OS X that Emacs cannot, and is
 much better integrated with the rest of the operating system. It also
 has good support for many of the ancillary applications discussed
-above, such as version control systems.[fn:tm2] On Linux, an
-alternative to Emacs is [[http://www.eng.hawaii.edu/Tutor/vi.html][vi]] or [[http://www.vim.org/][Vim]], but there are many others. For
+above, such as version control systems. After a delay somewhat reminiscent of the wait for the second coming of Jesus Christ, [[https://github.com/textmate/textmate][TextMate 2]] was released as an open-source project late in 2012, and now appears to be under active development again.  On Linux, the standard alternative to Emacs is [[http://www.eng.hawaii.edu/Tutor/vi.html][vi]] or [[http://www.vim.org/][Vim]], but there are many others. For
 Windows there is [[http://www.textpad.com/][Textpad]], [[http://www.winedt.com/][WinEdt]], [[http://www.ultraedit.com/][UltraEdit]], and [[http://notepad-plus.sourceforge.net/uk/site.htm][NotePad++]] amongst
 many others. Most of these applications have strong support for LaTeX
 and some also have good support for statistics programming.
+
 
 #+CAPTION: An earlier version of this document being edited in TextMate.
 #+LABEL:   fig:tm
@@ -829,9 +752,17 @@ and some also have good support for statistics programming.
 [[file:figures/textmate.png]]
 
 
-[fn:tm2] Its next major version, TextMate 2, has been in development
-for a very long time and is awaited with a mixture of near-religious
-hope, chronic anxiety and deep frustration by users of the original.
+[[http://www.sublimetext.com/][Sublime Text 2]] (and its upcoming version 3 successor) is a relatively recent entry into the world of powerful cross-platform text editors. Available for the three major OS platforms, under active development, and with an increasingly large user base, Sublime Text is fast, fluid, contains a powerful plugin system and, uniquely amongst alternatives to Emacs and ESS, includes a [[http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop][REPL]] that allows R to be run easily inside the editor.[fn:tmR] Sublime Text 2 costs $70. 
+
+[fn:tmR] TextMate also has some support for this way of working, but it is conceived and accomplished a little differently.
+
+Finally, for a different approach to working with R, consider [[http://www.rstudio.com][RStudio]]. It is not a text editor but rather an IDE, an integrated development environment---like a fully-windowed version of ESS, where figures and other output is automatically produced and displayed, and data and script files are managed via various windows and menus. It is available for Mac OS X, Windows, and Linux. It intergrates nicely with R's help files, and it also understands Sweave and Git. It is the easiest way by far to get into using R. 
+
+#+CAPTION: RStudio running on Windows.
+#+LABEL:   fig:rs
+#+ATTR_LaTeX: width=5in
+[[file:figures/rstudio.png]]
+
 
 For statistical analysis in the social sciences, the main alternative
 to R is [[http://www.stata.com/][Stata]]. Stata is not free, but like R it is versatile,
@@ -841,10 +772,7 @@ versions its graphics capabilities have improved a great deal. ESS can
 run Stata inside Emacs in the same way as it can do for R. Other
 editors can also be made to work with Stata: Jeremy Freese provides an
 [[http://www.jeremyfreese.com/#other%20research][UltraEdit syntax highlighting file for Stata]].  There is a [[http://www.winedt.org/Config/modes/Stata.php][Stata mode]]
-for WinEdt. Friedrich Huebler has a [[http://mysite.verizon.net/huebler/2005/20050310_Stata_editor.html][guide for integrating Stata with
-programming editors]]. Gabriel Rossman's blog [[http://codeandculture.wordpress.com/tag/stata/][Code and Culture]] has many
-examples of using Stata in the day-to-day business of analyzing
-sociological data.
+for WinEdt. Friedrich Huebler has a [[http://mysite.verizon.net/huebler/2005/20050310_Stata_editor.html][guide for integrating Stata with programming editors]]. Gabriel Rossman's blog [[http://codeandculture.wordpress.com/tag/stata/][Code and Culture]] has many examples of using Stata in the day-to-day business of analyzing sociological data.
 
 Amongst social scientists, revision control is perhaps the least
 widely-used of the tools I have discussed. But I am convinced that it
@@ -901,4 +829,3 @@ the first one broke. It never did.
 GNU-Shaped Devil]]" makes this point very well.
 
 \printbibliography
-
