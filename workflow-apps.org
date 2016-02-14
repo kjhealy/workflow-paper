@@ -32,7 +32,7 @@ the [[http://kieranhealyo.org/resources/emacs-starter-kit.html][Emacs Starter Ki
 defaults designed to help you get started using Emacs (a powerful,
 free text-editor) for data analysis and writing. I also point to several alternatives. 
 #+end_abstract
-
+ 
 ** Introduction
 You can do productive, maintainable and reproducible work with all
 kinds of different software set-ups.\symbolfootnote[0]{Email:
@@ -148,7 +148,7 @@ together you will want to be able to easily /edit text/, /analyze
 data/ and /minimize error/. In the next section I describe some
 applications and tools designed to let you do this easily. They fit
 together well (by design) and are all freely available for Windows,
-Linux and Mac OS X. They are not perfect, by any means --- in fact,
+Linux and Mac OS X. They are not perfect, by any means---in fact,
 some of them can be awkward to learn. But graduate-level research and
 writing can also be awkward to learn. Specialized tasks need
 specialized tools and, unfortunately, although they are very good at
@@ -175,7 +175,7 @@ writing a scholarly paper or a dissertation, a good text editor can
 make it easier to maintain control over the structure of your
 document, and help ensure that cross-references and other
 paraphernalia are correct. Just as the actual numbers are crunched by
-your stats program --- not your text editor --- the typesetting of
+your stats program---not your text editor---the typesetting of
 your paper is handled by a specialized application, too. Perhaps more
 importantly, a text editor /manipulates plain text/ as opposed to
 binary file formats like =.doc= or =.pdf=, and plain text is the
@@ -316,7 +316,7 @@ started. \textcite{kopka03:_guide_latex} and
 LaTeX.
      
 ** Analyze Data and Present Results 
-You will probably be doing some --- perhaps a great deal --- of
+You will probably be doing some---perhaps a great deal---of
 quantitative data analysis. *R* is an environment for statistical
 computing. It's exceptionally well-supported, continually improving,
 and has a very active expert-user community who have produced many
@@ -681,7 +681,7 @@ use Sweave.
 
 None of these applications is perfect. They are powerful, but they can
 be hard to learn. However, you don't have to start out using all of
-them at once, or learn everything about them right away --- the only
+them at once, or learn everything about them right away---the only
 thing you /really/ need to start doing immediately is keeping good
 backups. There are a number of ways to try them out in whole or in
 part. You could try LaTeX first, using any editor. Or you could try
@@ -795,8 +795,8 @@ write a paper, you need to be organized enough to have read the right
 literature, maybe collected some data, and most importantly asked an
 interesting question in the first place. No amount of software is
 going to solve those problems for you. Too much concern with the
-details of your setup hinders your work. Indeed --- and I speak from
-experience here --- this concern is itself a kind self-imposed
+details of your setup hinders your work. Indeed---and I speak from
+experience here---this concern is itself a kind self-imposed
 distraction that placates work-related anxiety in the short term while
 storing up more of it for later.[fn:merlin] On the hardware side,
 there's the absurd productivity counterpart to the hedonic treadmill,
@@ -812,7 +812,7 @@ things you want to make, of finding the answers to the questions that
 brought you to graduate school. The process of idea generation and
 project management can be run well, too, and perhaps even the business
 of choosing what the projects should be in the first place. But this
-is not the place --- and I am not the person --- to be giving advice
+is not the place---and I am not the person---to be giving advice
 about that.
 
 All of which is just to reiterate that it's the principles of workflow
