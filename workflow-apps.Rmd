@@ -1,10 +1,11 @@
 ---
-title: Choosing Your Workflow Applications
+title: The Plain Person's Guide to Plain Text Social Science
 author:
 - name: Kieran Healy
   affiliation: Duke University
   email: kjhealy@soc.duke.edu
 date: February 2016
+thanks: "This is an updated and expanded version of 'Choosing Your Workflow Applications' (2013). The main difference is an increased emphasis on Rmarkdown and Knitr rather than Org-mode."
 abstract: "As a beginning graduate student in the social sciences, what sort of software should you use to do your work? More importantly, what principles should guide your choices? This article offers some answers. The short version is: write using a good text editor (there are several to choose from); analyze quantitative data with R or Stata; minimize errors by storing your work in a simple format (plain text is best) and documenting it properly. Keep your projects in a version control system. Back everything up regularly and automatically. Don't get bogged down by gadgets, utilities or other accoutrements: they are there to help you do your work, but often waste your time by tempting you to tweak, update and generally futz with them. To help you get started, I briefly discuss the Emacs Starter Kit for the Social Sciences, a drop-in set of useful defaults designed to help you get started using Emacs (a powerful, free text-editor) for data analysis and writing. I also point to several alternatives."
 ...
 
@@ -59,6 +60,32 @@ Fancy Software. Nor shall the true path of Getting Things Done be
 revealed to you through the purchase of a nice [Moleskine
 Notebook](http://www.moleskineus.com/). Instead, it lies
 within---unfortunately.
+
+
+## What's the Problem?
+
+The problem is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this extremely sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr Drang, a consulting engineer and blogger you should be reading:
+
+> I don’t write fiction, but I can imagine that a lot of fiction writing can be done without any reference materials whatsoever. Similarly, a lot of editorials and opinion pieces are remarkably fact-free; these also can spring directly from the writer’s head. But the type of writing I typically do—mostly for work, but also here—is loaded with facts. I am constantly referring to photographs, drawings, experimental test results, calculations, reports written by others, textbooks, journal articles, and so on. These are not distractions; they are essential to the writing process.
+> 
+> And it’s not just reference material. Quite often I need to make my own graphs and drawings to include in a report. Because the text and the graphics are all part of a coherent whole, I need to go back and forth between the two; the words inform the pictures and the pictures inform the words. This is not the Platonic ideal of a clean writing environment—a cup of coffee on an empty desk in a white room—that you see in videos for distraction-free editors.
+>
+> Some of the popularity of these editors is part of the backlash against multitasking, but people are confusing themselves with their computers. When I’m writing a report, that is my single task, and I bring to bear whatever tools are necessary to complete it. That my computer is multitasking by running many programs simultaneously isn’t a source of confusion or distraction, it’s the natural and efficient way for me to get my one task done.
+
+A lot of academic writing is just like this. It is difficult to manage. It's even worse when you have collaborators and other contributors. So, what to do?
+
+## The Office Model and the Engineering Model 
+Let me make a crude distinction. There are "Office Type" solutions to this problem, and there are "Engineering Type" solutions. Don't get hung up on the distinction or the labels. Office solutions tend towards a cluster of tools where something like Microsoft Word is at the center of your work. A Word file or set of files is the most "real" thing in your project. Changes to your work are tracked inside that file or files. Citation and reference managers plug into them. The outputs of data analyses---tables, figures---get dropped into them or kept alongside them. The master document may be passed around from person to person or edited and updated in turn. The final output is exported from it, perhaps to PDF or to HTML, but maybe most often the final output just *is* the `.docx` file, cleaned up and with the track changes feature turned off.
+
+In the Engineering model, meanwhile, plain text files are at the center of your work. The most "real" thing in your project will either be those files or, more likely, the Git, Mercurial, or SVN repository that controls the project. Changes are tracked outside the files. Data analysis is managed in code that produces outputs in (ideally) a known and reproducible manner. Citation and reference management will likely also be done in plain text, as with a BibTeX `.bib` file. Final outputs are assembled from the plain text and turned to `.tex`, `.html`, or `.pdf` using some kind of typesetting or conversion tool. Very often, because of some unavoidable facts about the world, the final output of this kind of solution is also a `.docx` file.
+
+This distinction is meant to capture a tendency in organization, not a rigid divide---still less a sort of personality. Obviously it is possible organize things on the Office model. (Indeed, it's the dominant way.) Applications like [Scrivener](http://www.literatureandlatte.com), meanwhile, combine elements of the two approaches. Scrivener embraces the "bittyness" of large writing projects in an effective way, and can spit out clean copy in a variety of formats. Scrivener is built for people writing lengthy fiction (or qualitative non-fiction) rather than anything with quantitative data analysis, so I have never used it extensively. Microsoft Word, meanwhile, still rules large swathes of the Humanities and the Social Sciences, and the production process of many publishers. So even if you prefer plain text for other reasons---especially in connection with project management and data analysis---the routine need or obligation to provide a Word document to someone is one of the main reasons to want to be able to easily convert things. HTML is a great lingua franca.
+
+I'm more or less stuck in the Engineering model. But I also co-author with people who use the Office model. In those cases, it is easier for me to use their software than for them to use mine. We tend to collaborate using Google Docs or some other service that allows for simultaneously editing the master copy of a document. It's not ideal, but it is better than not collaborating. There is little to be gained from plain-text dogmatism in a `.docx` world.
+
+When I write things by myself, or co-author with someone I can
+imperiously boss around, I want to do everything in plain text. In the past---e.g. for my dissertation, and my [book](http://www.amazon.com/Last-Best-Gifts-Altruism-Market/dp/0226322378)---I wrote everything in LaTeX. This led to me making some [custom LaTeX templates and style files](https://github.com/kjhealy/latex-custom-kjh) meant to produce good-looking PDFs. I try to write in Markdown rather than `.tex` format when I can, because in principle it is simpler and more easily convertible to many different kinds of output. I discuss these and more tools below. First, let's begin with a brief discussion of computer hardware.
+
 
 ## What Sort of Computer Should You Use?
 
@@ -198,7 +225,7 @@ opposed to binary file formats like `.doc` or `.pdf`, and plain text is
 the easiest format to manage, control, back up, and come back to later
 with some other application.
 
-**Emacs** is a text editor, in the same way the blue whale is a
+Emacs is a text editor, in the same way the blue whale is a
 mammal. Emacs is very powerful, and can become almost a complete
 working environment in itself, should you so wish. (I don't really
 recommend it.) Combining Emacs with some other applications and
@@ -223,15 +250,17 @@ first version was written by Richard Stallman in the 1970s. Because it
 evolved in a much earlier era of computing (before the development of
 decent graphical displays, for instance, and window managers, and
 possibly also fire), it doesn't share many of the conventions of
-modern applications.[^emacs]
-
-[^emacs]: Emacs offers many opportunities to waste your time learning its particular conventions, tweaking its settings, and generally customizing it. There are several good alternatives on each major platform, and I discuss some of them below.
+modern applications. Like most powerful text editors, Emacs offers
+many opportunities to waste your time learning its particular
+conventions, tweaking its settings, and generally customizing it.
+There are several good alternatives on each major platform, and I
+discuss some of them below.
 
 
 ### Analyze Data and Present Results
 
 You will probably be doing some---perhaps a great deal---of
-quantitative data analysis. **R** is an environment for statistical
+quantitative data analysis. R is an environment for statistical
 computing. It's exceptionally well-supported, continually improving,
 and has a very active expert-user community who have produced many
 add-on packages. R has the ability to produce sophisticated and
@@ -241,12 +270,12 @@ number of excellent reference and teaching texts that illustrate its
 use. These include @dalgaard02introdstatisr,
 @venables02moderappliedstatissplus, @maindonald03dataanalygraphusingr,
 @fox02rspluscompanappliedregres, @frank01regresmodelstrat, and
-@gelmanhill07dataanalysis. Although it is a command-line tool at its
+@gelmanhill07:dataanalysis. Although it is a command-line tool at its
 core, it has a good graphical interface as well. You can download it
 from [The R Project Homepage](http://www.r-project.org/).
 
-R can be used directly within Emacs by way of a package called **ESS**
-(for "Emacs Speaks Statistics"). As shown in Figure \ref{fig:ess},
+R can be used directly within Emacs by way of a package called ESS
+(for "Emacs Speaks Statistics"). As shown in Figure 2,
 it allows you to work with your code in one Emacs frame and a live R
 session in another right beside it. Because everything is inside Emacs,
 it is easy to do things like send a chunk of your code over to R using a
@@ -318,12 +347,12 @@ for the inevitable process of decay that overtakes a project simply in
 virtue of its being left alone on the hard drive for six months or more:
 bit--rot.
 
-### Reproducible Programming with RMarkdown and Knitr ###
+### Reproducible Programming with RMarkdown and knitr ###
 
 A first step toward closing this gap is to use
-**[RMarkdown](http://rmarkdown.rstudio.com)** and 
-**[knitr](http://yihui.name/knitr/)** when doing quantitative analysis
-in R. **[Markdown](http://en.wikipedia.org/wiki/Markdown)** is a way
+[RMarkdown](http://rmarkdown.rstudio.com) and 
+[knitr](http://yihui.name/knitr/) when doing quantitative analysis
+in R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way
 of writing plain text that includes information about the formatting
 of your document. RMarkdown is a way to incorporate R code into this
 process. This approach is designed to integrate the plain-text
@@ -352,7 +381,7 @@ data, Sweave can make generating consistent and reliable reports much
 easier.
 
 Rmarkdown is one of several "literate programming" formats.
-**[Org-mode](http://orgmode.org/)** is an Emacs mode originally
+[Org-mode](http://orgmode.org/) is an Emacs mode originally
 designed to make it easier to take notes, make outlines and manage
 to-do lists. Very much in the spirit of Emacs itself, its users have
 extended it so that it is capable of all kinds of other things, too,
@@ -370,10 +399,9 @@ other formats quite easily. Examples of it in use can be seen at the
 
 For example, Figure \ref{fig:example-figure} is generated on the fly
 from source-code blocks included in the `.Rmd` source for this article.
-A piece of code can be executed, displayed, or both (as here). 
+A piece of code can be executed, displayed, or both. Here we hide the code that makes the figure, even though it is contained in the plain-text source. 
 
-
-```{r example-figure, fig.width=8, fig.height=5, fig.cap="A figure produced from code embedded in the source-file for this document. \\label{fig:example-figure}", results="show"}
+```{r example-figure, fig.width=8, fig.height=5, fig.cap="A figure produced from code embedded in the source-file for this document. \\label{fig:example-figure}", results="show", echo=FALSE}
 
 library(ggplot2)
 tea <- rnorm(100)
@@ -384,6 +412,22 @@ scale_y_continuous(name="Biscuits") + theme_bw()
 
 ```
 
+But we could also make it so that we displayed what we wrote. Like this: 
+
+
+```{r example-analysis, echo=TRUE}
+
+x <- rnorm(10, 100, 10)
+
+summary(x)
+
+```
+
+Knitr and RMarkdown make it easy to produce HTML output, too. This
+makes for easy portability, conversion, and quick previewing while
+editing.
+
+
 ### Use Revision Control
 
 The task of documenting your work at the level of particular pieces of
@@ -392,7 +436,7 @@ over time, as projects grow and change. This can pose a challenge to the
 Literate Programming model. Moreover, what if you are not doing
 statistical analysis at all, but still want to keep track of your work
 as it develops? The best thing to do is to institute some kind of
-**version** **control** **system** to keep a complete record of changes
+version control system to keep a complete record of changes
 to a file, a folder, or a project. This can be used in conjunction with
 or independently of a documentation method like Sweave. A good version
 control system allows you to easily "rewind the tape" to earlier
@@ -473,7 +517,7 @@ prone to magical thinking, you will not do this responsibly by yourself.
 This is why the most useful backup systems are the ones that require a
 minimum amount of work to set up and, once organized, back up everything
 automatically to an external (or remote) hard disk without you having to
-remember to do anything. On Macs, Apple's **Time Machine** software is
+remember to do anything. On Macs, Apple's Time Machine software is
 built in to the operating system and makes backups very easy. On Linux,
 you can use [rsync](http://www.psychocats.net/ubuntu/backup) for
 backups. It is also worth looking into a secure, peer-to-peer, or
@@ -487,7 +531,126 @@ remarked](http://jwz.livejournal.com/801607.html), when it comes to
 losing your data \`\`The universe tends toward maximum irony. Don't push
 it.''
 
-## Pulling it Together
+## Pulling it all Together
+
+### What I want to do
+I write sociology papers. Those papers cite books and articles. They often incorporate tables and figures created in [R](http://www.r-project.org). What I want to do is quickly turn a markdown file containing things like that into a properly formatted scholarly paper, without giving up any of the typographical quality or necessary scholarly apparatus (on the output side) or the convenience and convertibilty of markdown (on the input side). Most directly, I want to easily produce good-looking output from the same source in both HTML and PDF formats. And I want to do that with an absolute minimum of---ideally, *no*---post-processing of the output beyond that basic conversion step.
+
+For transforming a mixture of R code and text into a markdown file, where the code chunks are replaced by their output, the tool of choice is Yihui Xie's [knitr](http://yihui.name/knitr/). For converting markdown to HTML and PDF, the best thing available is John MacFarlane's superb [Pandoc](http://johnmacfarlane.net/pandoc/). Pandoc can convert plain text in several markup formats into many output formats. Now, managing citations and references---including internal references, such as Figure, Table, and Equation numbering---has long been the Achilles heel of workflows built around "lightweight" markup formats like markdown. It was one of the places where LaTeX really worked much better, especially in conjunction with the editing facilities of something like [AucTeX](https://www.gnu.org/software/auctex/) and [RefTeX](http://www.gnu.org/software/auctex/reftex.html). Markdown is not designed to manage the machinery of academic papers or scholarly books. That isn't what it was made to do. This fact long kept me from being able to use it as extensively as I'd like. But thanks to John's (and other contibutors') continuing and stellar work on `pandoc`, the balance has begun to shift. 
+
+The document flow I want is shown in Figure 3. I promise it is less insane than it appears.
+
+![A plain-text document toolchain.](figures/workflow-wide.pdf){#fig:workflow-diagram}
+
+There are still limitations to what markdown and pandoc can conveniently do. But being able to produce good HTML, LaTeX, and PDF in one step from the same source is a very attractive prospect.
+
+### How I almost do it
+Describing this all at once will probably make it sound a little crazy. But, at bottom, there are just two separable pieces: knitr converts `.Rmd` files to `.md` files, and pandoc converts `.md` files to HTML, .tex, and PDFs. In both cases we use a few switches, templates and configuration files to do that nicely. If you are like me, you probably have most or all of these tools installed anyway, and you are using them separately for different things. The thing is just to connect them a little. I assume you have you have a standard set of unix command-line tools available (e.g. Apple's developer tools), along with R, knitr, pandoc, and a TeX distribution. Note that the default set-ups for knitr and pandoc---the two key pieces of the process---will do most of what we want with no further tweaking. What I'm showing you here are just the relevant options to use and switches to set for these tools, together with some templates and document samples showing how nice-looking output can be produced in practice.
+
+I write everything in Emacs, but that doesn't matter. Use whatever text editor you like and just learn the hell out of it. My [Emacs Starter Kit for the Social Sciences](http://kieranhealy.org/resources/emacs-starter-kit.html) sets up Emacs to be aware of the tools discussed here. For present purposes, one of its nice features is that it turns on RefTeX mode for markdown files, and lets you easily cite items from your `.bib` file in the format pandoc expects. But, again, the text editor doesn't matter.
+
+The [custom LaTeX style files](https://github.com/kjhealy/latex-custom-kjh) were originally put together to let me write nice-looking `.tex` files directly, but now they just do their work in the background. Pandoc will use them when it converts things to PDF. The heavy lifting is done by the [org-preamble-pdflatex.sty](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-org-mode)  and [memoir-article-styles](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-memoir) files. If you install these files where LaTeX can find them---i.e., if you can compile a LaTeX document [based on this example](https://github.com/kjhealy/latex-custom-kjh/blob/master/templates/basic/article.tex)---then you are good to go. My [BibTeX master file](https://github.com/kjhealy/socbibs) is also available, but you will probably want to use your own, changing references to it in the templates as appropriate. Second, we have the custom pandoc stuff. [Here is the repository for that](https://github.com/kjhealy/pandoc-templates). Much of the material there is designed to go in the `~/.pandoc/` directory, which is where pandoc expects to find its configuration files.
+
+Inside the pandoc-templates repository there's a [folder with some examples](https://github.com/kjhealy/pandoc-templates/tree/master/examples) of how these pieces go together. Let's start with a straightforward markdown file---no R code yet, so nothing above the `article.md` line in the picture above. The sample `article-markdown.md` file looks like this: 
+
+~~~~~~~ {#yamlheader .yaml}
+---
+title: "A Pandoc Markdown Article Starter"
+author:
+- name: Kieran Healy
+  affiliation: Duke University
+  email: kjhealy@soc.duke.edu
+- name: Joe Bloggs
+  affiliation: University of North Carolina, Chapel Hill
+  email: joebloggs@unc.edu
+date: January 2014
+abstract: "Lorem ipsum dolor sit amet"
+bibliography: <!-- \bibliography{/Users/kjhealy/Documents/bibs/socbib-pandoc.bib} -->
+...
+
+# Introduction
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua [@fourcade13classsituat]. Notice that citation.
+
+# Theory
+Lorem ipsum dolor sit amet, consectetur adipisicing 
+elit, sed do eiusmod tempor incididunt ut labore et 
+dolore magna aliqua [@fourcade13classsituat].
+
+~~~~~~~
+
+The bit at the top is YAML metadata, which pandoc understands. The
+HTML and latex templates
+[in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/tree/master/templates)
+are set up to use this metadata properly. Pandoc will take care of the
+citations directly. There is more than one way to have pandoc manage
+citations, but here we just use the most self-contained route. (The
+`bibliography` line is not needed by pandoc at all: it is a hack to
+allow RefTeX to easily insert citations in the document while editing
+in Emacs.) 
+
+Simple documents can be contained in a single `.md` file. Documents
+including data analysis start life as `.Rmd` files which are then
+knitted into `.md` files and converted to PDF or HTML. I use a
+[Makefile](http://kbroman.org/minimal_make/) to control this process.
+Make is a command-line tool that manages the production of a file (the
+_target_) that has a number of _prerequisites_. In this case, the PDF
+or HTML file is the target, and the various figures and data tables
+are the prerequisites---if the code that produces them changes, the
+final document will change too. `Make` starts from the final document
+and works backwards along the chain of prerequisites, re-compiling or
+re-creating them as needed. It's a powerful tool. The
+[Makefile](https://github.com/kjhealy/pandoc-templates/blob/master/examples/Makefile)
+in the examples directory will convert any markdown files in the
+working directory to HTML, .tex, and PDF output. Just type `make` at
+the terminal to have it do everyhing, or e.g. `make html` to just
+produce the HTML file but not a PDF. If things go as they should, the
+HTML output from the example will look like Figure \ref{fig:pandoc-html}. 
+
+![HTML Output sample](figures/pandoc-template-html-output-sample.png){#fig:pandoc-html}
+
+The PDF output, meanwhile, [can be viewed here](http://kieranhealy.org/files/misc/article-markdown.pdf). Both look quite nice. The relevant sections of the Makefile show the pandoc commands that generate the output files from the markdown input. The Makefile section for producing PDF output looks like this:
+
+
+~~~~~~~~~~~~~~ {#sh .bash}
+
+pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
+--latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template \ 
+--filter pandoc-citeproc \
+--csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB)
+
+~~~~~~~~~~~~~~
+
+This contains some variables that are set at the top of the Makefile. On my computer, the command as actually executed looks like this:
+
+
+~~~~~~~~~~~~~~ {#sh .bash}
+
+pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
+--latex-engine=pdflatex --template=/Users/kjhealy/.pandoc/templates/latex.template \ 
+--filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl \
+--bibliography=/Users/kjhealy/Documents/bibs/socbib-pandoc.bib
+
+~~~~~~~~~~~~~~
+
+Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
+
+The examples directory [also includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the knitr project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, launch R in the working directory, load knitr, and process the file. You will also need the `ascii`, `memisc`, and `ggplot2` libraries to be available.
+
+If things are working properly, then a markdown file called `article-knitr.md` will be produced, together with some graphics in the `figures/` subfolder and some working files in the `cache/` folder. We set things up in the `.Rmd` file so that knitr produces both PNG and PDF versions of whatever figures are generated by R. That prepares the way for easy conversion to HTML and LaTeX. Once the `article-knitr.md` file is produced, HTML, .tex, and PDF versions of it can be produced as before, by typing `make` at the command line. You can also run the pandoc commands manually, of course, or run pandoc from inside R via knitr's `pandoc()` helper function, or set your editor up to run `make` for you as needed, if it can do that.
+
+### Using Marked
+In everyday use,  I find Brett Terpstra's [Marked.app](http://marked2app.com) to be a very useful way of previewing text while writing. Marked shows you your markdown files as HTML, updating on the fly whenever the file is saved. It supports `pandoc` as a custom processor. Essentially, you tell it to run a `pandoc` command like the one above to generate its previews, instead of its built-in markdown processor. You do this in the "Advanced" tab of Marked's preferences. The "Path" field in the preferences dialog contains the full path to `pandoc`, and the "Args" field contains all the relevant command switches---in my case, the same as in the Makefile above.
+
+![Marked's Advanced Preferences](figures/marked-prefs-ss.png){#fig:marked-prefs}
+
+When editing your markdown file in your favorite text editor, you point Marked at the file and get a live preview. You can add the [CSS files in the pandoc-templates repo](https://github.com/kjhealy/pandoc-templates/blob/master/marked/kultiad-serif.css) to the list of Custom CSS files Marked knows about, via the "Style" tab in the Preferences window. That way, Marked's preview will look the same as the HTML file that's produced. 
+
+The upshot of all of this is powerful editing using Emacs, [ESS](http://ess.r-project.org), R, and other tools; flexible conversion using pandoc; quick and easy previewing via HTML and Marked; and high-quality PDF typesetting at the same time (or whenever needed)---all generated directly from plain text and including almost all of what most of the scholarly papers I write need to include. While this may seem quite complex when laid out in this way, from my point of view the result is very straightforward. I just live in my text editor, the various scripts and settings do their work quietly, as they should, and I get the formatted output I want. 
+
+
+### An Emacs Starter Kit for the Social Sciences
 
 A step-by-step guide to downloading and installing every piece of
 software I've mentioned so far is beyond the scope of this discussion.
@@ -578,40 +741,7 @@ support for export to many others. An org-mode file can also be
 exported easily to rich-text or HTML, and from there Word or Google
 Docs will open it.
 
-Other options for lightweight markup include
-[Markdown](http://en.wikipedia.org/wiki/Markdown) or its close
-relation, [MultiMarkdown](http://fletcherpenney.net/MultiMarkdown).
-Documents written in these formats are easy to read in their
-plain-text form but can be simply and directly converted into HTML,
-Rich Text, LaTeX, Word, or other formats. In recent years Markdown
-has almost become a standard for plain-text markup, especially where
-the target output is HTML. As a result it's very widely supported.
-Most major editors have syntax and other support for Markdown.
-Annoyingly, working in Markdown is not easily integrated with
-org-mode.
-
-For conversion of plain-text documents, by far the most useful and
-powerful tool available is John MacFarlane's
-[Pandoc.](http://johnmacfarlane.net/pandoc/) It is a command-line
-utility that can read Markdown and (subsets of) reStructuredText,
-HTML, Org, and LaTeX; and it can write to MarkDown,
-reStructuredText, ePub, HTML, LaTeX, ConTeXt, RTF, DocBook XML,
-groff man, and S5 HTML slide shows. Pandoc is terrifically useful
-and I recommend checking it out. There is an Emacs mode for Markdown
-and Pandoc that integrates them into the editor.
-
-Lightweight markup languages like Markdown and Textile have a harder
-time dealing with some of the requirements of scholarly writing,
-especially the machinery of bibliographies and citations. If they
-could handle this task elegantly they would be almost perfect, but
-in practice this would probably just turn them back into something
-much less lightweight. Even here, though, good progress is being
-made and the most recent version of Pandoc includes pretty good
-support for citations. Markdown and R together with Knitr and Pandoc
-form a very useful toolchain.
-
-
-### Some Alternatives
+### Alternatives Might Be Better
 
 There are many other applications you might put at the center of your
 workflow, depending on need, personal preference, willingness to pay
@@ -653,14 +783,19 @@ that allows R to be run easily inside the editor.[^9] Sublime Text 2
 costs \$70.
 
 Finally, for a different approach to working with R, consider
-[RStudio](http://www.rstudio.com). It is not a text editor but
-rather an IDE, an integrated development environment---like a
-fully-windowed version of ESS, where figures and other output is
-automatically produced and displayed, and data and script files are
-managed via various windows and menus. It is available for Mac OS X,
-Windows, and Linux. It intergrates nicely with R's help files, and
-it also understands Sweave and Git. It is the easiest way by far to
-get into using R.
+[RStudio](http://www.rstudio.com). Although it appears quite late in
+this discussion, it might well be your first choice. I use it when
+teaching. It is not a text editor but rather an "IDE", an integrated
+development environment---like a fully-windowed version of ESS, where
+figures and other output is automatically produced and displayed, and
+data and script files are managed via various windows and menus. It is
+available for Mac OS X, Windows, and Linux. It intergrates nicely with
+R's help files. It understands Knitr and Git. It has full support for
+Rmarkdown and generates HTML, PDF, and other formats for you very
+easily. It also makes it easy to automatically publish workbooks
+online via its [RPubs platform](https://rpubs.com). It is the easiest
+way by far to get into using R, and provides a straightforward way to
+manage many of the tools already discussed here.
 
 ![RStudio running on Windows.](figures/rstudio.png)
 
