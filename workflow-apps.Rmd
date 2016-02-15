@@ -64,7 +64,7 @@ within---unfortunately.
 
 ## What's the Problem?
 
-The problem is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this extremely sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr Drang, a consulting engineer and blogger you should be reading:
+The problem is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr Drang, a consulting engineer:
 
 > I don’t write fiction, but I can imagine that a lot of fiction writing can be done without any reference materials whatsoever. Similarly, a lot of editorials and opinion pieces are remarkably fact-free; these also can spring directly from the writer’s head. But the type of writing I typically do—mostly for work, but also here—is loaded with facts. I am constantly referring to photographs, drawings, experimental test results, calculations, reports written by others, textbooks, journal articles, and so on. These are not distractions; they are essential to the writing process.
 > 
@@ -137,8 +137,80 @@ wrote everything in LaTeX. This led to me making some
 meant to produce good-looking PDFs. I try to write in Markdown rather
 than `.tex` format when I can, because in principle it is simpler and
 more easily convertible to many different kinds of output. I discuss
-these and more tools below. First, let's begin with a brief discussion
-of computer hardware.
+these and more tools below. 
+
+## Two Revolutions in Computing
+
+When talking to undergraduates or graduate students on this topic, and
+when teaching classes that use these tools, I increasingly run into
+the problem that it's hard to get started without backing up a bit
+first in order to talk about how the computer they are using works.
+
+I think reason for this is the rise of the flat-screen, touch-based model of
+computing, most obviously on phones and then very secondarily on
+things like Apple's iPad or Microsoft's Surface tablet. Now, most
+people who need to write long documents (like papers or dissertations)
+or work in an involved way with data do not use a tablet as their
+primary device. But it does seem clear that some kind of touch-screen
+interaction is the future of computing for most people. Indeed, once
+you consider phones properly you realize it's the _present_ of
+computing for most people. While it is not strictly impossible, it
+remains very difficult to do your academic, social-science work on a
+device of this sort. This is likely to be the case for some time. The
+tools we have are not designed up for them.
+
+That's not surprising. But I think there is an underappreciated
+tension here. Two ongoing computing revolutions are tending to pull in
+opposite directions. On one side, the mobile, cloud-centered,
+touch-screen, phone-or-tablet model has brought powerful computing to
+more people than ever before. This revolution is the one everyone is
+talking about, because it is happening on a huge scale and is where
+all the money is. In practice it puts single-purpose applications in the
+foreground and hides from the user both the workings of the operating
+system and (especially) the structure of the file system where items
+are stored and moved around.
+
+On the other side, open-source tools for plain-text coding, data
+analysis, and writing are also better and more accessible than they
+have ever been. This has happened on a smaller scale than the first
+revolution, of course. But still, these tools really have
+revolutionized the availability and practice of data analysis and
+scientific computing generally. They continue to do so, too, as people
+work to make them better at everything from slurping up data on the
+web to presenting it there. These tools mostly work by gluing together
+separate, specialized widgets into a reproducible workflow. They are 
+"bitty" or granular because the process of data analysis is that way
+as well. They do much less to hide the operating system
+layer---instead they often directly mesh with it---and they also
+presuppose a working knowledge of the file system underpinning the
+organization of the things the researcher is using or creating,
+from data files to code to figures and final papers.
+
+The tension is that, increasingly, people who come in to the world of
+social science wanting to work with data tend to have little or no
+prior experience with text-based, command-line, file-system-dependent
+tools. In many cases, they do not have much experience multi-tasking
+in a windowing environment, either, at least in the sense of making
+applications work together in the service of a single goal.[^multit] To
+be clear, this is not something to blame users for, and neither is it
+something to complain about in misguided nostalgia for the command
+line. Rather, it is an aspect of how computer use is changing at a
+very large scale. The coding and data analysis tools we have are
+powerful and for the most part meant to allow research products to be
+opened up and inspected. But the way they work clearly runs against
+the current of everyday, end-use computing, which increasingly hides
+many implementation details and focuses on single-purpose tasks.
+Again, specialized tools are necessarily specialized. The net result
+for the social sciences in the short to medium term, I think, is that
+we will have a suite of powerful tools that enable an amazing variety
+of scientific activity, developed in the open and mostly available for
+free. But it will get harder to teach people how to use them.
+Organizations like [Data Carpentry](http://www.datacarpentry.org) have
+begun to address this challenge in a very positive way. I think we'll
+need a lot more in that vein in the future.
+
+[^multit]: As opposed to multi-tasking in the less-interesting sense of trying to pay attention to a number of discrete tasks (writing, email, calendar, web-browsing), each controlled by a separate application.
+
 
 
 ## What Sort of Computer Should You Use?
@@ -182,6 +254,7 @@ it used to be, as Linux's package-management systems have matured. It
 remains true that Linux users are much more likely to be forced at some
 point to learn more than they might want to about the guts of their
 operating system.
+
 
 ## Just Make Sure You Know What You Did
 
@@ -517,7 +590,7 @@ fashion. Modern version control systems such as
 [Subversion](http://subversion.tigris.org/),
 [Mercurial](http://www.selenic.com/mercurial/) and
 [Git](http://git.or.cz/) can, if needed, manage very large projects
-with many branches spread across multiple users. Git has become a the
+with many branches spread across multiple users. Git has become the
 *de facto* standard, and [GitHub](http://github.com) is a place where
 software developers and social scientists make their work available,
 and where you can contribute to ongoing projects or make public your
@@ -531,8 +604,7 @@ though, many people find Word's \`\`Track Changes'' feature
 indispensable once they begin using it.) But version control systems
 can be used quite straightforwardly in a basic fashion, and they
 increasingly come with front ends that can be easily integrated with
-your text editor.[^6] Moreover, you can meet these systems half way.
-The excellent [DropBox](https://www.getdropbox.com/), for example,
+your text editor.[^6] Moreover, you can meet these systems half way. [Dropbox](https://www.getdropbox.com/), for example,
 allows you to share files between different computers you own, or with
 collaborators or general public. But it also automatically
 version-controls the contents of these folders.
@@ -748,9 +820,7 @@ in the preferences dialog contains the full path to `pandoc`, and the
 "Args" field contains all the relevant command switches---in my case,
 the same as in the Makefile above.
 
-![Marked's Advanced Preferences](figures/marked-prefs-ss.png){#fig:marked-prefs}
-
-When editing your markdown file in your favorite text editor, you point Marked at the file and get a live preview. You can add the [CSS files in the pandoc-templates repo](https://github.com/kjhealy/pandoc-templates/blob/master/marked/kultiad-serif.css) to the list of Custom CSS files Marked knows about, via the "Style" tab in the Preferences window. That way, Marked's preview will look the same as the HTML file that's produced. 
+When editing your markdown file in your favorite text editor, you point Marked at the file and get a live preview. You can add the [CSS files in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/blob/master/marked/kultiad-serif.css) to the list of Custom CSS files Marked knows about, via the "Style" tab in the Preferences window. That way, Marked's preview will look the same as the HTML file that's produced. 
 
 The upshot of all of this is powerful editing using Emacs, [ESS](http://ess.r-project.org), R, and other tools; flexible conversion using pandoc; quick and easy previewing via HTML and Marked; and high-quality PDF typesetting at the same time (or whenever needed)---all generated directly from plain text and including almost all of what most of the scholarly papers I write need to include. While this may seem quite complex when laid out in this way, from my point of view the result is very straightforward. I just live in my text editor, the various scripts and settings do their work quietly, as they should, and I get the formatted output I want. 
 
@@ -768,17 +838,7 @@ Sciences](http://kjhealy.github.com/emacs-starter-kit/). It's designed
 to smooth out Emacs' rough edges by giving you a drop-in collection of
 default settings, as well as automatically installing some important
 add-on packages. It will, I hope, help you skirt the abyss of Setting
-Things Up Forever. The [original
-version](http://github.com/technomancy/emacs-starter-kit/tree/master) of
-the kit was written by Phil Hagelberg and was made to go with the "[Meet
-Emacs](http://peepcode.com/products/meet-emacs)" screencast mentioned
-above. It was aimed at software developers in general. Eric Schulte, one
-of the authors of Org-babel, [modified and further
-extended](https://github.com/eschulte/emacs-starter-kit) the kit. [My
-version](https://github.com/kjhealy/emacs-starter-kit) adds support for
-AucTeX, ESS, and other bits and pieces mentioned here. As you can see if
-you follow the links, the kit is stored on GitHub and you are free to
-fork it and modify it to your own liking.
+Things Up Forever.
 
 ## Do I Have to Use this Stuff?
 
@@ -803,49 +863,37 @@ also produces figures that accord with accepted standards of efficient
 and effective information design. And fourth, the applications are
 closely integrated. Everything (including version control systems) can
 work inside Emacs, and all of them talk to or can take advantage of
-the others. R can output LaTeX tables, for instance, even if you don't
-use Sweave.
+the others. .
 
-None of these applications is perfect. They are powerful, but they can
-be hard to learn. However, you don't have to start out using all of them
-at once, or learn everything about them right away---the only thing you
-*really* need to start doing immediately is keeping good backups. There
-are a number of ways to try them out in whole or in part. You could try
-LaTeX first, using any editor. Or you could try Emacs and LaTeX
-together. You could begin using R and its GUI.[^8] Sweave or Org-babel
-can be left till last, though I have found these increasingly useful
-since I've started using them, and wish that all of my old project
-directories had some documentation in one or other of these formats.
-Revision control is more beneficial when implemented at the beginning of
-projects, and best of all when committing changes to a project becomes a
-habit of work. But it can be added at any time.
+None of these tools is perfect. They are powerful, but they can be
+hard to learn. However, you don't have to start out using all of them
+at once, or learn everything about them right away---the only thing
+you *really* need to start doing immediately is keeping good backups.
+There are a number of ways to try them out in whole or in part. You
+could try writing something in Markdown first, using any editor. You
+could begin using R with [RStudio](http://rstudio.com), which also
+makes writing in RMarkdown very easy.[^8] Revision control is more
+beneficial when implemented at the beginning of projects, and best of
+all when committing changes to a project becomes a habit of work. But
+it can be added at any time.
 
 You are not condemned to use these applications forever, either.
-LaTeX and (especially) Org-mode documents can be converted into many
-other formats. Your text files are editable in any other text
-editor. Statistical code is by nature much less portable, but the
-openness of R means that it is not likely to become obsolete or
-inaccessible any time soon.
+RMarkdown and (especially) Markdown or Org-mode documents can be
+converted into many other formats. Your text files are editable in any
+other text editor and on any other computer. Statistical code is by
+nature much less portable, but the openness of R means that it is not
+likely to become obsolete or inaccessible any time soon.
 
 A disadvantage of these particular applications is that I'm in a
 minority with respect to other people in my field. This is less and
-less true in the case of R, but remains so for LaTeX. (It also
-varies across social science disciplines.) Most people use Microsoft
-Word to write papers, and if you're collaborating with people
-(people you can't boss around, I mean) this can be an issue.
-Similarly, journals and presses in my field often do not accept
-material marked up in LaTeX, though again there are important
-exceptions.
-
-Converting files to a format Word understands can be tedious,
-although it is quite doable. Getting from LaTeX to Word is easiest
-via HTML. But if you really want to maximize the portability of your
-papers or especially your reading notes or memos, consider writing
-them in a modern lightweight markup format. Org-mode's native format
-is effectively one of these already, and it provides built-in
-support for export to many others. An org-mode file can also be
-exported easily to rich-text or HTML, and from there Word or Google
-Docs will open it.
+less true in the case of R. Writing papers in RMarkdown or Markdown is
+less common. Most people use Microsoft Word to write papers, and if
+you're collaborating with people (people you can't boss around, I
+mean) this can be an issue. Similarly, journals and presses in my
+field often want Word files both at the point of submission and after
+acceptance, though again there are important exceptions. Converting
+files to a format Word understands can be tedious, but is now much
+easier than it used to be, thanks to `pandoc`.
 
 ### Alternatives Might Be Better
 
@@ -878,30 +926,30 @@ and some also have good support for statistics programming.
 ![An earlier version of this document being edited in
 TextMate.](figures/textmate.png)
 
-[Sublime Text 2](http://www.sublimetext.com/) (and its upcoming version
-3 successor) is a relatively recent entry into the world of powerful
-cross-platform text editors. Available for the three major OS platforms,
-under active development, and with an increasingly large user base,
-Sublime Text is fast, fluid, contains a powerful plugin system and,
-uniquely amongst alternatives to Emacs and ESS, includes a
+[Sublime Text 3](http://www.sublimetext.com/) is a cross-platform text
+editor under active development, and with an increasingly large user
+base. Sublime Text is fast, fluid, and contains a powerful plugin
+system based on the [Python](http://python.org) programming language.
+Uniquely amongst alternatives to Emacs and ESS, includes a well-developed 
 [REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)
-that allows R to be run easily inside the editor.[^9] Sublime Text 2
+that allows R to be run easily inside the editor.[^9] Sublime Text
 costs \$70.
 
-Finally, for a different approach to working with R, consider
-[RStudio](http://www.rstudio.com). Although it appears quite late in
-this discussion, it might well be your first choice. I use it when
-teaching. It is not a text editor but rather an "IDE", an integrated
-development environment---like a fully-windowed version of ESS, where
-figures and other output is automatically produced and displayed, and
-data and script files are managed via various windows and menus. It is
-available for Mac OS X, Windows, and Linux. It intergrates nicely with
-R's help files. It understands `knitr` and Git. It has full support for
-Rmarkdown and generates HTML, PDF, and other formats for you very
-easily. It also makes it easy to automatically publish workbooks
-online via its [RPubs platform](https://rpubs.com). It is the easiest
-way by far to get into using R, and provides a straightforward way to
-manage many of the tools already discussed here.
+Finally, for a different approach to working with R, you should
+consider [RStudio](http://www.rstudio.com). Although it appears quite
+late in this discussion, it might well be your first choice. I use it
+when teaching. It is not a text editor but rather an "IDE", an
+integrated development environment---like a fully-windowed version of
+ESS, where figures and other output is automatically produced and
+displayed, and data and script files are managed via various windows
+and menus. It is available for Mac OS X, Windows, and Linux. It
+intergrates nicely with R's help files. It understands `knitr` and
+Git. It has full support for Rmarkdown and generates HTML, PDF, and
+other formats for you very easily. It also makes it easy to
+automatically publish workbooks online via its
+[RPubs platform](https://rpubs.com). It is the easiest way by far to
+get into using R, and provides a straightforward way to manage many of
+the tools already discussed here.
 
 ![RStudio running on Windows.](figures/rstudio.png)
 
