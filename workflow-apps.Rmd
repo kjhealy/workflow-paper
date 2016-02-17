@@ -383,6 +383,41 @@ conventions, tweaking its settings, and generally customizing it.
 There are several good alternatives on each major platform, and I
 discuss some of them below.
 
+Given that, you may be wondering why I mention it at all. Partly
+because it's the editor I used. Partly because it is available on
+every platform you're likely to use. And partly becuase it is very,
+*very* good at doing what I want it to do. In a modern computing
+environment there are many good reasons to use something like RStudio,
+or TextMate, or Sublime Text instead of Emacs (I return to these
+alternatives below), and you will do fine if you prefer those instead.
+A recent, good case for Emacs comes from
+[rekado](http://elephly.net/posts/2016-02-14-ilovefs-emacs.html), who
+writes:
+
+> Just like a browser is used by many as a platform for running
+> applications operating on some HTML document, Emacs is a platform
+> for anything that can “reasonably” (this is up for interpretation)
+> be mapped to buffers of text. Applications in browsers are written
+> in JavaScript, applications in Emacs are written in EmacsLisp (also
+> called “elisp”). ... A text buffer in Emacs could hold the trail of
+> a shell session (`shell-mode`), an email (`message-mode`), a TODO list
+> (`org-mode`), a directory listing (`dired`), a text file on disk, a chat
+> session (`ERC`), a web page (`eww`), the output produced by an external
+> command, etc. Just like a modern web browser represents an
+> environment in which a programming language can be used to
+> manipulate and interact with HTML documents, Emacs is an environment
+> for text buffers with a language that can be used to manipulate and
+> interact with text buffers.
+
+> If you have used your web browser (or have observed someone use
+> their web browser) to play games, listen to music, watch videos,
+> read and compose email, edit text (e.g. by contributing to the
+> Wikipedia), chat with friends (or chat about foes), read
+> documentation, installed an extension—well, then the notion of a
+> generic tool as a platform should not be a foreign concept to you.
+> Emacs can be understood as such a generic tool providing a text
+> interface (one of which may be a file editor).
+
 
 ### Analyze Data and Present Results
 
@@ -679,12 +714,47 @@ For transforming a mixture of R code and text into a markdown file, where the co
 
 ![A plain-text document toolchain.](figures/workflow-wide.pdf){#fig:workflow-diagram}
 
-### How I almost do it
-The document flow I want is shown in Figure 3. I promise it is less insane than it appears. Describing this all at once will probably make it sound a little crazy. But, at bottom, there are just two separable pieces: `knitr` converts `.Rmd` files to `.md` files, and `pandoc` converts `.md` files to HTML, `.tex`, and PDFs. In both cases we use a few switches, templates and configuration files to do that nicely. You may have some or all of these tools installed anyway, and use them separately for different things. The thing is just to connect them a little. I assume you have you have a standard set of unix command-line tools available (e.g. Apple's developer tools), along with R, knitr, pandoc, and a TeX distribution. Note that the default set-ups for `knitr` and `pandoc`---the two key pieces of the process---will do most of what we want with no further tweaking. What I'm showing you here are just the relevant options to use and switches to set for these tools, together with some templates and document samples showing how nice-looking output can be produced in practice.
+### How I almost do it The document flow I want is shown in Figure 3.
+I promise it is less insane than it appears. Describing this all at
+once will probably make it sound a little crazy. But, at bottom, there
+are just two separable pieces: `knitr` converts `.Rmd` files to `.md`
+files, and `pandoc` converts `.md` files to HTML, `.tex`, and PDFs. In
+both cases we use a few switches, templates and configuration files to
+do that nicely. You may have some or all of these tools installed
+anyway, and use them separately for different things. The thing is
+just to connect them a little. I assume you have you have a standard
+set of unix command-line tools available (e.g. Apple's developer
+tools), along with R, knitr, pandoc, and a TeX distribution. Note that
+the default set-ups for `knitr` and `pandoc`---the two key pieces of
+the process---will do most of what we want with no further tweaking.
+What I'm showing you here are just the relevant options to use and
+switches to set for these tools, together with some templates and
+document samples showing how nice-looking output can be produced in
+practice.
 
-I write everything in Emacs, but that doesn't matter. Use whatever text editor you like and just learn the hell out of it. My [Emacs Starter Kit for the Social Sciences](http://kieranhealy.org/resources/emacs-starter-kit.html) sets up Emacs to be aware of the tools discussed here. For present purposes, one of its nice features is that it turns on RefTeX mode for markdown files, and lets you easily cite items from your `.bib` file in the format pandoc expects. But, again, the text editor doesn't matter.
-
-The [custom LaTeX style files](https://github.com/kjhealy/latex-custom-kjh) were originally put together to let me write nice-looking `.tex` files directly, but now they just do their work in the background. Pandoc will use them when it converts things to PDF. The heavy lifting is done by the [org-preamble-pdflatex.sty](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-org-mode)  and [memoir-article-styles](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-memoir) files. If you install these files where LaTeX can find them---i.e., if you can compile a LaTeX document [based on this example](https://github.com/kjhealy/latex-custom-kjh/blob/master/templates/basic/article.tex)---then you are good to go. My [BibTeX master file](https://github.com/kjhealy/socbibs) is also available, but you will probably want to use your own, changing references to it in the templates as appropriate. Second, we have the custom pandoc stuff. [Here is the repository for that](https://github.com/kjhealy/pandoc-templates). Much of the material there is designed to go in the `~/.pandoc/` directory, which is where pandoc expects to find its configuration files.
+I write everything in Emacs, but as I hope is clear by now, that
+doesn't matter. Use whatever text editor you like and just learn the
+hell out of it. The
+[custom LaTeX style files](https://github.com/kjhealy/latex-custom-kjh)
+were originally put together to let me write nice-looking `.tex` files
+directly, but now they just do their work in the background. Pandoc
+will use them when it converts things to PDF. The heavy lifting is
+done by the
+[org-preamble-pdflatex.sty](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-org-mode)
+and
+[memoir-article-styles](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-memoir)
+files. If you install these files where LaTeX can find them---i.e., if
+you can compile a LaTeX document
+[based on this example](https://github.com/kjhealy/latex-custom-kjh/blob/master/templates/basic/article.tex)---then
+you are good to go. My
+[BibTeX master file](https://github.com/kjhealy/socbibs) is also
+available, but you will probably want to use your own, changing
+references to it in the templates as appropriate. Second, we have the
+custom pandoc stuff.
+[Here is the repository for that](https://github.com/kjhealy/pandoc-templates).
+Much of the material there is designed to go in the `~/.pandoc/`
+directory, which is where pandoc expects to find its configuration
+files.
 
 Inside the pandoc-templates repository there's a [folder with some examples](https://github.com/kjhealy/pandoc-templates/tree/master/examples) of how these pieces go together. Let's start with a straightforward markdown file---no R code yet, so nothing above the `article.md` line in the picture above. The sample `article-markdown.md` file looks like this: 
 
@@ -820,9 +890,23 @@ in the preferences dialog contains the full path to `pandoc`, and the
 "Args" field contains all the relevant command switches---in my case,
 the same as in the Makefile above.
 
-When editing your markdown file in your favorite text editor, you point Marked at the file and get a live preview. You can add the [CSS files in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/blob/master/marked/kultiad-serif.css) to the list of Custom CSS files Marked knows about, via the "Style" tab in the Preferences window. That way, Marked's preview will look the same as the HTML file that's produced. 
+When editing your markdown file in your favorite text editor, you
+point Marked at the file and get a live preview. You can add the
+[CSS files in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/blob/master/marked/kultiad-serif.css)
+to the list of Custom CSS files Marked knows about, via the "Style"
+tab in the Preferences window. That way, Marked's preview will look
+the same as the HTML file that's produced.
 
-The upshot of all of this is powerful editing using Emacs, [ESS](http://ess.r-project.org), R, and other tools; flexible conversion using pandoc; quick and easy previewing via HTML and Marked; and high-quality PDF typesetting at the same time (or whenever needed)---all generated directly from plain text and including almost all of what most of the scholarly papers I write need to include. While this may seem quite complex when laid out in this way, from my point of view the result is very straightforward. I just live in my text editor, the various scripts and settings do their work quietly, as they should, and I get the formatted output I want. 
+The upshot of all of this is powerful editing using Emacs,
+[ESS](http://ess.r-project.org), R, and other tools; flexible
+conversion using pandoc; quick and easy previewing via HTML and
+Marked; and high-quality PDF typesetting at the same time (or whenever
+needed)---all generated directly from plain text and including almost
+all of what most of the scholarly papers I write need to include.
+While this may seem quite complex when laid out in this way, from my
+point of view the result is very straightforward. I just live in my
+text editor, the various scripts and settings do their work quietly,
+as they should, and I get the formatted output I want.
 
 
 ### An Emacs Starter Kit for the Social Sciences
@@ -863,19 +947,19 @@ also produces figures that accord with accepted standards of efficient
 and effective information design. And fourth, the applications are
 closely integrated. Everything (including version control systems) can
 work inside Emacs, and all of them talk to or can take advantage of
-the others. .
+the others. 
 
 None of these tools is perfect. They are powerful, but they can be
-hard to learn. However, you don't have to start out using all of them
-at once, or learn everything about them right away---the only thing
-you *really* need to start doing immediately is keeping good backups.
-There are a number of ways to try them out in whole or in part. You
-could try writing something in Markdown first, using any editor. You
-could begin using R with [RStudio](http://rstudio.com), which also
-makes writing in RMarkdown very easy.[^8] Revision control is more
-beneficial when implemented at the beginning of projects, and best of
-all when committing changes to a project becomes a habit of work. But
-it can be added at any time.
+tedious to learn. However, you don't have to start out using all of
+them at once, or learn everything about them right away---the only
+thing you *really* need to start doing immediately is keeping good
+backups. There are a number of ways to try them out in whole or in
+part. You could try writing something in Markdown first, using any
+text editor. You could begin using R with
+[RStudio](http://rstudio.com), which also makes writing in RMarkdown
+very easy.[^8] Revision control is more beneficial when implemented at
+the beginning of projects, and best of all when committing changes to
+a project becomes a habit of work. But it can be added at any time.
 
 You are not condemned to use these applications forever, either.
 RMarkdown and (especially) Markdown or Org-mode documents can be
