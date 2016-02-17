@@ -1,0 +1,13 @@
+cref: True
+codeBlockCaptions: True
+figPrefix: 
+ - "Figure"
+ - "Figures"
+figureTitle: "Figure "
+lstPrefix:
+ - "Listing"
+ - "Listings"
+tblPrefix:
+ - "Table"
+ - "Tables"
+tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
