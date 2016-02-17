@@ -13,8 +13,11 @@
 ## 	in your working directory. Make sure you do not have files in these
 ##	formats that you want to keep!
 
-## All Rmarkdown files in the working directory
-SRC = $(wildcard *.Rmd)
+## Markdown extension (e.g. md, markdown, mdown).
+MEXT = md
+
+## All markdown files in the working directory
+SRC = $(wildcard *.$(MEXT))
 
 ## Location of Pandoc support files.
 PREFIX = /Users/kjhealy/.pandoc
@@ -25,33 +28,29 @@ BIB = /Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
 CSL = apsa
 
-MD=$(SRC:.Rmd=.md)
-PDFS=$(SRC:.Rmd=.pdf)
-HTML=$(SRC:.Rmd=.html)
-TEX=$(SRC:.Rmd=.tex)
+
+PDFS=$(SRC:.md=.pdf)
+HTML=$(SRC:.md=.html)
+TEX=$(SRC:.md=.tex)
 
 
-all:	$(MD) $(PDFS) $(HTML) $(TEX) 
+all:	$(PDFS) $(HTML) $(TEX)
 
 pdf:	clean $(PDFS)
 html:	clean $(HTML)
 tex:	clean $(TEX)
-md:	clean $(MD)
 
-%.md: %.Rmd
-	R --slave -e "set.seed(100);knitr::knit('$<')"
-
-%.html:	%.md 
-	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --css=$(PREFIX)/marked/kultiad-serif.css --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) --filter pandoc-citeproc-preamble -o $@ $<
+%.html:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --css=$(PREFIX)/marked/kultiad-serif.css --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
 
 %.tex:	%.md
-	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/ajps.csl --bibliography=$(BIB) --filter pandoc-citeproc-preamble -o $@ $<
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/ajps.csl --bibliography=$(BIB) -o $@ $<
 
 
 %.pdf:	%.md
-	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/ajps.csl --bibliography=$(BIB) --filter pandoc-citeproc-preamble -o $@ $<
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
 
 clean:
-	rm -f *.md *.html *.pdf *.tex
+	rm -f *.html *.pdf *.tex
 
 .PHONY: clean

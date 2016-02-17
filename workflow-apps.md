@@ -7,24 +7,21 @@ author:
 date: February 2016
 thanks: "This is an updated and expanded version of 'Choosing Your Workflow Applications' (2013). The main difference is an increased emphasis on Rmarkdown and `knitr` rather than Org-mode."
 abstract: "As a beginning graduate student in the social sciences, what sort of software should you use to do your work? More importantly, what principles should guide your choices? This article offers some answers. The short version is: write using a good text editor (there are several to choose from); analyze quantitative data with R or Stata; minimize errors by storing your work in a simple format (plain text is best) and documenting it properly. Keep your projects in a version control system. Back everything up regularly and automatically. Don't get bogged down by gadgets, utilities or other accoutrements: they are there to help you do your work, but often waste your time by tempting you to tweak, update and generally futz with them. To help you get started, I briefly discuss the Emacs Starter Kit for the Social Sciences, a drop-in set of useful defaults designed to help you get started using Emacs (a powerful, free text-editor) for data analysis and writing. I also point to several alternatives."
+cref: True
+codeBlockCaptions: True
+figPrefix: 
+ - "Figure"
+ - "Figures"
+figureTitle: "Figure "
+lstPrefix:
+ - "Listing"
+ - "Listings"
+tblPrefix:
+ - "Table"
+ - "Tables"
+tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
 ...
 
-```{r Setup, include=FALSE, results='hide', warning=FALSE}
-opts_chunk$set(fig.path="figures/",
-               dev=c("png","pdf"),
-               fig.width=6,
-               fig.height=5,
-               fig.lp="fig:",
-               dpi=300,
-               par=TRUE,
-               echo=TRUE,
-               message=FALSE,
-               warning=FALSE)
-
-opts_knit$set(kfigr.prefix=TRUE,
-              kfigr.link=FALSE)
-
-```
 
 ## Introduction
 
@@ -64,7 +61,16 @@ within---unfortunately.
 
 ## What's the Problem?
 
-The problem is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr Drang, a consulting engineer:
+The problem is that doing scholarly work is intrinsically a mess.
+There's the annoying business of getting ideas and writing them down,
+of course, but also everything before, during, and around it: data
+analysis and all that comes with it, and the tedious but unavoidable
+machinery of scholarly papers---especially citations and references.
+There is a lot of keep track of, a lot to get right, and a lot to draw
+together at the time of writing. Academic papers are by no means the
+only form of writing subject to constraints of this sort. Consider
+[this sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/)
+by Dr Drang, a consulting engineer:
 
 > I don’t write fiction, but I can imagine that a lot of fiction writing can be done without any reference materials whatsoever. Similarly, a lot of editorials and opinion pieces are remarkably fact-free; these also can spring directly from the writer’s head. But the type of writing I typically do—mostly for work, but also here—is loaded with facts. I am constantly referring to photographs, drawings, experimental test results, calculations, reports written by others, textbooks, journal articles, and so on. These are not distractions; they are essential to the writing process.
 > 
@@ -437,7 +443,7 @@ core, it has a good graphical interface as well. You can download it
 from [The R Project Homepage](http://www.r-project.org/).
 
 R can be used directly within Emacs by way of a package called ESS
-(for "Emacs Speaks Statistics"). As shown in Figure 2,
+(for "Emacs Speaks Statistics"). As shown in @fig:ess,
 it allows you to work with your code in one Emacs frame and a live R
 session in another right beside it. Because everything is inside Emacs,
 it is easy to do things like send a chunk of your code over to R using a
@@ -565,13 +571,15 @@ be seen at the
 [Org-babel website](http://orgmode.org/worg/org-contrib/babel/intro.html).
 
 This document contains pieces of R code that generate some of the
-figures in it. Figure \ref{fig:example-figure}, for instance, is
+figures in it. @fig:example-figure-r, for instance, could be 
 generated on the fly from source-code blocks included in the `.Rmd`
-source for this article. A piece of code can be executed, displayed,
-or both. Here we hide the code that makes the figure, even though it
-is contained in the plain-text source.
+source for this article. 
 
-```{r example-figure, fig.width=8, fig.height=5, fig.cap="A figure produced from code embedded in the source-file for this document. \\label{fig:example-figure}", results="show", echo=FALSE}
+![Tea and Buscuits](figures/example-figure-1.pdf){#fig:example-figure-r}
+
+Sometimes we will want to only show the results produced by the code---in this case, @fig:example-figure-r. But at other times we will want to display the code as well, as in @lst:r-example. 
+
+```{#lst:r-example .r caption="R code snippet."}
 
 library(ggplot2)
 tea <- rnorm(100)
@@ -579,17 +587,6 @@ biscuits <- tea + rnorm(100,0,1.3)
 qplot(tea, biscuits) + geom_smooth(method="lm") + 
 scale_x_continuous(name="Tea") + 
 scale_y_continuous(name="Biscuits") + theme_bw() 
-
-```
-
-But we could also make it so that we displayed what we wrote. Like this: 
-
-
-```{r example-analysis, echo=TRUE}
-
-x <- rnorm(10, 100, 10)
-
-summary(x)
 
 ```
 
@@ -714,23 +711,24 @@ For transforming a mixture of R code and text into a markdown file, where the co
 
 ![A plain-text document toolchain.](figures/workflow-wide.pdf){#fig:workflow-diagram}
 
-### How I almost do it The document flow I want is shown in Figure 3.
-I promise it is less insane than it appears. Describing this all at
-once will probably make it sound a little crazy. But, at bottom, there
-are just two separable pieces: `knitr` converts `.Rmd` files to `.md`
-files, and `pandoc` converts `.md` files to HTML, `.tex`, and PDFs. In
-both cases we use a few switches, templates and configuration files to
-do that nicely. You may have some or all of these tools installed
-anyway, and use them separately for different things. The thing is
-just to connect them a little. I assume you have you have a standard
-set of unix command-line tools available (e.g. Apple's developer
-tools), along with R, knitr, pandoc, and a TeX distribution. Note that
-the default set-ups for `knitr` and `pandoc`---the two key pieces of
-the process---will do most of what we want with no further tweaking.
-What I'm showing you here are just the relevant options to use and
-switches to set for these tools, together with some templates and
-document samples showing how nice-looking output can be produced in
-practice.
+### How I almost do it 
+
+The document flow I want is shown in Figure @fig:workflow-diagram. I promise it is less
+insane than it appears. Describing this all at once will probably make
+it sound a little crazy. But, at bottom, there are just two separable
+pieces: `knitr` converts `.Rmd` files to `.md` files, and `pandoc`
+converts `.md` files to HTML, `.tex`, and PDFs. In both cases we use a
+few switches, templates and configuration files to do that nicely. You
+may have some or all of these tools installed anyway, and use them
+separately for different things. The thing is just to connect them a
+little. I assume you have you have a standard set of unix command-line
+tools available (e.g. Apple's developer tools), along with R, knitr,
+pandoc, and a TeX distribution. Note that the default set-ups for
+`knitr` and `pandoc`---the two key pieces of the process---will do
+most of what we want with no further tweaking. What I'm showing you
+here are just the relevant options to use and switches to set for
+these tools, together with some templates and document samples showing
+how nice-looking output can be produced in practice.
 
 I write everything in Emacs, but as I hope is clear by now, that
 doesn't matter. Use whatever text editor you like and just learn the
@@ -756,9 +754,9 @@ Much of the material there is designed to go in the `~/.pandoc/`
 directory, which is where pandoc expects to find its configuration
 files.
 
-Inside the pandoc-templates repository there's a [folder with some examples](https://github.com/kjhealy/pandoc-templates/tree/master/examples) of how these pieces go together. Let's start with a straightforward markdown file---no R code yet, so nothing above the `article.md` line in the picture above. The sample `article-markdown.md` file looks like this: 
+Inside the pandoc-templates repository there's a [folder with some examples](https://github.com/kjhealy/pandoc-templates/tree/master/examples) of how these pieces go together. Let's start with a straightforward markdown file---no R code yet, so nothing above the `article.md` line in the picture above. The start of the sample `article-markdown.md` file is shown in @lst:yamlheader.
 
-~~~~~~~ {#yamlheader .yaml}
+```{#lst:yamlheader .yaml caption="The top of a markdown file, showing the document metadata,"}
 ---
 title: "A Pandoc Markdown Article Starter"
 author:
@@ -783,7 +781,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing
 elit, sed do eiusmod tempor incididunt ut labore et 
 dolore magna aliqua [@fourcade13classsituat].
 
-~~~~~~~
+```
 
 The bit at the top is YAML metadata, which pandoc understands. The
 HTML and latex templates
@@ -811,37 +809,35 @@ in the examples directory will convert any markdown files in the
 working directory to HTML, .tex, and PDF output. Just type `make` at
 the terminal to have it do everyhing, or e.g. `make html` to just
 produce the HTML file but not a PDF. If things go as they should, the
-HTML output from the example will look like Figure \ref{fig:pandoc-html}. 
+HTML output from the example will look like Figure @fig:pandoc-html. 
 
 ![HTML Output sample](figures/pandoc-template-html-output-sample.png){#fig:pandoc-html}
 
-The PDF output, meanwhile, [can be viewed here](http://kieranhealy.org/files/misc/article-markdown.pdf). Both look quite nice. The relevant sections of the Makefile show the pandoc commands that generate the output files from the markdown input. The Makefile section for producing PDF output looks like this:
+The PDF output, meanwhile, [can be viewed here](http://kieranhealy.org/files/misc/article-markdown.pdf). Both look quite nice. The relevant sections of the Makefile show the pandoc commands that generate the output files from the markdown input. The Makefile section for producing PDF output is shown in @lst:makefile.
 
-
-~~~~~~~~~~~~~~ {#sh .bash}
+```{#lst:makefile .bash caption="A piece of a Makefile"}
 
 pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
 --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template \ 
 --filter pandoc-citeproc \
 --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB)
 
-~~~~~~~~~~~~~~
+```
 
 This contains some variables that are set at the top of the Makefile.
 The backslashes are there to indicate that the `pandoc` command is
 actually a single line of text, not several lines separated by the
-`<return>` key. On my computer, the command as actually executed looks
-like this:
+`<return>` key. On my computer, the command as actually executed is shown in @lst:makeoutput.
 
 
-~~~~~~~~~~~~~~ {#sh .bash}
+```{#lst:makeoutput .bash caption="What the Makefile executes"}
 
 pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
 --latex-engine=pdflatex --template=/Users/kjhealy/.pandoc/templates/latex.template \ 
 --filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl \
 --bibliography=/Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 
-~~~~~~~~~~~~~~
+```
 
 Again, the backslashes are just for convenience. Your version would
 vary depending on the location of the templates and bibliography
@@ -988,7 +984,7 @@ especially, there is a plethora of choices. On the Mac, quality editors
 include [BBEdit](http://www.barebones.com/products/bbedit/index.shtml)
 (beloved of many web developers, but with relatively little support for
 R beyond syntax highlighting), and [TextMate](http://macromates.com/)
-(shown in Figure \ref{fig:tm}). TextMate has strong support for LaTeX
+(shown in Figure @fig:tm). TextMate has strong support for LaTeX
 and good (meaning, ESS-like) support for R. Because it is a modern
 application written specifically for the Mac it can take advantage of
 features of OS X that Emacs cannot, and is much better integrated with
@@ -1008,7 +1004,7 @@ many others. Most of these applications have strong support for LaTeX
 and some also have good support for statistics programming.
 
 ![An earlier version of this document being edited in
-TextMate.](figures/textmate.png)
+TextMate.](figures/textmate.png){#fig:tm}
 
 [Sublime Text 3](http://www.sublimetext.com/) is a cross-platform text
 editor under active development, and with an increasingly large user
@@ -1020,22 +1016,22 @@ that allows R to be run easily inside the editor.[^9] Sublime Text
 costs \$70.
 
 Finally, for a different approach to working with R, you should
-consider [RStudio](http://www.rstudio.com). Although it appears quite
-late in this discussion, it might well be your first choice. I use it
-when teaching. It is not a text editor but rather an "IDE", an
-integrated development environment---like a fully-windowed version of
-ESS, where figures and other output is automatically produced and
-displayed, and data and script files are managed via various windows
-and menus. It is available for Mac OS X, Windows, and Linux. It
-intergrates nicely with R's help files. It understands `knitr` and
-Git. It has full support for Rmarkdown and generates HTML, PDF, and
-other formats for you very easily. It also makes it easy to
-automatically publish workbooks online via its
-[RPubs platform](https://rpubs.com). It is the easiest way by far to
-get into using R, and provides a straightforward way to manage many of
-the tools already discussed here.
+consider [RStudio](http://www.rstudio.com). A screenshot is shown in
+Figure @fig:rstudio. Although it appears quite late in this
+discussion, it might well be your first choice. I use it when
+teaching. It is not a text editor but rather an "IDE", an integrated
+development environment---like a fully-windowed version of ESS, where
+figures and other output is automatically produced and displayed, and
+data and script files are managed via various windows and menus. It is
+available for Mac OS X, Windows, and Linux. It intergrates nicely with
+R's help files. It understands `knitr` and Git. It has full support
+for Rmarkdown and generates HTML, PDF, and other formats for you very
+easily. It also makes it easy to automatically publish workbooks
+online via its [RPubs platform](https://rpubs.com). It is the easiest
+way by far to get into using R, and provides a straightforward way to
+manage many of the tools already discussed here.
 
-![RStudio running on Windows.](figures/rstudio.png)
+![RStudio running on Windows.](figures/rstudio.png){#fig:rstudio}
 
 For statistical analysis in the social sciences, the main
 alternative to R is [Stata](http://www.stata.com/). Stata is not
