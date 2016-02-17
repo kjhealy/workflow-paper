@@ -7,19 +7,7 @@ author:
 date: February 2016
 thanks: "This is an updated and expanded version of 'Choosing Your Workflow Applications' (2013). The main difference is an increased emphasis on Rmarkdown and `knitr` rather than Org-mode."
 abstract: "As a beginning graduate student in the social sciences, what sort of software should you use to do your work? More importantly, what principles should guide your choices? This article offers some answers. The short version is: write using a good text editor (there are several to choose from); analyze quantitative data with R or Stata; minimize errors by storing your work in a simple format (plain text is best) and documenting it properly. Keep your projects in a version control system. Back everything up regularly and automatically. Don't get bogged down by gadgets, utilities or other accoutrements: they are there to help you do your work, but often waste your time by tempting you to tweak, update and generally futz with them. To help you get started, I briefly discuss the Emacs Starter Kit for the Social Sciences, a drop-in set of useful defaults designed to help you get started using Emacs (a powerful, free text-editor) for data analysis and writing. I also point to several alternatives."
-cref: True
-codeBlockCaptions: True
-figPrefix: 
- - "Figure"
- - "Figures"
-figureTitle: "Figure "
-lstPrefix:
- - "Listing"
- - "Listings"
-tblPrefix:
- - "Table"
- - "Tables"
-tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
+crossrefYaml: "./pandoc-crossref-settings.yaml"
 ...
 
 
