@@ -51,6 +51,6 @@ tex:	clean $(TEX)
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
 
 clean:
-	rm -f *.html *.pdf *.tex
+	rm -f *.html *.pdf *.tex *.aux *.log 
 
 .PHONY: clean
