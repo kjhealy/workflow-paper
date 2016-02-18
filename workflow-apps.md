@@ -130,7 +130,7 @@ RMarkdown is one of several "literate programming" formats. The idea goes back t
 
 @fig:example-figure-r, for instance, could be generated on the fly from source-code blocks included in the `.Rmd` source for this article.
 
-![Tea and Buscuits](figures/example-figure-1.pdf){#fig:example-figure-r}
+![Tea and Biscuits](figures/example-figure-1.pdf){#fig:example-figure-r}
 
 Sometimes we will want to only show the results produced by the code---in this case, @fig:example-figure-r. But at other times we will want to display the code as well, as in @lst:r-example. 
 
@@ -139,9 +139,9 @@ Sometimes we will want to only show the results produced by the code---in this c
 library(ggplot2)
 tea <- rnorm(100)
 biscuits <- tea + rnorm(100,0,1.3)
-qplot(tea, biscuits) + geom_smooth(method="lm") + 
-scale_x_continuous(name="Tea") + 
-scale_y_continuous(name="Biscuits") + theme_bw() 
+qplot(tea, biscuits) + 
+   geom_smooth(method="lm") + 
+   labs(x="Tea", y="Biscuits") + theme_bw() 
 
 ```
 
