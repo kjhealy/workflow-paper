@@ -1,8 +1,0 @@
-#+TITLE: Choosing Your Workflow Applications
-#+AUTHOR: Kieran Healy
-
-* About
-This repo contains the =.org= file behind [[http://www.kieranhealy.org/files/misc/workflow-apps.pdf][Choosing Your Workflow
-Applications]], a short guide to software tools, aimed at graduate
-students in the social sciences. I've put this here mostly as an
-illustration of some of the ideas discussed in the article itself.
