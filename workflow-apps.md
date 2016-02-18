@@ -139,9 +139,12 @@ Sometimes we will want to only show the results produced by the code---in this c
 library(ggplot2)
 tea <- rnorm(100)
 biscuits <- tea + rnorm(100,0,1.3)
-qplot(tea, biscuits) + 
+data <- data.frame(tea, biscuits)
+p <- ggplot(data, aes(x=tea, y=biscuits)) + 
    geom_smooth(method="lm") + 
    labs(x="Tea", y="Biscuits") + theme_bw() 
+
+print(p)   
 
 ```
 
