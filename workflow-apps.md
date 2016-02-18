@@ -178,7 +178,7 @@ For transforming a mixture of R code and text into a markdown file, where the co
 
 ### How I almost do it 
 
-The document flow I want is shown in Figure @fig:workflow-diagram. I promise it is less insane than it appears. Describing this all at once will probably make it sound a little crazy. But, at bottom, there are just two separable pieces: `knitr` converts `.Rmd` files to `.md` files, and `pandoc` converts `.md` files to HTML, `.tex`, and PDFs. In both cases we use a few switches, templates and configuration files to do that nicely. You may have some or all of these tools installed anyway, and use them separately for different things. The thing is just to connect them a little. I assume you have you have a standard set of unix command-line tools available (e.g. Apple's developer tools), along with R, knitr, pandoc, and a TeX distribution. Note that the default set-ups for `knitr` and `pandoc`---the two key pieces of the process---will do most of what we want with no further tweaking. What I'm showing you here are just the relevant options to use and switches to set for these tools, together with some templates and document samples showing how nice-looking output can be produced in practice.
+The document flow I want is shown in @fig:workflow-diagram. I promise it is less insane than it appears. Describing this all at once will probably make it sound a little crazy. But, at bottom, there are just two separable pieces: `knitr` converts `.Rmd` files to `.md` files, and `pandoc` converts `.md` files to HTML, `.tex`, and PDFs. In both cases we use a few switches, templates and configuration files to do that nicely. You may have some or all of these tools installed anyway, and use them separately for different things. The thing is just to connect them a little. I assume you have you have a standard set of unix command-line tools available (e.g. Apple's developer tools), along with R, knitr, pandoc, and a TeX distribution. Note that the default set-ups for `knitr` and `pandoc`---the two key pieces of the process---will do most of what we want with no further tweaking. What I'm showing you here are just the relevant options to use and switches to set for these tools, together with some templates and document samples showing how nice-looking output can be produced in practice.
 
 I write everything in Emacs, but as I hope is clear by now, that doesn't matter. Use whatever text editor you like and just learn the hell out of it. The [custom LaTeX style files](https://github.com/kjhealy/latex-custom-kjh) were originally put together to let me write nice-looking `.tex` files directly, but now they just do their work in the background. Pandoc will use them when it converts things to PDF. The heavy lifting is done by the [org-preamble-pdflatex.sty](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-org-mode) and [memoir-article-styles](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-memoir) files. If you install these files where LaTeX can find them---i.e., if you can compile a LaTeX document [based on this example](https://github.com/kjhealy/latex-custom-kjh/blob/master/templates/basic/article.tex)---then you are good to go. My [BibTeX master file](https://github.com/kjhealy/socbibs) is also available, but you will probably want to use your own, changing references to it in the templates as appropriate. Second, we have the custom pandoc stuff. [Here is the repository for that](https://github.com/kjhealy/pandoc-templates). Much of the material there is designed to go in the `~/.pandoc/` directory, which is where pandoc expects to find its configuration files.
 
@@ -186,6 +186,7 @@ Inside the pandoc-templates repository there's a [folder with some examples](htt
 
 ```{#lst:yamlheader .yaml caption="The top of a markdown file, showing the document metadata,"}
 ---
+
 title: "A Pandoc Markdown Article Starter"
 author:
 - name: Kieran Healy
@@ -208,12 +209,11 @@ aliqua [@fourcade13classsituat]. Notice that citation.
 Lorem ipsum dolor sit amet, consectetur adipisicing 
 elit, sed do eiusmod tempor incididunt ut labore et 
 dolore magna aliqua [@fourcade13classsituat].
-
 ```
 
 The bit at the top is YAML metadata, which pandoc understands. The HTML and latex templates [in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/tree/master/templates) are set up to use this metadata properly. Pandoc will take care of the citations directly. There is more than one way to have pandoc manage citations, but here we just use the most self-contained route. (The `bibliography` line is not needed by pandoc at all: it is a hack to allow RefTeX to easily insert citations in the document while editing in Emacs.)
 
-Simple documents can be contained in a single `.md` file. Documents including data analysis start life as `.Rmd` files which are then knitted into `.md` files and converted to PDF or HTML. I use a [Makefile](http://kbroman.org/minimal_make/) to control this process. Make is a command-line tool that manages the production of a file (the _target_) that has a number of _prerequisites_. In this case, the PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces them changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. The [Makefile](https://github.com/kjhealy/pandoc-templates/blob/master/examples/Makefile) in the examples directory will convert any markdown files in the working directory to HTML, .tex, and PDF output. Just type `make` at the terminal to have it do everyhing, or e.g. `make html` to just produce the HTML file but not a PDF. If things go as they should, the HTML output from the example will look like Figure @fig:pandoc-html.
+Simple documents can be contained in a single `.md` file. Documents including data analysis start life as `.Rmd` files which are then knitted into `.md` files and converted to PDF or HTML. I use a [Makefile](http://kbroman.org/minimal_make/) to control this process. Make is a command-line tool that manages the production of a file (the _target_) that has a number of _prerequisites_. In this case, the PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces them changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. The [Makefile](https://github.com/kjhealy/pandoc-templates/blob/master/examples/Makefile) in the examples directory will convert any markdown files in the working directory to HTML, .tex, and PDF output. Just type `make` at the terminal to have it do everyhing, or e.g. `make html` to just produce the HTML file but not a PDF. If things go as they should, the HTML output from the example will look like @fig:pandoc-html.
 
 ![HTML Output sample](figures/pandoc-template-html-output-sample.png){#fig:pandoc-html}
 
@@ -221,26 +221,24 @@ The PDF output, meanwhile, [can be viewed here](http://kieranhealy.org/files/mis
 
 ```{#lst:makefile .bash caption="A piece of a Makefile"}
 
-pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
---latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template \ 
---filter pandoc-citeproc \
+pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  
+--latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template  
+--filter pandoc-citeproc 
 --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB)
-
 ```
 
-This contains some variables that are set at the top of the Makefile. The backslashes are there to indicate that the `pandoc` command is actually a single line of text, not several lines separated by the `<return>` key. On my computer, the command as actually executed is shown in @lst:makeoutput.
+This contains some variables that are set at the top of the Makefile. Note that the `pandoc` command is actually a single line of text, not several lines separated by the `<return>` key. On my computer, the command as actually executed is shown in @lst:makeoutput.
 
 
 ```{#lst:makeoutput .bash caption="What the Makefile executes"}
 
-pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S \ 
---latex-engine=pdflatex --template=/Users/kjhealy/.pandoc/templates/latex.template \ 
---filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl \
+pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  
+--latex-engine=pdflatex --template=/Users/kjhealy/.pandoc/templates/latex.template  
+--filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl 
 --bibliography=/Users/kjhealy/Documents/bibs/socbib-pandoc.bib
-
 ```
 
-Again, the backslashes are just for convenience. Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
+Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
 
 The examples directory [also includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the `knitr` project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, launch R in the working directory, load knitr, and process the file. You will also need the `ascii`, `memisc`, and `ggplot2` libraries to be available.
 
@@ -273,14 +271,14 @@ A disadvantage of these particular applications is that I'm in a minority with r
 
 ### Alternatives Might Be Better
 
-There are many other applications you might put at the center of your workflow, depending on need, personal preference, willingness to pay some money, or desire to work on a specific platform. For text editing, especially, there is a plethora of choices. On the Mac, quality editors include [BBEdit](http://www.barebones.com/products/bbedit/index.shtml) (beloved of many web developers, but with relatively little support for R beyond syntax highlighting), and [TextMate](http://macromates.com/) (shown in Figure @fig:tm). TextMate has strong support for LaTeX and good (meaning, ESS-like) support for R. Because it is a modern application written specifically for the Mac it can take advantage of features of OS X that Emacs cannot, and is much better integrated with the rest of the operating system. It also has good support for many of the ancillary applications discussed above, such as version control systems. After a delay somewhat reminiscent of the wait for the second coming of Jesus Christ, [TextMate 2](https://github.com/textmate/textmate) was released as an open-source project late in 2012, and now appears to be under active development again. On Linux, the standard alternative to Emacs is [vi](http://www.eng.hawaii.edu/Tutor/vi.html) or [Vim](http://www.vim.org/), but there are many others. For Windows there is [Textpad](http://www.textpad.com/), [WinEdt](http://www.winedt.com/), [UltraEdit](http://www.ultraedit.com/), and [NotePad++](http://notepad-plus.sourceforge.net/uk/site.htm) amongst many others. Most of these applications have strong support for LaTeX and some also have good support for statistics programming.
+There are many other applications you might put at the center of your workflow, depending on need, personal preference, willingness to pay some money, or desire to work on a specific platform. For text editing, especially, there is a plethora of choices. On the Mac, quality editors include [BBEdit](http://www.barebones.com/products/bbedit/index.shtml) (beloved of many web developers, but with relatively little support for R beyond syntax highlighting), and [TextMate](http://macromates.com/) (shown in @fig:tm). TextMate has strong support for LaTeX and good (meaning, ESS-like) support for R. Because it is a modern application written specifically for the Mac it can take advantage of features of OS X that Emacs cannot, and is much better integrated with the rest of the operating system. It also has good support for many of the ancillary applications discussed above, such as version control systems. After a delay somewhat reminiscent of the wait for the second coming of Jesus Christ, [TextMate 2](https://github.com/textmate/textmate) was released as an open-source project late in 2012, and now appears to be under active development again. On Linux, the standard alternative to Emacs is [vi](http://www.eng.hawaii.edu/Tutor/vi.html) or [Vim](http://www.vim.org/), but there are many others. For Windows there is [Textpad](http://www.textpad.com/), [WinEdt](http://www.winedt.com/), [UltraEdit](http://www.ultraedit.com/), and [NotePad++](http://notepad-plus.sourceforge.net/uk/site.htm) amongst many others. Most of these applications have strong support for LaTeX and some also have good support for statistics programming.
 
 ![An earlier version of this document being edited in
 TextMate.](figures/textmate.png){#fig:tm}
 
 [Sublime Text 3](http://www.sublimetext.com/) is a cross-platform text editor under active development, and with an increasingly large user base. Sublime Text is fast, fluid, and contains a powerful plugin system based on the [Python](http://python.org) programming language. Uniquely amongst alternatives to Emacs and ESS, includes a well-developed [REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) that allows R to be run easily inside the editor.[^9] Sublime Text costs \$70.
 
-Finally, for a different approach to working with R, you should consider [RStudio](http://www.rstudio.com). A screenshot is shown in Figure @fig:rstudio. Although it appears quite late in this discussion, it might well be your first choice. I use it when teaching. It is not a text editor but rather an "IDE", an integrated development environment---like a fully-windowed version of ESS, where figures and other output is automatically produced and displayed, and data and script files are managed via various windows and menus. It is available for Mac OS X, Windows, and Linux. It intergrates nicely with R's help files. It understands `knitr` and Git. It has full support for Rmarkdown and generates HTML, PDF, and other formats for you very easily. It also makes it easy to automatically publish workbooks online via its [RPubs platform](https://rpubs.com). It is the easiest way by far to get into using R, and provides a straightforward way to manage many of the tools already discussed here.
+Finally, for a different approach to working with R, you should consider [RStudio](http://www.rstudio.com). A screenshot is shown in @fig:rstudio. Although it appears quite late in this discussion, it might well be your first choice. I use it when teaching. It is not a text editor but rather an "IDE", an integrated development environment---like a fully-windowed version of ESS, where figures and other output is automatically produced and displayed, and data and script files are managed via various windows and menus. It is available for Mac OS X, Windows, and Linux. It intergrates nicely with R's help files. It understands `knitr` and Git. It has full support for Rmarkdown and generates HTML, PDF, and other formats for you very easily. It also makes it easy to automatically publish workbooks online via its [RPubs platform](https://rpubs.com). It is the easiest way by far to get into using R, and provides a straightforward way to manage many of the tools already discussed here.
 
 ![RStudio running on Windows.](figures/rstudio.png){#fig:rstudio}
 
