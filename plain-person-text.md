@@ -225,33 +225,90 @@ pandoc mypaper.md -o mypaper.pdf
 
 Because we will probably run commands like this a lot, it's convenient to automate them a little bit, and to add some extra bells and whistles to accommodate things we will routinely add to files, such as author information and other metadata, together with the ability to process bibliographic information and cross-references. These are handled by `pandoc` by turning on various switches in the command, and by ensuring a couple of external "filters" are present to manage the bibliographies and cross-references. Rather than type long commands out repeatedly, we will automate the process. This kind of automation is especially useful when our final output file might have a number of prerequisites before it can be properly produced, and we would like the computer to be a little bit smart about what needs to be re-processed and under what conditions. That way, for example, if a Figure has not changed we will not re-run the (possibly time-consuming) R script to create it again, unless we have to.
 
-We manage this process using a tool called [`make`](http://kbroman.org/minimal_make/). Inside our project folder we put a plain-text `Makefile` that contains some rules governing how to produce a _target_ file that might have a number of _prerequisites_. In this case, a PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces the prerequisites changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/md-starter) will convert any markdown files in the working directory to HTML, `.tex`, `.pdf`, or `.docx` files as requested. Typing `make` at the terminal will have it do everyhing. Alternatively, e.g. `make html` will just produce the `.html` file only. If things go as they should, the HTML output from the example will look like @fig:pandoc-html.
+We manage this process using a tool called [`make`](http://kbroman.org/minimal_make/). Inside our project folder we put a plain-text `Makefile` that contains some rules governing how to produce a _target_ file that might have a number of _prerequisites_. In this case, a PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces the prerequisites changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/md-starter) will convert any markdown files in the working directory to HTML, `.tex`, `.pdf`, or `.docx` files as requested. Typing `make html` at the command line will produce `.html` files from any `.md` files in the directory, for example. The PDF output (from `make pdf`) will look like this article, more or less. The different pieces of the Makefile define a few variables, specify the relationship between the different file types. In essence the rules say, for example, that all the PDF files in the directory depend on changes to an `.md` file with the same name; that the same is true of the HTML files in the directory, and so on. Then the  show the pandoc commands that generate the output files from the markdown input. The Makefile itself is shown in @lst:makefile.
 
-![HTML Output sample](figures/pandoc-template-html-output-sample.png){#fig:pandoc-html}
+```{#lst:makefile .bash caption="A Makefile"}
 
-The PDF output, meanwhile, [can be viewed here](http://kieranhealy.org/files/misc/article-markdown.pdf). Both look quite nice. The relevant sections of the Makefile show the pandoc commands that generate the output files from the markdown input. The Makefile section for producing PDF output is shown in @lst:makefile.
+## The big gotcha for Makefiles is that for no good reason they use 
+## TAB rather than spaces to indent commands associated with rules. 
+## If you use spaces, `make` will not work.
 
-```{#lst:makefile .bash caption="A piece of a Makefile"}
+## Extension (e.g. md, markdown, mdown).
+## for all markdown files in the directory
+MEXT = md
 
-pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  
---latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template  
---filter pandoc-citeproc 
---csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB)
+## Variable for all markdown files in the working directory
+SRC = $(wildcard *.$(MEXT))
+
+## Location of Pandoc support files.
+PREFIX = /Users/kjhealy/.pandoc
+
+## Location of your working bibliography file
+BIB = /Users/kjhealy/Documents/bibs/socbib-pandoc.bib
+
+## CSL stylesheet (located in the csl folder of the PREFIX directory).
+CSL = apsa
+
+
+## Dependencies: .pdf depends on .md, .html depends on .md, etc
+PDFS=$(SRC:.md=.pdf)
+HTML=$(SRC:.md=.html)
+TEX=$(SRC:.md=.tex)
+DOCX=$(SRC:.md=.docx)
+
+## Rules -- make all, make pdf, make html. The `clean` rule is below.
+all:	$(PDFS) $(HTML) $(TEX) $(DOCX)
+
+pdf:	clean $(PDFS)
+html:	clean $(HTML)
+tex:	clean $(TEX)
+docx:	clean $(DOCX)
+
+## The commands associated with dependencies.
+## This first one is run when `make html` is typed.
+## Read the rule as "Each .html file depends on a .md file with the
+## same name. Run this pandoc command if the .md file has changed."
+## 
+%.html:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
+    -w html -S --template=$(PREFIX)/templates/html.template \
+    --css=$(PREFIX)/marked/kultiad-serif.css --filter pandoc-crossref \     
+    --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl \ 
+    --bibliography=$(BIB) -o $@ $<
+
+
+## Same goes for the other file types. Watch out for the TAB before 'pandoc'
+%.tex:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
+    --listings -w latex -s -S --latex-engine=pdflatex \ 
+    --template=$(PREFIX)/templates/latex.template \ 
+    --filter pandoc-crossref --filter pandoc-citeproc \ 
+    --csl=$(PREFIX)/csl/ajps.csl --filter pandoc-citeproc-preamble \ 
+    --bibliography=$(BIB) -o $@ $<
+
+
+%.pdf:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
+    --listings -s -S --latex-engine=pdflatex \ 
+    --template=$(PREFIX)/templates/latex.template \ 
+    --filter pandoc-crossref --filter pandoc-citeproc \ 
+    --csl=$(PREFIX)/csl/$(CSL).csl --filter pandoc-citeproc-preamble \ 
+    --bibliography=$(BIB) -o $@ $<
+
+%.docx:	%.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
+    -s -S --filter pandoc-crossref --csl=$(PREFIX)/csl/$(CSL).csl \ 
+    --bibliography=$(BIB) -o $@ $<
+
+
+clean:
+	rm -f *.html *.pdf *.tex *.aux *.log *.docx
+
+.PHONY: clean
+
 ```
 
-This contains some variables that are set at the top of the Makefile. Note that the `pandoc` command is actually a single line of text, not several lines separated by the `<return>` key. On my computer, the command as actually executed is shown in @lst:makeoutput.
-
-
-```{#lst:makeoutput .bash caption="What the Makefile executes"}
-
-pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  
---latex-engine=pdflatex 
---template=/Users/kjhealy/.pandoc/templates/latex.template
---filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl 
---bibliography=/Users/kjhealy/Documents/bibs/socbib-pandoc.bib
-```
-
-Again, this is all a single line of text, broken up here just for convenience. Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
+Note that the `pandoc` commands are actually a single line of text, not several lines separated by the `<return>` key. The `\` symbol is not in the Makefile proper. The commands are broken into a separate lines for reading convenience. Your version would vary depending on the location of the templates and bibliography files. From the command line, typing `make pdf` would take all the `.md` files in the directory one at a time and run the pandoc command to turn each one into a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
 
 The examples directory [also includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the `knitr` project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, launch R in the working directory, load knitr, and process the file. You will also need the `ascii`, `memisc`, and `ggplot2` libraries to be available.
 
@@ -303,7 +360,7 @@ Amongst social scientists, revision control is perhaps the least widely-used of 
 
 It would be nice if all you needed to do your work was a box software of software tricks and shortcuts. But of course it's a bit more complicated than that. In order to get to the point where you can write a paper, you need to be organized enough to have read the right literature, maybe collected some data, and most importantly asked an interesting question in the first place. No amount of software is going to solve those problems for you. Too much concern with the details of your setup hinders your work. Indeed---and I speak from experience here---this concern is itself a kind self-imposed distraction that placates work-related anxiety in the short term while storing up more of it for later.[^10] On the hardware side, there's the absurd productivity counterpart to the hedonic treadmill, where for some reason it's hard to get through the to-do list even though the cafe you're at contains more computing power than was available to the Pentagon in 1965. On the software side, the besetting vice of software is the tendency to waste a lot of your time installing, updating, and generally obsessing about it.[^11] Even more generally, efficient workflow habits are themselves just a means to the end of completing the projects you are really interested in, of making the things you want to make, of finding the answers to the questions that brought you to graduate school. The process of idea generation and project management can be run well, too, and perhaps even the business of choosing what the projects should be in the first place. But this is not the place---and I am not the person---to be giving advice about that.
 
-All of which is just to reiterate two things. First, I am not advocating these tools on the grounds that they will make you more "productive". Rather, they may help you remain in control of---and able to reproduce---your own prior work. That is an important difference. Second, even with that caveat it is still the *principles* of workflow management that are important. The software is just a means to an end. One of the [smartest, most productive people I've ever known](http://en.wikipedia.org/wiki/David_Kellogg_Lewis) spent half of his career writing on a typewriter and the other half on an ancient [IBM Displaywriter](http://www-03.ibm.com/ibm/history/exhibits/pc/pc_8.html). His backup solution for having hopelessly outdated hardware was to keep a spare Displaywriter in a nearby closet, in case the first one broke. It never did.
+All of which is just to reiterate two things. First, I am not advocating these tools on the grounds that they will make you more "productive". Rather, they may help you stay in control of---and able to reproduce---your own prior work. That is an important difference. If you care about getting the right answer in your data analysis, or at least being able to repeatedly get the same probably wrong answer, then tools that enhance this sort of control should appeal to you. Second, even with that caveat it is still the *principles* of workflow management that are important. The software is just a means to an end. One of the [smartest, most productive people I've ever known](http://en.wikipedia.org/wiki/David_Kellogg_Lewis) spent half of his career writing on a typewriter and the other half on an ancient [IBM Displaywriter](http://www-03.ibm.com/ibm/history/exhibits/pc/pc_8.html). His backup solution for having hopelessly outdated hardware was to keep a spare Displaywriter in a nearby closet, in case the first one broke. It never did.
 
 
 ## Appendix: Links to Resources

@@ -13,10 +13,11 @@
 ## 	in your working directory. Make sure you do not have files in these
 ##	formats that you want to keep!
 
-## Markdown extension (e.g. md, markdown, mdown).
+## Extension (e.g. md, markdown, mdown).
+## for all markdown files in the directory
 MEXT = md
 
-## All markdown files in the working directory
+## Variable for all markdown files in the working directory
 SRC = $(wildcard *.$(MEXT))
 
 ## Location of Pandoc support files.
@@ -29,11 +30,14 @@ BIB = /Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 CSL = apsa
 
 
+## Dependencies: .pdf depends on .md, .html depends on .md, etc
 PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
 TEX=$(SRC:.md=.tex)
 DOCX=$(SRC:.md=.docx)
 
+## Rules -- make all, make pdf, make html: first call the `clean` rule (see below),
+## then the filetype rule.
 all:	$(PDFS) $(HTML) $(TEX) $(DOCX)
 
 pdf:	clean $(PDFS)
@@ -41,9 +45,14 @@ html:	clean $(HTML)
 tex:	clean $(TEX)
 docx:	clean $(DOCX)
 
+## The actual commands.
+## How to produce a .html file corresponding to each .md in the directory. Run when
+## `make html` is the command.
 %.html:	%.md
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --css=$(PREFIX)/marked/kultiad-serif.css --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
 
+
+## Same goes for the other file types
 %.tex:	%.md
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block --listings -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-crossref --filter pandoc-citeproc --csl=$(PREFIX)/csl/ajps.csl --filter pandoc-citeproc-preamble --bibliography=$(BIB) -o $@ $<
 
