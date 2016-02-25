@@ -309,11 +309,12 @@ All of which is just to reiterate two things. First, I am not advocating these t
     - [Homebrew package manager](http://brew.sh). A convenient way to install several of the tools here, including Emacs and Pandoc.
     - [Emacs](http://www.gnu.org/software/emacs/). A powerful text editor. Ready-to-go Mac version at [Emacs for Mac OS X](http://emacsformacosx).
     - [R](http://r-project.org). A platform for statistical computing.
-    - [Rstudio](http://rstudio.com). An IDE for R. The most straightforward way to get into using R and RMarkdown.
+    - [RStudio](http://rstudio.com). An IDE for R. The most straightforward way to get into using R and RMarkdown.
     - [TeX and LaTeX](http://tug.org). A typesetting and document preparation system. You can write files in `.tex` format directly, or you can just have it available in the background for other tools to use. The [MacTeX Distribution](http://tug.org/mactex) is the one to install for OS X.
     - [Pandoc](http://pandoc.org). Converts plain-text documents to and from a wide variety of formats. Can be installed with Homebrew. Be sure to also install `pandoc-citeproc` for processing citations and bibliographies, and `pandoc-crossref` for producing cross-references and labels.
     - [Git](http://git-scm.org). Version control system. Installs with Apple's Developer Tools, or get the latest version via Homebrew.
     - [GNU Make](http://www.gnu.org/software/make). You tell `make` what the steps are to create the pieces of a document or program. As you edit and change the various pieces, it automatically figures out which pieces need to be updated and recompiled, and issues the commands to do that. See Karl Broman's [Minimal Make](http://kbroman.org/minimal_make/) for a short introduction. Make will be installed automatically with Apple's developer tools.
+    - [Zotero](http://zotero.org) and [Mendeley](http://mendeley.com) are citation managers that incorporate annotation and other features. I don't use these tools, but that's not for any strong principled reason. If you use one and want to integrate with the material here, just make sure it can export to BibTeX/BibLaTeX files.
 
 - **Helpers and Templates**
     - [Emacs Starter Kit for the Social Sciences](http://kjhealy.github.com/emacs-starter-kit/). Set Emacs up to use many of the tools described in this guide.
@@ -322,6 +323,13 @@ All of which is just to reiterate two things. First, I am not advocating these t
     - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) An overview of Markdown and RMarkdown conventions.
     - [RStudio Cheatsheets](https://rstudio.com/resources/cheatsheets/) Other quick guides, including a more comprehensive RMarkdown reference and a information about using RStudio's IDE, and some of the main tools in R.
     - [Plain Person's Guide](http://github.com/kjhealy/workflow-apps) The git repository for this project.
+    
+- **Paid Applications and Services**
+    - [Backblaze](http://backblaze.com). Secure off-site backup.
+    - [Crashplan](http://crashplan.com). Secure off-site backup.
+    - [GitHub](http://github.com). Host public Git repositories for free. Pay to host private ones. Also a source for publicly available code (e.g. R packages and utilities) written by other people.
+    - [Marked 2](http://marked2app.com). Live HTML previewing of Markdown documents. Mac OS X only.
+    - [Sublime Text](http://sublimetext.com). Python-based text editor.
 
 [^1]: This may also be true if you are about to move from being a
     graduate student to starting as a faculty member, though perhaps the
