@@ -184,8 +184,8 @@ A sample document flow is shown in @fig:workflow-diagram. I promise it is less i
 
 I write everything in Emacs, but as I hope is clear by now, that doesn't matter. Use whatever text editor you like and just learn the hell out of it. The [custom LaTeX style files](https://github.com/kjhealy/latex-custom-kjh) were originally put together to let me write nice-looking `.tex` files directly, but now they just do their work in the background. Pandoc will use them when it converts things to PDF. The heavy lifting is done by the [org-preamble-pdflatex.sty](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-org-mode) and [memoir-article-styles](https://github.com/kjhealy/latex-custom-kjh/tree/master/needs-memoir) files. If you install these files where LaTeX can find them---i.e., if you can compile a LaTeX document [based on this example](https://github.com/kjhealy/latex-custom-kjh/blob/master/templates/basic/article.tex)---then you are good to go. My [BibTeX master file](https://github.com/kjhealy/socbibs) is also available, but you will probably want to use your own, changing references to it in the templates as appropriate. Second, we have the custom pandoc stuff. [Here is the repository for that](https://github.com/kjhealy/pandoc-templates). Much of the material there is designed to go in the `~/.pandoc/` directory, which is where pandoc expects to find its configuration files. I have also set up a sample [`md-starter` project](https://github.com/kjhealy/md-starter) and an [`rmd-starter` project](https://github.com/kjhealy/rmd-starter). These are the skeletons of project folders for a paper written in Markdown (just an `.md` file, with no R) and a paper beginning life as an `.Rmd` file. The sample projects contain the basic starter file and a `Makefile` to produce `.html`, `.tex`, `.pdf` and `.docx` files.
 
-```{#lst:yamlheader .yaml caption="The top of a pandoc-ready .md file, showing the document metadata"}
 
+```{#lst:yamlheader .sh caption="Markdown file with document metadata"}
 ---
 title: "A Pandoc Markdown Article Starter"
 author:
@@ -211,7 +211,10 @@ dolore magna aliqua [@fourcade13classsituat].
 
 ```
 
-Let's start with a straightforward markdown file---no R code yet, so nothing above the `article.md` line in the picture above. The start of the sample `article-markdown.md` file is shown in @lst:yamlheader. The bit at the top is metadata, which pandoc understands. The HTML and LaTeX templates [in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/tree/master/templates) are set up to use this metadata properly. Pandoc will take care of the citations directly. There is more than one way to have pandoc manage citations, but here we just use the most self-contained route. Simple documents can be contained in a single `.md` file. Documents including data analysis start life as `.Rmd` files which are then knitted into `.md` files and converted to PDF or HTML. At its simplest, a `mypaper.md` document can be converted to `mypaper.pdf` file by opening a terminal window and typing a command like the one in @lst:pandocsimple.
+: Listing 
+
+
+Let's start with a straightforward markdown file---no R code yet, so nothing to the left of `article.md` line in @fig:workflow-diagram. The start of the sample `article-markdown.md` file is shown in @lst:yamlheader. The bit at the top is metadata, which pandoc understands. The HTML and LaTeX templates [in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/tree/master/templates) are set up to use this metadata properly. Pandoc will take care of the citations directly. There is more than one way to have pandoc manage citations, but here we just use the most self-contained route. Simple documents can be contained in a single `.md` file. Documents including data analysis start life as `.Rmd` files which are then knitted into `.md` files and converted to PDF or HTML. At its simplest, a `mypaper.md` document can be converted to `mypaper.pdf` file by opening a terminal window and typing a command like the one in @lst:pandocsimple.
 
 ```{#lst:pandocsimple .sh caption="The simplest way to converting a Markdown file to PDF with pandoc"}
 
@@ -242,12 +245,13 @@ This contains some variables that are set at the top of the Makefile. Note that 
 ```{#lst:makeoutput .bash caption="What the Makefile executes"}
 
 pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  
---latex-engine=pdflatex --template=/Users/kjhealy/.pandoc/templates/latex.template  
+--latex-engine=pdflatex 
+--template=/Users/kjhealy/.pandoc/templates/latex.template
 --filter pandoc-citeproc --csl=/Users/kjhealy/.pandoc/csl/apsr.csl 
 --bibliography=/Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 ```
 
-Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
+Again, this is all a single line of text, broken up here just for convenience. Your version would vary depending on the location of the templates and bibliography files. This is what you would run from the command line if you wanted to take a markdown file and use pdflatex to turn it in to a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
 
 The examples directory [also includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the `knitr` project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, launch R in the working directory, load knitr, and process the file. You will also need the `ascii`, `memisc`, and `ggplot2` libraries to be available.
 
@@ -305,7 +309,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 ## Appendix: Links to Resources
 
 - **Basic Tools**
-    - [Apple's Developer Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) Unix toolchain. Install directly with `xcode-select --install`, or just try to use e.g. `git` from the terminal and have OS X prompt you to install them.
+    - [Apple's Developer Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) Unix toolchain. Install directly with `xcode-select --install`, or just try to use e.g. `git` from the terminal and have OS X prompt you to install the tools.
     - [Homebrew package manager](http://brew.sh). A convenient way to install several of the tools here, including Emacs and Pandoc.
     - [Emacs](http://www.gnu.org/software/emacs/). A powerful text editor. Ready-to-go Mac version at [Emacs for Mac OS X](http://emacsformacosx).
     - [R](http://r-project.org). A platform for statistical computing.
@@ -363,5 +367,4 @@ All of which is just to reiterate two things. First, I am not advocating these t
     Devil](http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/)"
     makes this point very well.
 
-[^commandline]: Here's how. Open a terminal window and type `xcode-select --install`. You can install `pandoc`
- and many other tools using the [Homebrew package manager](http://brew.sh).
+[^commandline]: Here's how. Open a terminal window and type `xcode-select --install`. You can install `pandoc` and many other tools using the [Homebrew package manager](http://brew.sh).
