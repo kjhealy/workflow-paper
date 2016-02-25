@@ -383,7 +383,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
     - [`md-starter` project](https://github.com/kjhealy/md-starter) and [`rmd-starter` project](https://github.com/kjhealy/rmd-starter). Assuming you have the tools and Pandoc/LaTeX templates installed, these skeleton project folders contain a basic `.md` or `.rmd` starter file and a `Makefile` to produce `.html`, `.tex`, `.pdf` and `.docx` files as described in this guide.
     - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) An overview of Markdown and RMarkdown conventions.
     - [RStudio Cheatsheets](https://rstudio.com/resources/cheatsheets/) Other quick guides, including a more comprehensive RMarkdown reference and a information about using RStudio's IDE, and some of the main tools in R.
-    - [Plain Person's Guide](http://github.com/kjhealy/workflow-apps) The git repository for this project.
+    - [Plain Person's Guide](http://github.com/kjhealy/workflow-paper) The git repository for this project.
     
 - **Paid Applications and Services**
     - [Backblaze](http://backblaze.com). Secure off-site backup.
