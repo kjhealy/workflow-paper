@@ -119,7 +119,6 @@ Errors in data analysis often well up out of the gap that typically exists betwe
 An important way to caulk this gap is to use [RMarkdown](http://rmarkdown.rstudio.com) and [knitr](http://yihui.name/knitr/) when doing quantitative analysis in R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way of writing plain text that includes information about the formatting of your document. It was originally developed by John Gruber, with input from Aaron Swartz. The aim was to make a simple format that could incorporate structural information about the document (such as headings and subheadings, *emphasis*, [hyperlinks](http://daringfireball.net/markdown), lists, footnotes, and so on), with minimal loss of readability. Formats like HTML or TeX are much more extensive markup languages, but Markdown was meant to be simple. Over the years it has become a *de facto* standard. Text editors and note-taking applications support it, and tools exist to convert Markdown not just into HTML (its original target output format) but many other document types as well. There are a number of Markdown variants, or "flavors", that have extended it to manage things like cross-references and labels, citations, and other textual elements. @lst:markdown-example shows the markdown source for this paragraph and its subheading.
 
 ```{#lst:markdown-example .markdown caption="The Markdown source for a nearby part of this document."}
-
 ### Using Markdown, RMarkdown and `knitr` 
 
 An important way to caulk this gap is to use
@@ -142,7 +141,6 @@ Markdown variants, or "flavors", that have extended it to manage
 things like cross-references and labels, citations, and other textual
 elements. @lst:markdown-example shows the markdown source for this
 paragraph and its subheading.
-
 ```
 
 RMarkdown is a way to incorporate R code into this process. This approach is designed to integrate the plain-text documentation or writeup of a data analysis and its execution. You write the text of your paper (or, more often, your report documenting a data analysis) as normal. Whenever you want to run a model, produce a table or display a figure, rather than paste in the results of your work from elsewhere, you write down the R code that will produce the output you want. These "chunks" of code can be interspersed throughout the document. They are distinguished from the regular text by a special delimiter at the beginning and end of the block.
@@ -157,7 +155,6 @@ RMarkdown is one of several "literate programming" formats. The idea goes back t
 ![Tea and Biscuits](figures/example-figure-1.png){#fig:example-figure-r}
 
 ```{#lst:r-example .r caption="R code snippet."}
-
 library(ggplot2)
 tea <- rnorm(100)
 biscuits <- tea + rnorm(100,0,1.3)
@@ -165,9 +162,7 @@ data <- data.frame(tea, biscuits)
 p <- ggplot(data, aes(x=tea, y=biscuits)) + 
    geom_smooth(method="lm") + 
    labs(x="Tea", y="Biscuits") + theme_bw() 
-
 print(p)   
-
 ```
 
 `knitr` and RMarkdown make it easy to produce HTML output, too. This makes for easy portability, conversion, and quick previewing while editing. You can work with RMarkdown files in any text editor, and Emacs has strong support for them. RStudio also comes with built-in support for `.Rmd` files and makes it very easy to produce HTML and PDF output, and to publish your reports to the web via its [RPubs](http://rpubs.com) service.
@@ -211,7 +206,6 @@ aliqua [@fourcade13classsituat]. Notice that citation.
 Lorem ipsum dolor sit amet, consectetur adipisicing 
 elit, sed do eiusmod tempor incididunt ut labore et 
 dolore magna aliqua [@fourcade13classsituat].
-
 ```
 
 : Listing 
@@ -219,10 +213,8 @@ dolore magna aliqua [@fourcade13classsituat].
 
 Let's start with a straightforward markdown file---no R code yet, so nothing to the left of `article.md` line in @fig:workflow-diagram. The start of the sample `article-markdown.md` file is shown in @lst:yamlheader. The bit at the top is metadata, which pandoc understands. The HTML and LaTeX templates [in the pandoc-templates repository](https://github.com/kjhealy/pandoc-templates/tree/master/templates) are set up to use this metadata properly. Pandoc will take care of the citations directly. There is more than one way to have pandoc manage citations, but here we just use the most self-contained route. Simple documents can be contained in a single `.md` file. Documents including data analysis start life as `.Rmd` files which are then knitted into `.md` files and converted to PDF or HTML. At its simplest, a `mypaper.md` document can be converted to `mypaper.pdf` file by opening a terminal window and typing a command like the one in @lst:pandocsimple.
 
-```{#lst:pandocsimple .sh caption="The simplest way to converting a Markdown file to PDF with pandoc"}
-
+```{#lst:pandocsimple .sh caption="The simplest way to convert a Markdown file to PDF with pandoc"}
 pandoc mypaper.md -o mypaper.pdf
-
 ```
 
 
@@ -231,7 +223,6 @@ Because we will probably run commands like this a lot, it's convenient to automa
 We manage this process using a tool called [`make`](http://kbroman.org/minimal_make/). Inside our project folder we put a plain-text `Makefile` that contains some rules governing how to produce a _target_ file that might have a number of _prerequisites_. In this case, a PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces the prerequisites changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/md-starter) will convert any markdown files in the working directory to HTML, `.tex`, `.pdf`, or `.docx` files as requested. Typing `make html` at the command line will produce `.html` files from any `.md` files in the directory, for example. The PDF output (from `make pdf`) will look like this article, more or less. The different pieces of the Makefile define a few variables, specify the relationship between the different file types. In essence the rules say, for example, that all the PDF files in the directory depend on changes to an `.md` file with the same name; that the same is true of the HTML files in the directory, and so on. Then the  show the pandoc commands that generate the output files from the markdown input. The Makefile itself is shown in @lst:makefile.
 
 ```{#lst:makefile .bash caption="A Makefile"}
-
 ## The big gotcha for Makefiles is that for no good reason they use 
 ## TAB rather than spaces to indent commands associated with rules. 
 ## If you use spaces, `make` will not work.
@@ -252,7 +243,6 @@ BIB = /Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
 CSL = apsa
 
-
 ## Dependencies: .pdf depends on .md, .html depends on .md, etc
 PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
@@ -261,7 +251,6 @@ DOCX=$(SRC:.md=.docx)
 
 ## Rules -- make all, make pdf, make html. The `clean` rule is below.
 all:	$(PDFS) $(HTML) $(TEX) $(DOCX)
-
 pdf:	clean $(PDFS)
 html:	clean $(HTML)
 tex:	clean $(TEX)
@@ -271,14 +260,12 @@ docx:	clean $(DOCX)
 ## This first one is run when `make html` is typed.
 ## Read the rule as "Each .html file depends on a .md file with the
 ## same name. Run this pandoc command if the .md file has changed."
-## 
 %.html:	%.md
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
     -w html -S --template=$(PREFIX)/templates/html.template \
     --css=$(PREFIX)/marked/kultiad-serif.css --filter pandoc-crossref \     
     --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl \ 
     --bibliography=$(BIB) -o $@ $<
-
 
 ## Same goes for the other file types. Watch out for the TAB before 'pandoc'
 %.tex:	%.md
@@ -288,7 +275,6 @@ docx:	clean $(DOCX)
     --filter pandoc-crossref --filter pandoc-citeproc \ 
     --csl=$(PREFIX)/csl/ajps.csl --filter pandoc-citeproc-preamble \ 
     --bibliography=$(BIB) -o $@ $<
-
 
 %.pdf:	%.md
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
@@ -303,12 +289,10 @@ docx:	clean $(DOCX)
     -s -S --filter pandoc-crossref --csl=$(PREFIX)/csl/$(CSL).csl \ 
     --bibliography=$(BIB) -o $@ $<
 
-
 clean:
 	rm -f *.html *.pdf *.tex *.aux *.log *.docx
 
 .PHONY: clean
-
 ```
 
 Note that the `pandoc` commands are actually a single line of text, not several lines separated by the `<return>` key. The `\` symbol is not in the Makefile proper. The commands are broken into a separate lines for reading convenience. Your version would vary depending on the location of the templates and bibliography files. From the command line, typing `make pdf` would take all the `.md` files in the directory one at a time and run the pandoc command to turn each one into a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
