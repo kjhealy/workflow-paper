@@ -396,14 +396,6 @@ All of which is just to reiterate two things. First, I am not advocating these t
     graduate student to starting as a faculty member, though perhaps the
     rationale is less compelling given the costs.
 
-[^2]: Comparisons should still take account of remaining differences in
-    hardware design quality, and of course the OS itself.
-    I use Mac OS X these days, and I recommend you do, too. The
-    discussion here reflects that preference to some extent. But the
-    other options are also viable alternatives, and most of the tools I
-    discuss are available on all three platforms. So I will not spend
-    any more time trying to convince you one way or the other.
-
 [^3]: For further argument about the advantages of text-editors over
     word processors see Allin Cottrell's polemic, \`\`[Word Processors:
     Stupid and Inefficient](http://www.ecn.wfu.edu/~cottrell/wp.html).''
