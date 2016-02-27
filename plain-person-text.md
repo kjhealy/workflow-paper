@@ -112,9 +112,9 @@ We have already seen how the right set of tools can save you time by automatical
 
 Errors in data analysis often well up out of the gap that typically exists between the procedure used to produce a figure or table in a paper and the subsequent use of that output later. In the ordinary way of doing things, you have the code for your data analysis in one file, the output it produced in another, and the text of your paper in a third file. You do the analysis, collect the output and copy the relevant results into your paper, often manually reformatting them on the way. Each of these transitions introduces the opportunity for error. In particular, it is easy for a table of results to get detached from the sequence of steps that produced it. Almost everyone who has written a quantitative paper has been confronted with the problem of reading an old draft containing results or figures that need to be revisited or reproduced (as a result of peer-review, say) but which lack any information about the circumstances of their creation. Academic papers take a long time to get through the cycle of writing, review, revision, and publication, even when you're working hard the whole time. It is not uncommon to have to return to something you did two years previously in order to answer some question or other from a reviewer. You do not want to have to do everything over from scratch in order to get the right answer. I am not exaggerating when I say that, whatever the challenges of replicating the results of someone else's quantitative analysis, after a fairly short period of time authors themselves find it hard to replicate their *own* work. Computer Science people have a term of art for the inevitable process of decay that overtakes a project simply in virtue of its being left alone on the hard drive for six months or more: bit--rot.
 
-### Using Markdown, RMarkdown and `knitr` 
+### Using Markdown
 
-An important way to caulk this gap is to use [RMarkdown](http://rmarkdown.rstudio.com) and [knitr](http://yihui.name/knitr/) when doing quantitative analysis in R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way of writing plain text that includes information about the formatting of your document. It was originally developed by John Gruber, with input from Aaron Swartz. The aim was to make a simple format that could incorporate structural information about the document (such as headings and subheadings, *emphasis*, [hyperlinks](http://daringfireball.net/markdown), lists, footnotes, and so on), with minimal loss of readability. Formats like HTML or TeX are much more extensive markup languages, but Markdown was meant to be simple. Over the years it has become a *de facto* standard. Text editors and note-taking applications support it, and tools exist to convert Markdown not just into HTML (its original target output format) but many other document types as well. There are a number of Markdown variants, or "flavors", that have extended it to manage things like cross-references and labels, citations, and other textual elements. @lst:markdown-example shows the markdown source for this paragraph and its subheading.
+An important way to caulk this gap is to use [RMarkdown](http://rmarkdown.rstudio.com) and [knitr](http://yihui.name/knitr/) when doing quantitative analysis in R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way of writing plain text that includes information about the formatting of your document. It was originally developed by John Gruber, with input from Aaron Swartz. The aim was to make a simple format that could incorporate structural information about the document (such as headings and subheadings, *emphasis*, [hyperlinks](http://daringfireball.net/markdown), lists, footnotes, and so on), with minimal loss of readability. Formats like HTML or TeX are much more extensive markup languages, but Markdown was meant to be simple. Over the years it has become a *de facto* standard. Text editors and note-taking applications support it, and tools exist to convert Markdown not just into HTML (its original target output format) but many other document types as well. @lst:markdown-example shows the markdown source for this paragraph and its subheading.
 
 ```{#lst:markdown-example .markdown caption="The Markdown source for a nearby part of this document."}
 ### Using Markdown, RMarkdown and `knitr` 
@@ -134,18 +134,71 @@ are much more extensive markup languages, but Markdown was meant to be
 simple. Over the years it has become a *de facto* standard. Text
 editors and note-taking applications support it, and tools exist to
 convert Markdown not just into HTML (its original target output
-format) but many other document types as well. There are a number of
-Markdown variants, or "flavors", that have extended it to manage
-things like cross-references and labels, citations, and other textual
-elements. @lst:markdown-example shows the markdown source for this
-paragraph and its subheading.
+format) but many other document types as well. @lst:markdown-example shows 
+the markdown source for this paragraph and its subheading.
 ```
 
-RMarkdown is a way to incorporate R code into this process. This approach is designed to integrate the plain-text documentation or writeup of a data analysis and its execution. You write the text of your paper (or, more often, your report documenting a data analysis) as normal. Whenever you want to run a model, produce a table or display a figure, rather than paste in the results of your work from elsewhere, you write down the R code that will produce the output you want. These "chunks" of code can be interspersed throughout the document. They are distinguished from the regular text by a special delimiter at the beginning and end of the block.
+The excerpt shown in @lst:markdown-example shows a few of the most
+common Markdown conventions, most notably the standard way of
+representing hyperlinks, and emphasizing text. There are a number of
+Markdown variants, or "flavors", that have extended it to manage
+things like cross-references and labels, citations, and other textual
+elements. Citations are particularly important. The `pandoc-citeproc`
+filter is an add-on that handles these. It can be installed alongside
+`pandoc`. Your bibliography can be stored in one of a variety of
+formats (such as BibTeX, or EndNote). Within your `.md` document,
+cites are referred to by their key, such as
+`[@healy14datavisualsociol]`. When `pandoc` converts your document,
+the cite key is replaced with the reference information like this
+[@healy14datavisualsociol], and the full bibliographic entry is
+included in an automaticaly-generated list of references. Read
+[Pandoc's documentation for more details](http://pandoc.org/README.html#citations)
+about citations. At the end of the excerpt you can also see that the
+code listing is labeled with `@lst:markdown-example`, for example. A
+Pandoc filter named
+[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)
+extends this `@label` convention to deal with labeled Figures, Tables,
+and so on. Using Markdown in this way means you do not have to worry
+whether your reference list is complete, or whether cross-references
+(to 'Figure 3' for example) remain correct after you move things
+around in your text.
 
-When you're ready, you `knit` the document. That is, you feed it to R, which processes the code chunks, and produces a finished version where the code chunks have been replaced by their output. This is now a nice markdown file that you can then turn into a PDF or HTML document. Conversely, if you just want to extract the code you've written from the surrounding text, then you "tangle" the file, which results in an `.R` file. It's pretty straightforward in practice. The strength of this approach is that is makes it much easier to document your work properly. There is just one file for both the data analysis and the writeup. The output of the analysis is created on the fly, and the code to do it is embedded in the paper. If you need to do multiple but identical (or very similar) analyses of different bits of data, RMarkdown and `knitr` can make generating consistent and reliable reports much easier.
 
-RMarkdown is one of several "literate programming" formats. The idea goes back to Donald Knuth, the pioneering theorist of computer science who developed the TeX typesetting system in his spare time. Although his focus was on documenting computer programs, in retrospect Knuth anticipated many of the main ideas---and developed several of the initial tools---for reproducible data analysis.
+## Using RMarkdown and `knitr` 
+
+All of this applies just to `.md` documents. What about data analysis?
+RMarkdown is a way to incorporate R code into this process. This
+approach is designed to integrate the plain-text documentation or
+writeup of a data analysis and its execution. You write the text of
+your paper (or, more often, your report documenting a data analysis)
+as normal. Whenever you want to run a model, produce a table or
+display a figure, rather than paste in the results of your work from
+elsewhere, you write down the R code that will produce the output you
+want. These "chunks" of code can be interspersed throughout the
+document. They are distinguished from the regular text by a special
+delimiter at the beginning and end of the block.
+
+When you're ready, you `knit` the document. That is, you feed it to R,
+which processes the code chunks, and produces a finished version where
+the code chunks have been replaced by their output. This is now a nice
+markdown file that you can then turn into a PDF or HTML document.
+Conversely, if you just want to extract the code you've written from
+the surrounding text, then you "tangle" the file, which results in an
+`.R` file. It's pretty straightforward in practice. The strength of
+this approach is that is makes it much easier to document your work
+properly. There is just one file for both the data analysis and the
+writeup. The output of the analysis is created on the fly, and the
+code to do it is embedded in the paper. If you need to do multiple but
+identical (or very similar) analyses of different bits of data,
+RMarkdown and `knitr` can make generating consistent and reliable
+reports much easier.
+
+RMarkdown is one of several "literate programming" formats. The idea
+goes back to Donald Knuth, the pioneering theorist of computer science
+who developed the TeX typesetting system in his spare time. Although
+his focus was on documenting computer programs, in retrospect Knuth
+anticipated many of the main ideas---and developed several of the
+initial tools---for reproducible data analysis.
 
 @fig:example-figure-r, for instance, could be generated on the fly from source-code blocks included in the `.Rmd` source for this article. Sometimes we will want to only show the results produced by the code---in this case, @fig:example-figure-r. But at other times we will want to display the code as well, as in @lst:r-example. 
 
@@ -215,7 +268,9 @@ pandoc mypaper.md -o mypaper.pdf
 
 Because we will probably run commands like this a lot, it's convenient to automate them a little bit, and to add some extra bells and whistles to accommodate things we will routinely add to files, such as author information and other metadata, together with the ability to process bibliographic information and cross-references. These are handled by `pandoc` by turning on various switches in the command, and by ensuring a couple of external "filters" are present to manage the bibliographies and cross-references. Rather than type long commands out repeatedly, we will automate the process. This kind of automation is especially useful when our final output file might have a number of prerequisites before it can be properly produced, and we would like the computer to be a little bit smart about what needs to be re-processed and under what conditions. That way, for example, if a Figure has not changed we will not re-run the (possibly time-consuming) R script to create it again, unless we have to.
 
-We manage this process using a tool called [`make`](https://www.gnu.org/software/make/). Inside our project folder we put a plain-text `Makefile` that contains some rules governing how to produce a _target_ file that might have a number of _prerequisites_. In this case, a PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces the prerequisites changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. For a good basic introduction, take a look at Karl Broman's "[Minimal Make](http://kbroman.org/minimal_make/)". The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/md-starter) will convert any markdown files in the working directory to HTML, `.tex`, `.pdf`, or `.docx` files as requested. Typing `make html` at the command line will produce `.html` files from any `.md` files in the directory, for example. The PDF output (from `make pdf`) will look like this article, more or less. The different pieces of the Makefile define a few variables, specify the relationship between the different file types. In essence the rules say, for example, that all the PDF files in the directory depend on changes to an `.md` file with the same name; that the same is true of the HTML files in the directory, and so on. Then the  show the pandoc commands that generate the output files from the markdown input. The Makefile itself is shown in @lst:makefile.
+We manage this process using a tool called [`make`](https://www.gnu.org/software/make/). Inside our project folder we put a plain-text `Makefile` that contains some rules governing how to produce a _target_ file that might have a number of _prerequisites_. In this case, a PDF or HTML file is the target, and the various figures and data tables are the prerequisites---if the code that produces the prerequisites changes, the final document will change too. `Make` starts from the final document and works backwards along the chain of prerequisites, re-compiling or re-creating them as needed. It's a powerful tool. For a good basic introduction, take a look at Karl Broman's "[Minimal Make](http://kbroman.org/minimal_make/)". (Incidentally, Karl Broman has [a number of tutorials and guides](http://kbroman.org/pages/tutorials) providing accurate and concise tours of many of the tools and topics described here, including [getting started with reproducible research](http://kbroman.org/steps2rr), [using git and GitHub](http://kbroman.org/github_tutorial), and [working with knitr](http://kbroman.org/knitr_knutshell).)
+
+The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/md-starter) will convert any markdown files in the working directory to HTML, `.tex`, `.pdf`, or `.docx` files as requested. Typing `make html` at the command line will produce `.html` files from any `.md` files in the directory, for example. The PDF output (from `make pdf`) will look like this article, more or less. The different pieces of the `Makefile` define a few variables that specify the relationship between the different file types. In essence the rules say, for example, that all the PDF files in the directory depend on changes to an `.md` file with the same name; that the same is true of the HTML files in the directory, and so on. Then the  show the `pandoc` commands that generate the output files from the markdown input. The Makefile itself is shown in @lst:makefile.
 
 ```{#lst:makefile .bash caption="A Makefile"}
 ## The big gotcha for Makefiles is that for no good reason they use 
@@ -290,11 +345,11 @@ clean:
 .PHONY: clean
 ```
 
-Note that the `pandoc` commands are actually a single line of text, not several lines separated by the `<return>` key. The `\` symbol is not in the Makefile proper. The commands are broken into a separate lines for reading convenience. Your version would vary depending on the location of the templates and bibliography files. From the command line, typing `make pdf` would take all the `.md` files in the directory one at a time and run the pandoc command to turn each one into a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
+Note that the `pandoc` commands are actually a single line of text, not several lines separated by the `<return>` key. The `\` symbol is not in the `Makefile` proper. The commands are broken into a separate lines for reading convenience. With this Makefile,  typing `make pdf` would take all the `.md` files in the directory one at a time and run the pandoc command to turn each one into a PDF, using the [APSR](https://www.apsanet.org/utils/journal.cfm?Journal=APSR) reference style, my latex template, and a `.bib` file called `socbib-pandoc.bib`.
 
-The examples directory [also includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the `knitr` project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, launch R in the working directory, load `knitr`, and process the file. You will also need the `ascii`, `memisc`, and `ggplot2` libraries to be available.
+You shouldn't use this `Makefile` blindly. Take the time to learn how `make` works and how it can help your project. The particular steps may be quite simple, and not require the use of any variables or other frills. Your version would also vary depending on the location of the templates and bibliography files, and so on. But if you find yourself repeatedly running the same sequence of commands to assemble a document (e.g. cleaning data; running preliminary code; producing figures; assembling a final document) then `make` can do a lot to automate the process.
 
-If things are working properly, then a markdown file called `article-knitr.md` will be produced, together with some graphics in the `figures/` subfolder and some working files in the `cache/` folder. We set things up in the `.Rmd` file so that `knitr` produces both PNG and PDF versions of whatever figures are generated by R. That prepares the way for easy conversion to HTML and LaTeX. Once the `article-knitr.md` file is produced, HTML, `.tex`, and PDF versions of it can be produced as before, by typing `make` at the command line. You can also run the pandoc commands manually, of course, or do everything from inside R via the `rmarkdown` package's `render()` function.
+The examples directory [includes](https://github.com/kjhealy/pandoc-templates/blob/master/examples/article-knitr.Rmd) a sample `.Rmd` file. The code chunks in the file provide examples of how to generate tables and figures in the document. In particular they show some useful options that can be passed to knitr. [Consult the `knitr` project page](http://yihui.name/knitr/) for extensive documentation and many more examples. To produce output from the `article-knitr.Rmd` file, you could of course launch R in the working directory, load `knitr`, and process the file. This produces the `article-knitr.md` file, together with some graphics in the `figures/` folder (and some working files in the `cache/` folder). We set things up in the `.Rmd` file so that `knitr` produces both PNG and PDF versions of whatever figures are generated by R. That prepares the way for easy conversion to HTML and LaTeX. Once the `article-knitr.md` file is produced, HTML, `.tex`, and PDF versions of it can be produced as before, by typing `make` at the command line. But of course there's no reason `make` can't automate that first step, too. The [`rmd-starter` project](http://github.com/kjhealy/rmd-starter) has a sample `Makefile` that begins with the `.Rmd` files in the directory and produces the outputs from there.
 
 ### Using Marked
 
@@ -347,37 +402,47 @@ All of which is just to reiterate two things. First, I am not advocating these t
 
 ## Appendix: Links to Resources
 
-- **Basic Tools**
-    - [Apple's Developer Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) Unix toolchain. Install directly with `xcode-select --install`, or just try to use e.g. `git` from the terminal and have OS X prompt you to install the tools.
-    - [Homebrew package manager](http://brew.sh). A convenient way to install several of the tools here, including Emacs and Pandoc.
-    - [Emacs](http://www.gnu.org/software/emacs/). A powerful text editor. Ready-to-go Mac version at [Emacs for Mac OS X](http://emacsformacosx).
-    - [R](http://r-project.org). A platform for statistical computing.
-    - [Python](http://python.org) and [SciPy](http://www.scipy.org/). Python is a general-purpose programming language increasingly used in data manipulation and analysis.
-    - [RStudio](http://rstudio.com). An IDE for R. The most straightforward way to get into using R and RMarkdown.
-    - [TeX and LaTeX](http://tug.org). A typesetting and document preparation system. You can write files in `.tex` format directly, or you can just have it available in the background for other tools to use. The [MacTeX Distribution](http://tug.org/mactex) is the one to install for OS X.
-    - [Pandoc](http://pandoc.org). Converts plain-text documents to and from a wide variety of formats. Can be installed with Homebrew. Be sure to also install `pandoc-citeproc` for processing citations and bibliographies, and `pandoc-crossref` for producing cross-references and labels.
-    - [Git](http://git-scm.org). Version control system. Installs with Apple's Developer Tools, or get the latest version via Homebrew.
-    - [GNU Make](http://www.gnu.org/software/make). You tell `make` what the steps are to create the pieces of a document or program. As you edit and change the various pieces, it automatically figures out which pieces need to be updated and recompiled, and issues the commands to do that. See Karl Broman's [Minimal Make](http://kbroman.org/minimal_make/) for a short introduction. Make will be installed automatically with Apple's developer tools.
-    - [Zotero](http://zotero.org) and [Mendeley](http://mendeley.com) are citation managers that incorporate annotation and other features. I don't use these tools, but that's not for any strong principled reason. If you use one and want to integrate with the material here, just make sure it can export to BibTeX/BibLaTeX files.
 
-- **Helpers and Templates**
-    - [Emacs Starter Kit for the Social Sciences](http://kjhealy.github.com/emacs-starter-kit/). Set Emacs up to use many of the tools described in this guide.
-    - [Pandoc Templates](https://github.com/kjhealy/pandoc-templates). LaTeX and HTML templates, together with Pandoc configuration files and other things needed to produce good-looking PDF, HTML, and Word documents from plain text sources using Pandoc.
-    - [`md-starter` project](https://github.com/kjhealy/md-starter) and [`rmd-starter` project](https://github.com/kjhealy/rmd-starter). Assuming you have the tools and Pandoc/LaTeX templates installed, these skeleton project folders contain a basic `.md` or `.rmd` starter file and a `Makefile` to produce `.html`, `.tex`, `.pdf` and `.docx` files as described in this guide.
-    - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) An overview of Markdown and RMarkdown conventions.
-    - [RStudio Cheatsheets](https://rstudio.com/resources/cheatsheets/) Other quick guides, including a more comprehensive RMarkdown reference and a information about using RStudio's IDE, and some of the main tools in R.
-    - [Plain Person's Guide](http://github.com/kjhealy/workflow-paper) The git repository for this project.
+### Basic Tools
+- [Apple's Developer Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) Unix toolchain. Install directly with `xcode-select --install`, or just try to use e.g. `git` from the terminal and have OS X prompt you to install the tools.
+- [Homebrew package manager](http://brew.sh). A convenient way to install several of the tools here, including Emacs and Pandoc.
+- [Emacs](http://www.gnu.org/software/emacs/). A powerful text editor. Ready-to-go Mac version at [Emacs for Mac OS X](http://emacsformacosx).
+- [R](http://r-project.org). A platform for statistical computing.
+- [Python](http://python.org) and [SciPy](http://www.scipy.org/). Python is a general-purpose programming language increasingly used in data manipulation and analysis.
+- [RStudio](http://rstudio.com). An IDE for R. The most straightforward way to get into using R and RMarkdown.
+- [TeX and LaTeX](http://tug.org). A typesetting and document preparation system. You can write files in `.tex` format directly, or you can just have it available in the background for other tools to use. The [MacTeX Distribution](http://tug.org/mactex) is the one to install for OS X.
+- [Pandoc](http://pandoc.org). Converts plain-text documents to and from a wide variety of formats. Can be installed with Homebrew. Be sure to also install `pandoc-citeproc` for processing citations and bibliographies, and `pandoc-crossref` for producing cross-references and labels.
+- [Git](http://git-scm.org). Version control system. Installs with Apple's Developer Tools, or get the latest version via Homebrew.
+- [GNU Make](http://www.gnu.org/software/make). You tell `make` what the steps are to create the pieces of a document or program. As you edit and change the various pieces, it automatically figures out which pieces need to be updated and recompiled, and issues the commands to do that. See Karl Broman's [Minimal Make](http://kbroman.org/minimal_make/) for a short introduction. Make will be installed automatically with Apple's developer tools.
+
+### Helpers and Templates
+- [Emacs Starter Kit for the Social Sciences](http://kjhealy.github.com/emacs-starter-kit/). Set Emacs up to use many of the tools described in this guide.
+- [Pandoc Templates](https://github.com/kjhealy/pandoc-templates). LaTeX and HTML templates, together with Pandoc configuration files and other things needed to produce good-looking PDF, HTML, and Word documents from plain text sources using Pandoc.
+- [`md-starter` project](https://github.com/kjhealy/md-starter) and [`rmd-starter` project](https://github.com/kjhealy/rmd-starter). Assuming you have the tools and Pandoc/LaTeX templates installed, these skeleton project folders contain a basic `.md` or `.rmd` starter file and a `Makefile` to produce `.html`, `.tex`, `.pdf` and `.docx` files as described in this guide.
+- [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) An overview of Markdown and RMarkdown conventions.
+- [RStudio Cheatsheets](https://rstudio.com/resources/cheatsheets/) Other quick guides, including a more comprehensive RMarkdown reference and a information about using RStudio's IDE, and some of the main tools in R.
+
+### Guides
+
+- [knitr](http://yihui.name/knitr/) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
+- [Rmarkdown documentation](http://rmarkdown.rstudio.com) from the makers of RStudio. Lots of good examples.
+- [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
+- [Karl Broman's Tutorials and Guides](http://kbroman.org/pages/tutorials) Accurate and concise guides to many of the tools and topics described here, including [getting started with reproducible research](http://kbroman.org/steps2rr), [using git and GitHub](http://kbroman.org/github_tutorial), and [working with knitr](http://kbroman.org/knitr_knutshell).
     
-- **Paid Applications and Services**
-    - [Backblaze](http://backblaze.com). Secure off-site backup.
-    - [Crashplan](http://crashplan.com). Secure off-site backup.
-    - [GitHub](http://github.com). Host public Git repositories for free. Pay to host private ones. Also a source for publicly available code (e.g. R packages and utilities) written by other people.
-    - [Marked 2](http://marked2app.com). Live HTML previewing of Markdown documents. Mac OS X only.
-    - [Sublime Text](http://sublimetext.com). Python-based text editor.
+### Paid Applications and Services
+- [Backblaze](http://backblaze.com). Secure off-site backup.
+- [Crashplan](http://crashplan.com). Secure off-site backup.
+- [GitHub](http://github.com). Host public Git repositories for free. Pay to host private ones. Also a source for publicly available code (e.g. R packages and utilities) written by other people.
+- [Marked 2](http://marked2app.com). Live HTML previewing of Markdown documents. Mac OS X only.
+- [Sublime Text](http://sublimetext.com). Python-based text editor.
+- [Zotero](http://zotero.org), [Mendeley](http://mendeley.com), and [Papers](http://papersapp.com) are citation managers that incorporate PDF storate, annotationm and other features. Zotero is free to use. Mendeley has a premium tier. Papers is a paid application after a trial period. I don't use these tools much, but that's not for any strong principled reason---mostly just intertia. If you use one and want to integrate with the material here, just make sure it can export to BibTeX/BibLaTeX files. Papers, which I've used most recently, can handily output citation keys in pandoc's format amongst several others.
+
+
 
 [^1]: This may also be true if you are about to move from being a
     graduate student to starting as a faculty member, though perhaps the
     rationale is less compelling given the costs.
+
 
 [^3]: For further argument about the advantages of text-editors over
     word processors see Allin Cottrell's polemic, \`\`[Word Processors:
