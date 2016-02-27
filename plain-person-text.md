@@ -5,7 +5,7 @@ author:
   affiliation: Duke University
   email: kjhealy@soc.duke.edu
 date: February 2016
-thanks: "This is an updated and expanded version of 'Choosing Your Workflow Applications' (2013). The main difference is an increased emphasis on Rmarkdown, `knitr`, and `pandoc`. The `.md` source for this file is available at [`https://github.com/kjhealy/workflow-paper`](https://github.com/kjhealy/workflow-paper)."
+thanks: "This is an updated and expanded version of 'Choosing Your Workflow Applications' (2013). The main difference is an increased emphasis on Rmarkdown, `knitr`, and `pandoc`. The `.md` source for this file is available at [`https://github.com/kjhealy/workflow-paper`](https://github.com/kjhealy/workflow-paper). It is also available as a website, at [`http://plain-text.co`](http://plain-text.co)."
 abstract: "As a beginning graduate student in the social sciences, what sort of software should you use to do your work? More importantly, what principles should guide your choices? This article offers some answers. The short version is: you should use tools that give you more control over the process of data analysis and writing. I recommend you write prose and code using a good text editor; analyze quantitative data with R or Stata; minimize error by storing your work in a simple format (plain text is best), and make a habit of documenting what you've done. For data analysis, consider using a format like Rmarkdown and tools like Knitr to make your work more easily reproducible for your future self. Use Pandoc to turn your plain-text documents into PDF, HTML, or Word files to share with others. Keep your projects in a version control system. Back everything up regularly. Make your computer work for you by automating as many of these steps as you can. To help you get started, I briefly discuss a drop-in set of useful defaults to get started with Emacs (a powerful, free text-editor). I share some templates and style files that can get you quickly from plain text to various output formats. And I point to several alternatives, because no humane person should recommend Emacs without presenting some other options as well."
 crossrefYaml: "./pandoc-crossref-settings.yaml"
 ...
@@ -281,7 +281,8 @@ The `Makefile` in the sample [`md-starter` project](https://github.com/kjhealy/m
 ## for all markdown files in the directory
 MEXT = md
 
-## Variable for all markdown files in the working directory
+## Variable expands to a list of all markdown files 
+## in the working directory
 SRC = $(wildcard *.$(MEXT))
 
 ## Location of Pandoc support files.
@@ -293,7 +294,7 @@ BIB = /Users/kjhealy/Documents/bibs/socbib-pandoc.bib
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
 CSL = apsa
 
-## Dependencies: .pdf depends on .md, .html depends on .md, etc
+## x.pdf depends on x.md, x.html depends on x.md, etc
 PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
 TEX=$(SRC:.md=.tex)
@@ -306,10 +307,10 @@ html:	clean $(HTML)
 tex:	clean $(TEX)
 docx:	clean $(DOCX)
 
-## The commands associated with dependencies.
+## The commands associated with each rule.
 ## This first one is run when `make html` is typed.
-## Read the rule as "Each .html file depends on a .md file with the
-## same name. Run this pandoc command if the .md file has changed."
+## Read the rule as "When making the html file, 
+## run this pandoc command if the .md file has changed."
 %.html:	%.md
 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block \ 
     -w html -S --template=$(PREFIX)/templates/html.template \
