@@ -178,7 +178,7 @@ want. These "chunks" of code can be interspersed throughout the
 document. They are distinguished from the regular text by a special
 delimiter at the beginning and end of the block.
 
-When you're ready, you `knit` the document. That is, you feed it to R,
+When you're ready, you `knit` the document  [@xie15dynamdocumr]. That is, you feed it to R,
 which processes the code chunks, and produces a finished version where
 the code chunks have been replaced by their output. This is now a nice
 markdown file that you can then turn into a PDF or HTML document.
@@ -464,7 +464,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 - [GitHub](http://github.com). Host public Git repositories for free. Pay to host private ones. Also a source for publicly available code (e.g. R packages and utilities) written by other people.
 - [Marked 2](http://marked2app.com). Live HTML previewing of Markdown documents. Mac OS X only.
 - [Sublime Text](http://sublimetext.com). Python-based text editor.
-- [Zotero](http://zotero.org), [Mendeley](http://mendeley.com), and [Papers](http://papersapp.com) are citation managers that incorporate PDF storate, annotationm and other features. Zotero is free to use. Mendeley has a premium tier. Papers is a paid application after a trial period. I don't use these tools much, but that's not for any strong principled reason---mostly just intertia. If you use one and want to integrate with the material here, just make sure it can export to BibTeX/BibLaTeX files. Papers, which I've used most recently, can handily output citation keys in pandoc's format amongst several others.
+- [Zotero](http://zotero.org), [Mendeley](http://mendeley.com), and [Papers](http://papersapp.com) are citation managers that incorporate PDF storage, annotation and other features. Zotero is free to use. Mendeley has a premium tier. Papers is a paid application after a trial period. I don't use these tools much, but that's not for any strong principled reason---mostly just intertia. If you use one and want to integrate with the material here, just make sure it can export to BibTeX/BibLaTeX files. Papers, which I've used most recently, can handily output citation keys in pandoc's format amongst several others.
 
 
 
