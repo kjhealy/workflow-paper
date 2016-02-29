@@ -274,7 +274,7 @@ Following Karl Broman's example, let's imagine that you have a paper, `paper.md`
 
 Here is what a basic `Makefile` for our example would look like:
 
-```{#lst:makesimple .bash caption="A simple Makefile"}```
+```{#lst:makesimple .bash caption="A simple Makefile"}
 
 ## Read as "mypaper.pdf depends on mypaper.md and fig1.pdf"
 mypaper.pdf: mypaper.md fig1.pdf 
