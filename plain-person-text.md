@@ -62,7 +62,7 @@ A third principle is that repetitive and error-prone processes should be automat
 
 There are many ways of implementing these principles. You could use Microsoft Word, Endnote and SPSS. Or Textpad and Stata. Or a pile of legal pads, a calculator, a pair of scissors and a box of file folders. But software applications are not all created equal, and some make it easier than others to do the Right Thing. For instance, it is *possible* to produce well-structured, easily-maintainable documents using Microsoft Word. But you have to use its styling and outlining features strictly and responsibly, and most people don't bother. You can maintain reproducible analyses in SPSS, but the application isn't set up to do this automatically or efficiently, nor does its design encourage good habits. So, it is probably a good idea to invest some time learning about the alternatives. Many of them are free to use or try out, and you are at a point in your career where you can afford to play with different setups without too much trouble.
 
-The dissertation, book, or articles you write will generally consist of the main text, the results of data analysis (perhaps presented in tables or figures) and the scholarly apparatus of notes and references. Thus, as you put a paper or an entire dissertation together you will want to be able to easily *keep a record of your actions* as you *edit text*, *analyze data* and *present results*, in a *reproducible way*. In the next section I describe some applications and tools designed to let you do all of this. I focus on tools that fit together well (by design) and that are all freely available for Windows, Linux and Mac OS X. They are not perfect, by any means---in fact, some of them can be awkward to learn. But graduate-level research and writing can also be awkward to learn. Specialized tasks need specialized tools and, unfortunately, although they are very good at what they do, these tools don't always go out of their way to be friendly.
+The dissertation, book, or articles you write will generally consist of the main text, the results of data analysis (perhaps presented in tables or figures) and the scholarly apparatus of notes and references. Thus, as you put a paper or an entire dissertation together you will want to be able to easily *keep a record of your actions* as you *edit text*, *analyze data* and *present results* in a *reproducible way*. In the next section I describe some applications and tools designed to let you do all of this. I focus on tools that fit together well (by design) and that are all freely available for Windows, Linux and Mac OS X. They are not perfect, by any means---in fact, some of them can be awkward to learn. But graduate-level research and writing can also be awkward to learn. Specialized tasks need specialized tools and, unfortunately, although they are very good at what they do, these tools don't always go out of their way to be friendly.
 
 ### Use version control
 
@@ -84,6 +84,7 @@ Regardless of whether you choose to use a formal revision control system, you sh
 
 ## Edit Text ##
 
+### Use a Text Editor ###
 If you are going to be doing quantitative analysis of any kind then you should write using a good text editor. The same can be said, I'd argue, for working with any highly structured document subject to a lot of revision, such as a scholarly paper. Text editors are different from word processors. Unlike applications such as Microsoft Word, text editors generally don't make a big effort to make what you write look like as though it is being written on a printed page.[^3] Instead, they focus on working with text efficiently, while keeping it in a plain and portable format, as opposed to binary file formats like `.docx`. @fig:emacstext shows an example. 
 
 ![Working on part of this document in Emacs.](figures/emacs-texted.png){#fig:emacstext}
@@ -99,34 +100,30 @@ While very powerful and flexible, Emacs can be annoying. Indeed, to many people 
 
 Given all that, why mention it in the first place? Partly because it's the editor I use. Partly because it is available for all of the main desktop and laptop computing plaforms. And partly becuase it is very, *very* good at doing what I want it to do. In a modern computing environment there are many good reasons to use something like RStudio, or TextMate, or Sublime Text instead of Emacs (I return to these alternatives below). You will do fine if you prefer those instead.
 
-## Analyze Data and Present Results
+### Write in Markdown ###
 
-You will probably be doing some---perhaps a great deal---of quantitative data analysis. R is an environment for statistical computing. It's well-supported, continually improving, and has a very active expert-user community. The documentation that comes with the software is complete, if somewhat terse, but there are a large number of excellent reference and teaching texts that illustrate its use. These include @dalgaard08introdstatisr, @venables02moderappliedstatissplus, @maindonald03dataanalygraphusingr, @fox02rspluscompanappliedregres, @harrell16regresmodelstrat, @matloff11artrprogr, and @gelmanhill07:dataanalysis. Although it is a command-line tool at its core, it can easily be used in conjunction with the [RStudio IDE](http://rstudio.com). You can download R from [The R Project Homepage](http://www.r-project.org/).
-
-R can be used directly within Emacs by way of a package called ESS (for "Emacs Speaks Statistics"). As shown in @fig:ess, it allows you to work with your code in one Emacs frame and a live R session in another right beside it. Because everything is inside Emacs, it is easy to do things like send a chunk of your code over to R using a keystroke. This is a very efficient way of doing interactive data analysis while building up code you can use again in future.
-
-![Working with R in Emacs using ESS. A document containing R code (`apple.r`) is open in the top half of the screen. Below the divider, an R session is running, also inside Emacs. Code from the top pane is sent to the bottom with a keyboard shortcut, where it is evaluated by R. We can also jump down to the bottom pane and do work there. Small details like a lint checker, active line highlighting, and revision-control information are also visible.](figures/emacs-ess-2016.png){#fig:ess}
-
-You'll present your results in papers, but also in talks where you will likely use some kind of presentation software. You can use Microsoft PowerPoint or Apple's [Keynote](http://www.apple.com/iwork/keynote/). Or you produce HTML or PDF slides [directly](http://rmarkdown.rstudio.com/ioslides_presentation_format.html) from plain text documents.[^4]
-
-## Reproduce Work and Minimize Error ##
-
-We have already seen how the right set of tools can save you time by automatically highlighting the syntax of your code, ensuring everything you cite ends up in your bibliography, picking out mistakes in syntax, and providing templates for commonly-used methods or functions. Your time is saved twice over: you don't repeat yourself, and you make fewer errors you'd otherwise have to fix. When it comes to managing ongoing projects, minimizing error means addressing two related problems. The first is to find ways to further reduce the opportunity for errors to creep in without you noticing. This is especially important when it comes to coding and analyzing data. The second is to find a way to figure out, retrospectively, what it was you did to generate a particular result. Using a revision control system gets us a good distance down this road. But there is more we can do at the level of particular reports or papers.
-
-Errors in data analysis often well up out of the gap that typically exists between the procedure used to produce a figure or table in a paper and the subsequent use of that output later. In the ordinary way of doing things, you have the code for your data analysis in one file, the output it produced in another, and the text of your paper in a third file. You do the analysis, collect the output and copy the relevant results into your paper, often manually reformatting them on the way. Each of these transitions introduces the opportunity for error. In particular, it is easy for a table of results to get detached from the sequence of steps that produced it. Almost everyone who has written a quantitative paper has been confronted with the problem of reading an old draft containing results or figures that need to be revisited or reproduced (as a result of peer-review, say) but which lack any information about the circumstances of their creation. Academic papers take a long time to get through the cycle of writing, review, revision, and publication, even when you're working hard the whole time. It is not uncommon to have to return to something you did two years previously in order to answer some question or other from a reviewer. You do not want to have to do everything over from scratch in order to get the right answer. I am not exaggerating when I say that, whatever the challenges of replicating the results of someone else's quantitative analysis, after a fairly short period of time authors themselves find it hard to replicate their *own* work. Computer Science people have a term of art for the inevitable process of decay that overtakes a project simply in virtue of its being left alone on the hard drive for six months or more: bit--rot.
-
-### Using Markdown
-
-An important way to caulk this gap is to use [RMarkdown](http://rmarkdown.rstudio.com) and [knitr](http://yihui.name/knitr/) when doing quantitative analysis in R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way of writing plain text that includes information about the formatting of your document. It was originally developed by John Gruber, with input from Aaron Swartz. The aim was to make a simple format that could incorporate structural information about the document (such as headings and subheadings, *emphasis*, [hyperlinks](http://daringfireball.net/markdown), lists, footnotes, and so on), with minimal loss of readability. Formats like HTML or TeX are much more extensive markup languages, but Markdown was meant to be simple. Over the years it has become a *de facto* standard. Text editors and note-taking applications support it, and tools exist to convert Markdown not just into HTML (its original target output format) but many other document types as well. @lst:markdown-example shows the markdown source for this paragraph and its subheading.
+When you write papers in plain text, how do you manage the formatting,
+sectioning, and other related aspects of your document?
+[Markdown](http://en.wikipedia.org/wiki/Markdown) is a
+loosely-standardized way of writing plain text that includes
+information about the formatting of your document. It was originally
+developed by John Gruber, with input from Aaron Swartz. The aim was to
+make a simple format that could incorporate structural information
+about the document (such as headings and subheadings, *emphasis*,
+[hyperlinks](http://daringfireball.net/markdown), lists, footnotes,
+and so on), with minimal loss of readability. Formats like HTML or TeX
+are much more extensive markup languages, but Markdown was meant to be
+simple. Over the years it has become a *de facto* standard. Text
+editors and note-taking applications support it, and tools exist to
+convert Markdown not just into HTML (its original target output
+format) but many other document types as well. @lst:markdown-example
+shows the markdown source for this paragraph and its subheading.
 
 ```{#lst:markdown-example .markdown caption="The Markdown source for a nearby part of this document."}
-### Using Markdown, RMarkdown and `knitr` 
-
-An important way to caulk this gap is to use
-[RMarkdown](http://rmarkdown.rstudio.com) and
-[knitr](http://yihui.name/knitr/) when doing quantitative analysis in
-R. [Markdown](http://en.wikipedia.org/wiki/Markdown) is a way of
-writing plain text that includes information about the formatting of
+When you write papers in plain text, how do you manage the formatting, 
+sectioning, and other related aspects of your document? 
+[Markdown](http://en.wikipedia.org/wiki/Markdown) is a loosely-standardized 
+way of writing plain text that includes information about the formatting of
 your document. It was originally developed by John Gruber, with input
 from Aaron Swartz. The aim was to make a simple format that could
 incorporate structural information about the document (such as
@@ -141,37 +138,30 @@ format) but many other document types as well. @lst:markdown-example shows
 the markdown source for this paragraph and its subheading.
 ```
 
-The excerpt shown in @lst:markdown-example shows a few of the most
-common Markdown conventions, most notably the standard way of
-representing hyperlinks, and emphasizing text. There are a number of
-Markdown variants, or "flavors", that have extended it to manage
-things like cross-references and labels, citations, and other textual
-elements. Citations are particularly important. The `pandoc-citeproc`
-filter is an add-on that handles these. It can be installed alongside
-`pandoc`. Your bibliography can be stored in one of a variety of
-formats (such as BibTeX, or EndNote). Within your `.md` document,
-cites are referred to by their key, such as
-`[@healy14datavisualsociol]`. When `pandoc` converts your document,
-the cite key is replaced with the reference information like this
-[@healy14datavisualsociol], and the full bibliographic entry is
-included in an automaticaly-generated list of references. Read
-[Pandoc's documentation for more details](http://pandoc.org/README.html#citations)
-about citations. At the end of the excerpt you can also see that the
-code listing is labeled with `@lst:markdown-example`, for example. A
-Pandoc filter named
-[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)
-extends this `@label` convention to deal with labeled Figures, Tables,
-and so on. Using Markdown in this way means you do not have to worry
-whether your reference list is complete, or whether cross-references
-(to 'Figure 3' for example) remain correct after you move things
-around in your text.
+### Use R with ESS or RStudio
 
+You will probably be doing some---perhaps a great deal---of quantitative data analysis. R is an environment for statistical computing. It's well-supported, continually improving, and has a very active expert-user community. The documentation that comes with the software is complete, if somewhat terse, but there are a large number of excellent reference and teaching texts that illustrate its use. These include @dalgaard08introdstatisr, @venables02moderappliedstatissplus, @maindonald03dataanalygraphusingr, @fox02rspluscompanappliedregres, @harrell16regresmodelstrat, @matloff11artrprogr, and @gelmanhill07:dataanalysis. Although it is a command-line tool at its core, it can easily be used in conjunction with the [RStudio IDE](http://rstudio.com). You can download R from [The R Project Homepage](http://www.r-project.org/).
 
-## Using RMarkdown and `knitr` 
+R can be used directly within Emacs by way of a package called ESS (for "Emacs Speaks Statistics"). As shown in @fig:ess, it allows you to work with your code in one Emacs frame and a live R session in another right beside it. Because everything is inside Emacs, it is easy to do things like send a chunk of your code over to R using a keystroke. This is a very efficient way of doing interactive data analysis while building up code you can use again in future.
 
-All of this applies just to `.md` documents. What about data analysis?
-RMarkdown is a way to incorporate R code into this process. This
-approach is designed to integrate the plain-text documentation or
+![Working with R in Emacs using ESS. A document containing R code (`apple.r`) is open in the top half of the screen. Below the divider, an R session is running, also inside Emacs. Code from the top pane is sent to the bottom with a keyboard shortcut, where it is evaluated by R. We can also jump down to the bottom pane and do work there. Small details like a lint checker, active line highlighting, and revision-control information are also visible.](figures/emacs-ess-2016.png){#fig:ess}
+
+You'll present your results in papers, but also in talks where you will likely use some kind of presentation software. You can use Microsoft PowerPoint or Apple's [Keynote](http://www.apple.com/iwork/keynote/). Or, you can produce HTML or PDF slides [directly](http://rmarkdown.rstudio.com/ioslides_presentation_format.html) from plain text documents.[^4]
+
+## Reproduce Work and Minimize Error ##
+
+We have already seen how the right set of tools can save you time by automatically highlighting the syntax of your code, ensuring everything you cite ends up in your bibliography, picking out mistakes in syntax, and providing templates for commonly-used methods or functions. Your time is saved twice over: you don't repeat yourself, and you make fewer errors you'd otherwise have to fix. When it comes to managing ongoing projects, minimizing error means addressing two related problems. The first is to find ways to further reduce the opportunity for errors to creep in without you noticing. This is especially important when it comes to coding and analyzing data. The second is to find a way to figure out, retrospectively, what it was you did to generate a particular result. Using a revision control system gets us a good distance down this road. But there is more we can do at the level of particular reports or papers.
+
+Errors in data analysis often well up out of the gap that typically exists between the procedure used to produce a figure or table in a paper and the subsequent use of that output later. In the ordinary way of doing things, you have the code for your data analysis in one file, the output it produced in another, and the text of your paper in a third file. You do the analysis, collect the output and copy the relevant results into your paper, often manually reformatting them on the way. Each of these transitions introduces the opportunity for error. In particular, it is easy for a table of results to get detached from the sequence of steps that produced it. Almost everyone who has written a quantitative paper has been confronted with the problem of reading an old draft containing results or figures that need to be revisited or reproduced (as a result of peer-review, say) but which lack any information about the circumstances of their creation. Academic papers take a long time to get through the cycle of writing, review, revision, and publication, even when you're working hard the whole time. It is not uncommon to have to return to something you did two years previously in order to answer some question or other from a reviewer. You do not want to have to do everything over from scratch in order to get the right answer. I am not exaggerating when I say that, whatever the challenges of replicating the results of someone else's quantitative analysis, after a fairly short period of time authors themselves find it hard to replicate their *own* work. Computer Science people have a term of art for the inevitable process of decay that overtakes a project simply in virtue of its being left alone on the hard drive for six months or more: bit--rot.
+
+### Use RMarkdown
+
+An important way to caulk this gap is to use
+[RMarkdown](http://rmarkdown.rstudio.com) and
+[knitr](http://yihui.name/knitr/) when doing quantitative analysis in
+R. We've already seen how to write plain-text documents in Markdown's
+lightweight format. RMarkdown allows you to incorporate code into this
+process. It is designed to integrate the plain-text documentation or
 writeup of a data analysis and its execution. You write the text of
 your paper (or, more often, your report documenting a data analysis)
 as normal. Whenever you want to run a model, produce a table or
@@ -179,22 +169,22 @@ display a figure, rather than paste in the results of your work from
 elsewhere, you write down the R code that will produce the output you
 want. These "chunks" of code can be interspersed throughout the
 document. They are distinguished from the regular text by a special
-delimiter at the beginning and end of the block.
+delimiter at the beginning and end of the block. 
 
-When you're ready, you `knit` the document  [@xie15dynamdocumr]. That is, you feed it to R,
-which processes the code chunks, and produces a finished version where
-the code chunks have been replaced by their output. This is now a nice
-markdown file that you can then turn into a PDF or HTML document.
-Conversely, if you just want to extract the code you've written from
-the surrounding text, then you "tangle" the file, which results in an
-`.R` file. It's pretty straightforward in practice. The strength of
-this approach is that is makes it much easier to document your work
-properly. There is just one file for both the data analysis and the
-writeup. The output of the analysis is created on the fly, and the
-code to do it is embedded in the paper. If you need to do multiple but
-identical (or very similar) analyses of different bits of data,
-RMarkdown and `knitr` can make generating consistent and reliable
-reports much easier.
+When you're ready, you `knit` the document [@xie15dynamdocumr]. That
+is, you feed it to R, which processes the code chunks, and produces a
+finished version where the code chunks have been replaced by their
+output. This is now a nice markdown file that you can then turn into a
+PDF or HTML document. Conversely, if you just want to extract the code
+you've written from the surrounding text, then you "tangle" the file,
+which results in an `.R` file. It's pretty straightforward in
+practice. The strength of this approach is that is makes it much
+easier to document your work properly. There is just one file for both
+the data analysis and the writeup. The output of the analysis is
+created on the fly, and the code to do it is embedded in the paper. If
+you need to do multiple but identical (or very similar) analyses of
+different bits of data, RMarkdown and `knitr` can make generating
+consistent and reliable reports much easier.
 
 RMarkdown is one of several "literate programming" formats. The idea
 goes back to Donald Knuth, the pioneering theorist of computer science
@@ -220,6 +210,13 @@ print(p)
 ```
 
 `knitr` and RMarkdown make it easy to produce HTML output, too. This makes for easy portability, conversion, and quick previewing while editing. You can work with RMarkdown files in any text editor, and Emacs has strong support for them. RStudio also comes with built-in support for `.Rmd` files and makes it very easy to produce HTML and PDF output, and to publish your reports to the web via its [RPubs](http://rpubs.com) service.
+
+The [knitr website](http://yihui.name/knitr/) has a numerous
+[worked examples](http://yihui.name/knitr/demo/minimal/) showing how
+it works. These range from
+[the basic setup](https://raw.githubusercontent.com/yihui/knitr-examples/master/001-minimal.Rmd)
+to [more developed cases](http://yihui.name/knitr/demos/) to
+[more developed examples](http://yihui.name/knitr/demo/showcase/).
 
 The literate programming approach has its limits. For large or complex analyses it can still make more sense to produce the final result in pieces rather than all at once in a single `.Rmd` file. This is one of the reasons it remains important to manage your projects using some kind of version control, so you can keep track of work that is needed but might not fit inside a single `.Rmd` document. 
 
@@ -440,6 +437,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 - [Homebrew package manager](http://brew.sh). A convenient way to install several of the tools here, including Emacs and Pandoc.
 - [Emacs](http://www.gnu.org/software/emacs/). A powerful text editor. Ready-to-go Mac version at [Emacs for Mac OS X](http://emacsformacosx).
 - [R](http://r-project.org). A platform for statistical computing.
+- [knitr](http://yihui.name/knitr/). Reproducible plain-text documents from within R. 
 - [Python](http://python.org) and [SciPy](http://www.scipy.org/). Python is a general-purpose programming language increasingly used in data manipulation and analysis.
 - [RStudio](http://rstudio.com). An IDE for R. The most straightforward way to get into using R and RMarkdown.
 - [TeX and LaTeX](http://tug.org). A typesetting and document preparation system. You can write files in `.tex` format directly, or you can just have it available in the background for other tools to use. The [MacTeX Distribution](http://tug.org/mactex) is the one to install for OS X.
@@ -456,7 +454,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 
 ### Guides
 
-- [knitr](http://yihui.name/knitr/) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
+- [knitr](http://yihui.name/knitr/demos) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
 - [Rmarkdown documentation](http://rmarkdown.rstudio.com) from the makers of RStudio. Lots of good examples.
 - [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
 - [Karl Broman's Tutorials and Guides](http://kbroman.org/pages/tutorials) Accurate and concise guides to many of the tools and topics described here, including [getting started with reproducible research](http://kbroman.org/steps2rr), [using git and GitHub](http://kbroman.org/github_tutorial), and [working with knitr](http://kbroman.org/knitr_knutshell).
