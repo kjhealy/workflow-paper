@@ -152,6 +152,29 @@ You'll present your results in papers, but also in talks where you will likely u
 
 We have already seen how the right set of tools can save you time by automatically highlighting the syntax of your code, ensuring everything you cite ends up in your bibliography, picking out mistakes in syntax, and providing templates for commonly-used methods or functions. Your time is saved twice over: you don't repeat yourself, and you make fewer errors you'd otherwise have to fix. When it comes to managing ongoing projects, minimizing error means addressing two related problems. The first is to find ways to further reduce the opportunity for errors to creep in without you noticing. This is especially important when it comes to coding and analyzing data. The second is to find a way to figure out, retrospectively, what it was you did to generate a particular result. Using a revision control system gets us a good distance down this road. But there is more we can do at the level of particular reports or papers.
 
+When you write code it is often in the process of doing some analysis
+on the fly. Ideas occur to you, you have a few things you want to look
+at, one thing leads to another. As a rule, you should try to document
+your work as you go. If you are writing an R script, then this usually
+means adding (brief, but useful) comments to your work to explain what
+it is a piece of code is meant to do. Is should also mean trying to
+write your code so that is readable. Code is like prose in this
+respect. Hadley Wickham's
+[R Style Guide](http://adv-r.had.co.nz/Style.html) provides some
+useful guidelines about writing readable code. The R package
+[lintr](https://github.com/jimhester/lintr) implements these
+principles---it acts like a copy-editor for your code. In Emacs you an
+use `lintr` automatically through a tool called [flycheck](https://github.com/flycheck/flycheck). 
+
+You should also try not to repeat yourself when you write your code. A
+good rule is that if you find yourself copying and pasting chunks of
+code (for example, to draw the same sort of plot or run the same kind
+of model for a bunch of different variables) then you should pause and
+see if you can write a quick convenience function instead to automate
+things more effectively. That way, your code can be shorter and also
+less prone to the errors and inconsistencies that creep in through
+repeated copy-and-paste. 
+
 Errors in data analysis often well up out of the gap that typically exists between the procedure used to produce a figure or table in a paper and the subsequent use of that output later. In the ordinary way of doing things, you have the code for your data analysis in one file, the output it produced in another, and the text of your paper in a third file. You do the analysis, collect the output and copy the relevant results into your paper, often manually reformatting them on the way. Each of these transitions introduces the opportunity for error. In particular, it is easy for a table of results to get detached from the sequence of steps that produced it. Almost everyone who has written a quantitative paper has been confronted with the problem of reading an old draft containing results or figures that need to be revisited or reproduced (as a result of peer-review, say) but which lack any information about the circumstances of their creation. Academic papers take a long time to get through the cycle of writing, review, revision, and publication, even when you're working hard the whole time. It is not uncommon to have to return to something you did two years previously in order to answer some question or other from a reviewer. You do not want to have to do everything over from scratch in order to get the right answer. I am not exaggerating when I say that, whatever the challenges of replicating the results of someone else's quantitative analysis, after a fairly short period of time authors themselves find it hard to replicate their *own* work. Computer Science people have a term of art for the inevitable process of decay that overtakes a project simply in virtue of its being left alone on the hard drive for six months or more: bit--rot.
 
 ### Use RMarkdown
@@ -172,19 +195,23 @@ document. They are distinguished from the regular text by a special
 delimiter at the beginning and end of the block. 
 
 When you're ready, you `knit` the document [@xie15dynamdocumr]. That
-is, you feed it to R, which processes the code chunks, and produces a
-finished version where the code chunks have been replaced by their
-output. This is now a nice markdown file that you can then turn into a
-PDF or HTML document. Conversely, if you just want to extract the code
-you've written from the surrounding text, then you "tangle" the file,
-which results in an `.R` file. It's pretty straightforward in
-practice. The strength of this approach is that is makes it much
-easier to document your work properly. There is just one file for both
-the data analysis and the writeup. The output of the analysis is
-created on the fly, and the code to do it is embedded in the paper. If
-you need to do multiple but identical (or very similar) analyses of
-different bits of data, RMarkdown and `knitr` can make generating
-consistent and reliable reports much easier.
+is, you feed your `.Rmd` file to R, which processes the code chunks,
+and produces a new `.md` where the code chunks have been replaced by
+their output. You can then turn that Markdown file into a PDF or HTML
+document. Relatedly, the
+[`rmarkdown` library](http://blog.rstudio.org/2014/06/18/r-markdown-v2/)
+in R provides a `render()` function that takes you from `.Rmd` to HTML
+or PDF in a single step. This is what RStudio uses to produce your
+documents. Conversely, if you just want to extract the code you've written from the
+surrounding text, then you "tangle" the file, which results in an `.R`
+file. It's pretty straightforward in practice. The strength of this
+approach is that is makes it much easier to document your work
+properly. There is just one file for both the data analysis and the
+writeup. The output of the analysis is created on the fly, and the
+code to do it is embedded in the paper. If you need to do multiple but
+identical (or very similar) analyses of different bits of data,
+RMarkdown and `knitr` can make generating consistent and reliable
+reports much easier.
 
 RMarkdown is one of several "literate programming" formats. The idea
 goes back to Donald Knuth, the pioneering theorist of computer science
@@ -444,6 +471,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 - [Pandoc](http://pandoc.org). Converts plain-text documents to and from a wide variety of formats. Can be installed with Homebrew. Be sure to also install `pandoc-citeproc` for processing citations and bibliographies, and `pandoc-crossref` for producing cross-references and labels.
 - [Git](http://git-scm.org). Version control system. Installs with Apple's Developer Tools, or get the latest version via Homebrew.
 - [GNU Make](http://www.gnu.org/software/make). You tell `make` what the steps are to create the pieces of a document or program. As you edit and change the various pieces, it automatically figures out which pieces need to be updated and recompiled, and issues the commands to do that. See Karl Broman's [Minimal Make](http://kbroman.org/minimal_make/) for a short introduction. Make will be installed automatically with Apple's developer tools.
+- [lintr](https://github.com/jimhester/lintr) and [flycheck](https://github.com/flycheck/flycheck). Tools that nudge you to write neater code.
 
 ### Helpers and Templates
 - [Emacs Starter Kit for the Social Sciences](http://kjhealy.github.com/emacs-starter-kit/). Set Emacs up to use many of the tools described in this guide.
@@ -454,6 +482,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 
 ### Guides
 
+[R Style Guide](http://adv-r.had.co.nz/Style.html). Write readable code.
 - [knitr](http://yihui.name/knitr/demos) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
 - [Rmarkdown documentation](http://rmarkdown.rstudio.com) from the makers of RStudio. Lots of good examples.
 - [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
