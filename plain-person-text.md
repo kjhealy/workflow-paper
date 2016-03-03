@@ -32,7 +32,7 @@ The tension is that, increasingly, people---people like the target audience of t
 
 ## What's the Problem?
 
-The problem, however, is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr. Drang, a (pseudonymous) consulting engineer:
+The problem is that doing scholarly work is intrinsically a mess. There's the annoying business of getting ideas and writing them down, of course, but also everything before, during, and around it: data analysis and all that comes with it, and the tedious but unavoidable machinery of scholarly papers---especially citations and references. There is a lot of keep track of, a lot to get right, and a lot to draw together at the time of writing. Academic papers are by no means the only form of writing subject to constraints of this sort. Consider [this sensible discussion](http://www.leancrew.com/all-this/2013/12/a-free-distraction/) by Dr. Drang, a (pseudonymous) consulting engineer:
 
 > I don’t write fiction, but I can imagine that a lot of fiction writing can be done without any reference materials whatsoever. Similarly, a lot of editorials and opinion pieces are remarkably fact-free; these also can spring directly from the writer’s head. But the type of writing I typically do—mostly for work, but also here—is loaded with facts. I am constantly referring to photographs, drawings, experimental test results, calculations, reports written by others, textbooks, journal articles, and so on. These are not distractions; they are essential to the writing process.
 > 
@@ -98,7 +98,10 @@ Emacs is a text editor, in the same way the blue whale is a mammal. It does the 
 
 While very powerful and flexible, Emacs can be annoying. Indeed, to many people encountering it for the first time---especially those used to standard applications on Windows or Mac OS---its conventions seem bizarre and byzantine. As applications go, Emacs is quite ancient. The first version was written by Richard Stallman in the 1970s. Because it evolved in a much earlier era of computing (before the development of decent graphical displays, for instance, and window managers, and possibly also fire), it doesn't share many of the conventions of modern applications. Like most powerful text editors, Emacs offers many opportunities to waste your time learning its particular conventions, tweaking its settings, and generally customizing it. There are several good alternatives on each major platform, and I discuss some of them below.
 
-Given all that, why mention it in the first place? Partly because it's the editor I use. Partly because it is available for all of the main desktop and laptop computing plaforms. And partly becuase it is very, *very* good at doing what I want it to do. In a modern computing environment there are many good reasons to use something like RStudio, or TextMate, or Sublime Text instead of Emacs (I return to these alternatives below). You will do fine if you prefer those instead.
+Given all that, why mention it in the first place? Partly because it's the editor I use. Partly because it is available for all of the main desktop and laptop computing plaforms. And partly becuase it is very, *very* good at doing what I want it to do. There are many good reasons to use something like [TextMate](https://macromates.com/download), or [Sublime Text](https://www.sublimetext.com) instead of Emacs (I return to these alternatives below). Similarly, when doing data analysis with
+R, you may just want to use the
+[RStudio environment](http://rstudio.com). You will do fine if you
+prefer these alternatives. You will do fine if you go with these alternatives.
 
 ### Write in Markdown ###
 
@@ -137,6 +140,33 @@ convert Markdown not just into HTML (its original target output
 format) but many other document types as well. @lst:markdown-example shows 
 the markdown source for this paragraph and its subheading.
 ```
+
+The excerpt shown in @lst:markdown-example shows a few of the most
+common Markdown conventions, most notably how it represents headings
+and subheadings (a `#` symbol for a top-level header, with `##` for
+the next level down, and so on), how it represents hyperlinks, and how
+it emphasizes text. There are a number of Markdown variants, or
+"flavors", that have extended it to manage things like
+cross-references and labels, citations, and other textual elements.
+Citations are particularly important. The `pandoc-citeproc` filter is
+an add-on that handles these. It can be installed alongside `pandoc`.
+Your bibliography can be stored in one of a variety of formats (such
+as BibTeX, or EndNote). Within your `.md` document, cites are referred
+to by their key, such as `[@healy14datavisualsociol]`. When `pandoc`
+converts your document, the cite key is replaced with the reference
+information like this [@healy14datavisualsociol], and the full
+bibliographic entry is included in an automaticaly-generated list of
+references. Read
+[Pandoc's documentation for more details](http://pandoc.org/README.html#citations)
+about citations. At the end of the excerpt you can also see that the
+code listing is labeled with `@lst:markdown-example`, for example. A
+Pandoc filter named
+[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)
+extends this `@label` convention to deal with labeled Figures, Tables,
+and so on. Using Markdown in this way means you do not have to worry
+whether your reference list is complete, or whether cross-references
+(to 'Figure 3' for example) remain correct after you move things
+around in your text.
 
 ### Use R with ESS or RStudio
 
@@ -423,6 +453,10 @@ A step-by-step guide to downloading and installing every piece of software I've 
 
 ## Do I Have to Use All this Stuff?
 
+![How to Draw an Owl](figures/draw-owl.jpg){#fig:owl}
+
+> Installation/setup/whatever is always harder and much more poorly documented than mere usage --- [Jenny's Law](https://twitter.com/JennyBryan/status/699462966282858500)
+
 ### Pros and Cons
 
 Running your data analysis in R, writing documents in Markdown or RMarkdown, doing both inside Emacs, processing them with `pandoc`, tracking things with Git and using (behind the scenes) various Unix tools and LaTeX ... this all sounds rather complicated. It has four main advantages. First, these formats, tools, and applications are all free. You can try them out without much in the way of monetary expense. (Your time may be a different matter, but although you don't believe me, you have more of that now than you will later.) Second, they are all open-source projects and are all available for Mac OS X, Linux and Windows. Portability is important, as is the long-term viability of the platform you choose to work with. If you change your computing system, your work can move with you easily. Third, they allow you to do your work in a portable, documented, and reproducible way. And fourth, the applications are closely integrated. Everything (including version control) can work inside Emacs. All of them can work directly with or take advantage of the others.
@@ -486,6 +520,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 - [knitr](http://yihui.name/knitr/demos) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
 - [Rmarkdown documentation](http://rmarkdown.rstudio.com) from the makers of RStudio. Lots of good examples.
 - [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
+- [Jenny Bryan's Stat 545](http://stat545-ubc.github.io/topics.html). Notes and tutorials for a Data Analysis course taught by [Jennifer Bryan](http://www.stat.ubc.ca/~jenny/) at the University of British Columbia. Lots of useful material.
 - [Karl Broman's Tutorials and Guides](http://kbroman.org/pages/tutorials) Accurate and concise guides to many of the tools and topics described here, including [getting started with reproducible research](http://kbroman.org/steps2rr), [using git and GitHub](http://kbroman.org/github_tutorial), and [working with knitr](http://kbroman.org/knitr_knutshell).
     
 ### Paid Applications and Services
