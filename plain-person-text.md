@@ -268,8 +268,8 @@ print(p)
 
 `knitr` and RMarkdown make it easy to produce HTML output, too. This makes for easy portability, conversion, and quick previewing while editing. You can work with RMarkdown files in any text editor, and Emacs has strong support for them. RStudio also comes with built-in support for `.Rmd` files and makes it very easy to produce HTML and PDF output, and to publish your reports to the web via its [RPubs](http://rpubs.com) service.
 
-The [knitr website](http://yihui.name/knitr/) has a numerous
-[worked examples](http://yihui.name/knitr/demo/minimal/) showing how
+The [knitr website](http://yihui.name/knitr/) has 
+[numerous examples](http://yihui.name/knitr/demo/minimal/) showing how
 it works. These range from
 [the basic setup](https://raw.githubusercontent.com/yihui/knitr-examples/master/001-minimal.Rmd)
 to [more developed cases](http://yihui.name/knitr/demos/) to
@@ -516,7 +516,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 
 ### Guides
 
-[R Style Guide](http://adv-r.had.co.nz/Style.html). Write readable code.
+- [R Style Guide](http://adv-r.had.co.nz/Style.html). Write readable code.
 - [knitr](http://yihui.name/knitr/demos) Documentation and examples for `knitr` by its author, Yihui Xie. There is also a [knitr book](http://www.amazon.com/dp/1498716962/) covering the same ground in more detail.
 - [Rmarkdown documentation](http://rmarkdown.rstudio.com) from the makers of RStudio. Lots of good examples.
 - [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
