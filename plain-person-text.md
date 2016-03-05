@@ -430,7 +430,7 @@ not require the use of any variables or other frills. If you find
 yourself repeatedly running the same sequence of commands to assemble
 a document (e.g. cleaning data; running preliminary code; producing
 figures; assembling a final document) then `make` can do a lot to
-automate the process.
+automate the process. For further examples of `Makefiles` doing things relevant to data analysis, see [Lincoln Mullen's discussion](http://lincolnmullen.com/blog/makefiles-for-ocr-and-converting-shapefiles) of the things he uses `make` to manage.
 
 The particular steps needed for many projects may be quite simple, and not require the use of any variables or other frills. If you find yourself repeatedly running the same sequence of commands to assemble a document (e.g. cleaning data; running preliminary code; producing figures; assembling a final document) then `make` can do a lot to automate the process.
 
@@ -522,6 +522,7 @@ All of which is just to reiterate two things. First, I am not advocating these t
 - [Plain Person's Guide](http://github.com/kjhealy/plain-text.co) The git repository for this project.
 - [Jenny Bryan's Stat 545](http://stat545-ubc.github.io/topics.html). Notes and tutorials for a Data Analysis course taught by [Jennifer Bryan](http://www.stat.ubc.ca/~jenny/) at the University of British Columbia. Lots of useful material.
 - [Karl Broman's Tutorials and Guides](http://kbroman.org/pages/tutorials) Accurate and concise guides to many of the tools and topics described here, including [getting started with reproducible research](http://kbroman.org/steps2rr), [using git and GitHub](http://kbroman.org/github_tutorial), and [working with knitr](http://kbroman.org/knitr_knutshell).
+- [Makefiles for OCR and converting Shapefiles](http://lincolnmullen.com/blog/makefiles-for-ocr-and-converting-shapefiles). Some further examples of `Makefiles` in the data-analysis pipeline, by [Lincoln Mullen](http://lincolnmullen.com)
     
 ### Paid Applications and Services
 - [Backblaze](http://backblaze.com). Secure off-site backup.
